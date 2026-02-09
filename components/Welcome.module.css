@@ -1,0 +1,239 @@
+/* ==============================
+   WELCOME SECTION
+================================ */
+
+.welcome {
+  position: relative;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ==============================
+   TITLE
+================================ */
+
+/* TITLE */
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center; /* center horizontally */
+  flex-wrap: wrap; /* allows logo and text to wrap on small screens */
+  margin-bottom: 0.6rem;
+}
+
+.welcomeText {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f5c46b;
+  letter-spacing: -0.02em;
+  margin: 0; /* remove old padding-left */
+  text-align: center;
+}
+
+.welcomeText:hover {
+  transform: translateY(-2px);
+  color: #ffd992;
+  text-shadow:
+    0 0 8px rgba(245, 201, 122, 0.35),
+    0 0 18px rgba(245, 201, 122, 0.2);
+}
+
+.inlineLogo {
+  width: 85px;
+  height: auto;
+}
+
+/* SUBTITLE */
+.subTitle {
+  font-size: 1.5rem;
+  color: rgba(245, 245, 245, 0.85);
+  margin-bottom: 3.5rem;
+  max-width: 90%; /* ensures it never overflows */
+  line-height: 1.6;
+  text-align: center; /* center text */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ==============================
+   CARDS WRAPPER
+================================ */
+
+.cardsWrapper {
+  display: flex;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+}
+
+/* ==============================
+   GLASS CARD
+================================ */
+
+.infoCard {
+  flex: 1;
+  min-width: 320px;
+  padding: 1.6rem 2.3rem;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.010);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover – elegant lift (NO glow) */
+.infoCard:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* ==============================
+   ICON
+================================ */
+
+/* .iconWrapper {
+  margin-bottom: 1.2rem;
+} */
+
+.icon {
+  width: 120px;
+  height: 120px;
+  transition: transform 0.35s ease;
+}
+
+.infoCard:hover .icon {
+  transform: scale(1.08);
+}
+
+/* ==============================
+   CARD TITLE
+================================ */
+
+.cardTitle {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  /* GOLD heading */
+  color: #f5c46b;
+}
+
+/* ==============================
+   CARD CONTENT
+================================ */
+
+.cardContent {
+  width: 100%;
+}
+
+/* List reset */
+.cardContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List items */
+.cardContent li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.9rem;
+
+  /* Off-white text */
+  color: rgba(245, 245, 245, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* GOLD bullets */
+.cardContent li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-size: 1.2rem;
+  color: #f5c46b;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .welcomeText {
+    font-size: 2.4rem;
+  }
+
+  .cardsWrapper {
+    flex-direction: column;
+  }
+
+  .infoCard {
+    padding: 2.2rem 1.7rem;
+  }
+}
+
+/* TITLE */
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center; /* center horizontally */
+  flex-wrap: wrap; /* allows logo and text to wrap on small screens */
+  margin-bottom: 0.6rem;
+}
+
+.welcomeText {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f5c46b;
+  letter-spacing: -0.02em;
+  margin: 0; /* remove old padding-left */
+  text-align: center;
+}
+
+.welcomeText:hover {
+  transform: translateY(-2px);
+  color: #ffd992;
+  text-shadow:
+    0 0 8px rgba(245, 201, 122, 0.35),
+    0 0 18px rgba(245, 201, 122, 0.2);
+}
+
+.inlineLogo {
+  width: 85px;
+  height: auto;
+}
+
+/* SUBTITLE */
+.subTitle {
+  font-size: 1.5rem;
+  color: rgba(245, 245, 245, 0.85);
+  margin-bottom: 3.5rem;
+  max-width: 90%; /* ensures it never overflows */
+  line-height: 1.6;
+  text-align: center; /* center text */
+  margin-left: auto;
+  margin-right: auto;
+}

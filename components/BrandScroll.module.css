@@ -1,0 +1,169 @@
+.brandScroll {
+  padding: 4rem 0 5rem;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+/* =========================
+   CLIENTS HEADING
+========================= */
+.clientsHeading {
+   text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color:#f5c46b;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease,
+    color 0.3s ease;
+}
+
+.clientsHeading:hover {
+  transform: translateY(-2px);
+  color: #ffd992;
+
+  text-shadow:
+    0 0 8px rgba(245, 201, 122, 0.35),
+    0 0 18px rgba(245, 201, 122, 0.2);
+}
+
+/* =========================
+   MARQUEE
+========================= */
+.scrollContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrollContent {
+  display: flex;
+  gap: 4rem;
+  animation: scroll 30s linear infinite;
+  width: fit-content;
+}
+
+.scrollContent:hover {
+  animation-play-state: paused;
+}
+
+.brandItem {
+  font-size: 2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0 1rem;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.5px;
+
+  /* underline via background */
+  background-image: linear-gradient(
+    90deg,
+    #e6a6a1,
+    #e6a6a1,
+    #e6a6a1
+  );
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  transition:
+    color 0.3s ease,
+    background-size 0.35s ease,
+    transform 0.3s ease;
+}
+
+.brandItem:hover {
+  /* color: #f5c97a; */
+  color: #e6a6a1;
+  background-size: 100% 2px;
+  transform: translateY(-2px);
+}
+
+/* GOLD UNDERLINE */
+.brandItem::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #e6a6a1,
+    #e6a6a1,
+    #e6a6a1
+  );
+
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+
+.brandItem:hover::after {
+  width: 100%;
+}
+
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .clientsHeading {
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .brandItem {
+    font-size: 1.5rem;
+  }
+
+  .scrollContent {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clientsHeading {
+    font-size: 1.8rem;
+  }
+
+  .brandItem {
+    font-size: 1.25rem;
+  }
+
+  .scrollContent {
+    gap: 2rem;
+  }
+}
+
+/* 🚫 Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .brandItem {
+    background-size: 0% 2px;
+    transform: none;
+  }
+
+  .brandItem:hover {
+    color: rgba(255, 255, 255, 0.75);
+    background-size: 0% 2px;
+    transform: none;
+  }
+}
+

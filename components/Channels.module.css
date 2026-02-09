@@ -1,0 +1,139 @@
+.channels {
+  padding: 6rem 0;
+  /* background-color: var(--bg-black); */
+  background: transparent;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+   color:#f5c46b;
+  letter-spacing: -0.02em;
+}
+.sectionTitle:hover {
+  transform: translateY(-2px);
+  color: #ffd992;
+
+  text-shadow:
+    0 0 8px rgba(245, 201, 122, 0.35),
+    0 0 18px rgba(245, 201, 122, 0.2);
+}
+
+.channelList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.channelItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.channelIcon {
+  font-size: 3rem;
+  transition: all 0.3s ease;
+}
+
+.emojiIcon {
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+.channelIconImage {
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.8;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.channelName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-white);
+  transition: color 0.3s ease;
+}
+
+.channelItem:hover .emojiIcon {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.channelItem:hover .channelIconImage {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.channelItem:hover .channelName {
+  color:#f5c46b;
+}
+
+@media (max-width: 1024px) {
+  .channelList {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .channels {
+    padding: 4rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .channelList {
+    gap: 2rem;
+  }
+
+  .channelIcon {
+    font-size: 2.5rem;
+  }
+
+  .channelIconImage {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .channelList {
+    gap: 1.5rem;
+  }
+
+  .channelItem {
+    padding: 1rem;
+  }
+
+  .channelIcon {
+    font-size: 2rem;
+  }
+
+  .channelName {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,287 @@
+/* ===============================
+   CONTACT – FROSTED GLASS CARD
+   =============================== */
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  font-family: 'Inter', sans-serif;
+
+  /* page background stays outside the card */
+}
+
+/* ===============================
+   MAIN GLASS CARD
+   =============================== */
+
+.glassCard {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 650px;
+
+  background: rgba(255, 255, 255, 0.001);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+
+  border-radius: 28px;
+  border: 1px solid rgba(215, 180, 120, 0.35);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+
+  padding: 4.5rem 5rem;
+  overflow: hidden;
+}
+
+/* soft frozen light */
+.glassCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(255, 255, 255, 0.45),
+    transparent 60%
+  );
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 2.5rem;
+  right: 3rem;
+  z-index: 3;
+
+  width: 400px;
+  height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.iconWrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===============================
+   INNER LAYOUT
+   =============================== */
+
+.container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  height: 100%;
+}
+
+/* ===============================
+   LEFT – FORM
+   =============================== */
+
+.formArea {
+  max-width: 520px;
+  z-index: 1;
+}
+
+.formArea h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #d6a85a;
+  margin-bottom: 0.8rem;
+}
+
+.formArea h2:hover {
+  transform: translateY(-2px);
+  color: #ffd992;
+
+  text-shadow:
+    0 0 8px rgba(245, 201, 122, 0.35),
+    0 0 18px rgba(245, 201, 122, 0.2);
+}
+
+
+.formArea p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #bfa77a;
+  margin-bottom: 2.5rem;
+}
+
+/* Glass inputs */
+.formArea input,
+.formArea textarea {
+  width: 100%;
+  margin-bottom: 1.4rem;
+  padding: 14px 18px;
+
+  background: rgba(255, 255, 255, 0.00);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 14px;
+  border: 1px solid rgba(215, 180, 120, 0.35);
+
+  color: #e9860e;
+  font-size: 0.95rem;
+
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.formArea textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Hover / focus – gold outline */
+.formArea input:hover,
+.formArea textarea:hover,
+.formArea input:focus,
+.formArea textarea:focus {
+  border-color: #e7bf6a;
+  box-shadow: 0 0 14px rgba(231, 191, 106, 0.45);
+  /* background: rgba(255, 255, 255, 0.55); */
+}
+
+/* Placeholder */
+/* .formArea input::placeholder,
+.formArea textarea::placeholder {
+  color: rgba(240, 144, 25, 0.6);
+} */
+
+/* ===============================
+   SUBMIT BUTTON
+   =============================== */
+
+/* .formArea button {
+  display: block;        
+  width: fit-content;     
+  margin: 1rem auto 0 auto; 
+  
+  padding: 14px 38px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f2c46f, #d9a441);
+  border: 1px solid transparent;
+
+  color: #5b3b13;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+} */
+
+.formArea label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  color: #f5c46b; /* golden label */
+  font-weight: 600;
+}
+
+.formArea input,
+.formArea textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 0.95rem;
+  resize: none;
+}
+
+/* Placeholder */
+.formArea input::placeholder,
+.formArea textarea::placeholder {
+  color: rgba(240, 144, 25, 0.6);
+}
+.formArea button {
+  margin: 1.5rem auto 0;
+  display: block; /* centers button */
+  padding: 14px 38px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f2c46f, #d9a441);
+  border: 1px solid transparent;
+  color: #5b3b13;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.formArea button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 196, 107, 0.3);
+}
+
+.statusMessage {
+  margin-top: 1rem;
+  color: #f5c46b;
+  font-weight: 600;
+}
+
+/* ===============================
+   ADDRESS – BOTTOM RIGHT (INSIDE CARD)
+   =============================== */
+
+.address {
+  position: absolute;
+  right: 3.5rem;
+  bottom: 3rem;
+
+  font-size: 0.9rem;
+  color: #bfa77a;
+  z-index: 2;
+}
+
+.address p {
+  margin: 0.35rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 1024px) {
+  .glassCard {
+    padding: 3rem 2.5rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .address {
+    position: static;
+    margin-top: 2.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .iconWrapper {
+    width: 90px;
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .iconWrapper {
+    width: 70px;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}

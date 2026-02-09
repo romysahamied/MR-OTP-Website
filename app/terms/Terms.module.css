@@ -1,0 +1,128 @@
+.wrapper {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #0a0e17 0%, #020409 50%, #000 100%);
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #f6e27a, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.updated {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.intro {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  color: #f5c46b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(245, 196, 107, 0.25);
+}
+
+.section h3 {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.section p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+  font-size: 0.98rem;
+}
+
+.section ul {
+  list-style: none;
+  margin: 0.5rem 0 1rem;
+  padding-left: 0;
+}
+
+.section li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.section li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d4af37;
+}
+
+.section a {
+  color: #f5c46b;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.section a:hover {
+  color: #f6e27a;
+}
+
+.section strong {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.contactList {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.contactList li {
+  padding-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+.contactList li::before {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+  }
+
+  .section h3 {
+    font-size: 1.1rem;
+  }
+}
