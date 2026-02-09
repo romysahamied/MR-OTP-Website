@@ -38,6 +38,7 @@ export default function Services() {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const [visible, setVisible] = useState(false)
   const [carouselIndex, setCarouselIndex] = useState(0)
+  const [slideDir, setSlideDir] = useState<'left' | 'right'>('right')
   const autoAdvanceRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
@@ -63,6 +64,7 @@ export default function Services() {
 
   useEffect(() => {
     autoAdvanceRef.current = setInterval(() => {
+      setSlideDir('right')
       setCarouselIndex((i) => (i + 1) % CAROUSEL_ITEMS.length)
     }, AUTO_ADVANCE_MS)
     return () => {
@@ -74,9 +76,11 @@ export default function Services() {
     if (autoAdvanceRef.current) {
       clearInterval(autoAdvanceRef.current)
       autoAdvanceRef.current = setInterval(() => {
+        setSlideDir('right')
         setCarouselIndex((i) => (i + 1) % CAROUSEL_ITEMS.length)
       }, AUTO_ADVANCE_MS)
     }
+    setSlideDir('left')
     goTo(carouselIndex - 1)
   }
 
@@ -84,9 +88,11 @@ export default function Services() {
     if (autoAdvanceRef.current) {
       clearInterval(autoAdvanceRef.current)
       autoAdvanceRef.current = setInterval(() => {
+        setSlideDir('right')
         setCarouselIndex((i) => (i + 1) % CAROUSEL_ITEMS.length)
       }, AUTO_ADVANCE_MS)
     }
+    setSlideDir('right')
     goTo(carouselIndex + 1)
   }
 
@@ -109,7 +115,12 @@ export default function Services() {
             <span className={styles.carouselArrowIcon}>‹</span>
           </button>
           <div className={styles.carouselTile}>
-            <div className={styles.carouselImageWrap}>
+            <div
+              className={`${styles.carouselImageWrap} ${
+                slideDir === 'right' ? styles.slideRight : styles.slideLeft
+              }`}
+              key={item.src}
+            >
               <Image
                 key={item.src}
                 src={item.src}
@@ -120,18 +131,25 @@ export default function Services() {
               />
             </div>
           </div>
+        </div>
+        <div className={styles.carouselRight}>
+          <div
+            className={`${styles.carouselText} ${
+              slideDir === 'right' ? styles.slideRight : styles.slideLeft
+            }`}
+            key={item.title}
+          >
+            <h3 className={styles.carouselTitle}>{item.title}</h3>
+            <p className={styles.carouselDescription}>{item.description}</p>
+          </div>
           <button
             type="button"
-            className={styles.carouselArrow}
+            className={`${styles.carouselArrow} ${styles.carouselArrowEnd}`}
             onClick={handleNext}
             aria-label="Next"
           >
             <span className={styles.carouselArrowIcon}>›</span>
           </button>
-        </div>
-        <div className={styles.carouselText}>
-          <h3 className={styles.carouselTitle}>{item.title}</h3>
-          <p className={styles.carouselDescription}>{item.description}</p>
         </div>
       </div>
     </section>
