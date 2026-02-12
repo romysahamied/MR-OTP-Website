@@ -256,6 +256,8 @@
   flex: 0 1 520px;
   min-width: 0;
   position: relative;
+  justify-content: center;
+  padding: 0 44px;
 }
 
 .carouselRight {
@@ -293,7 +295,10 @@
 .carouselArrow:hover {
   background: rgba(245, 196, 107, 0.15);
   border-color: #f5c46b;
-  transform: scale(1.05);
+}
+
+.carouselArrow:hover .carouselArrowIcon {
+  transform: translateY(-0.5px) scale(1.05);
 }
 
 .carouselTile {
@@ -325,8 +330,16 @@
   padding: 0 0.5rem;
 }
 
-.carouselArrowEnd {
-  margin-left: auto;
+.carouselArrowPrev {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carouselArrowNext {
+  margin-left: 1rem;
 }
 
 .slideRight {
@@ -377,11 +390,15 @@
     flex-direction: column;
     margin-top: 3rem;
     gap: 1.5rem;
+    position: relative;
   }
 
   .carouselLeft {
     width: 100%;
     max-width: 480px;
+    justify-content: center;
+    position: relative;
+    padding: 0 36px;
   }
 
   .carouselRight {
@@ -393,5 +410,7 @@
   .carouselText {
     max-width: 100%;
     padding: 0;
+    text-align: center;
   }
+
 }

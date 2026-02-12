@@ -3,10 +3,10 @@ import styles from './Channels.module.css'
 
 const channels = [
   { name: 'WhatsApp', icon: '/whatsapp.svg', isImage: true },
-  { name: 'Viber', icon: '💜', isImage: false },
-  { name: 'SMS', icon: '📱', isImage: false },
-  { name: 'Voice', icon: '📞', isImage: false },
-  { name: 'RCS', icon: '✨', isImage: false },
+  { name: 'Viber', icon: '/viber.jpg', isImage: true },
+  { name: 'SMS', icon: '/sms-icon.png', isImage: true },
+  { name: 'Voice', icon: '/voice-icon.png', isImage: true },
+  { name: 'RCS', icon: '/RCS-icon.png', isImage: true },
 ]
 
 export default function Channels() {

@@ -112,16 +112,22 @@ export default function Integrations() {
       <div className={styles.curlyWrap}>
         <svg
           className={styles.curlyBracket}
-          viewBox="0 0 200 48"
+          viewBox="0 0 300 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden
         >
           {/* Closing brace: full width span */}
           <path
-            d="M 12 48 L 12 14 C 12 4 85 0 100 0 C 115 0 188 4 188 14 L 188 48"
+            d="M 18 60
+               C 18 44 28 42 44 40
+               L 122 34
+               C 138 33 144 28 150 20
+               C 156 28 162 33 178 34
+               L 256 40
+               C 272 42 282 44 282 60"
             stroke="url(#curlyGradient)"
-            strokeWidth="2.5"
+            strokeWidth="3"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"

@@ -30,28 +30,32 @@
 .curlyWrap {
   width: 100%;
   max-width: 1100px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
 .curlyBracket {
   width: 100%;
-  height: 44px;
-  max-height: 44px;
+  height: 52px;
+  max-height: 52px;
   display: block;
   filter: drop-shadow(0 0 8px rgba(245, 196, 107, 0.25));
 }
 
 .curlyLabels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: -12px;
-  padding: 0;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  height: 1.5rem;
 }
 
+/* Bracket tips at ~6% and ~94% of width */
 .curlyLabelLeft {
-  width: 25%;
+  position: absolute;
+  left: 39%;
+  transform: translateX(-50%);
   font-size: 0.95rem;
   font-weight: 600;
   color: #f5c46b;
@@ -60,7 +64,9 @@
 }
 
 .curlyLabelRight {
-  width: 25%;
+  position: absolute;
+  left: 61%;
+  transform: translateX(-50%);
   font-size: 0.95rem;
   font-weight: 600;
   color: #f5c46b;
@@ -70,14 +76,19 @@
 
 @media (max-width: 900px) {
   .curlyLabels {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem 2rem;
+    position: static;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: -6px;
   }
 
   .curlyLabelLeft,
   .curlyLabelRight {
-    width: auto;
+    position: static;
+    transform: none;
+    text-align: center;
   }
 }
 
@@ -85,6 +96,7 @@
 .glassCard {
   width: 100%;
   max-width: 1100px;
+  margin-top: 2rem;
   padding: 2.5rem;
   border-radius: 26px;
 

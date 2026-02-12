@@ -57,8 +57,12 @@ export default function SpaceBackground({ isMobile }: { isMobile: boolean }) {
   })
 
   return (
-    <points ref={pointsRef} frustumCulled={false}>
-      <bufferGeometry>
+    <points
+      key={STAR_COUNT}
+      ref={pointsRef}
+      frustumCulled={false}
+    >
+      <bufferGeometry key={STAR_COUNT}>
         <bufferAttribute
           attach="attributes-position"
           array={data.positions}

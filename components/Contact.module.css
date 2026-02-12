@@ -278,10 +278,8 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .iconWrapper {
-    width: 70px;
-    top: 1.5rem;
-    right: 1.5rem;
+    display: none;
   }
 }

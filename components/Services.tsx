@@ -108,7 +108,7 @@ export default function Services() {
         <div className={styles.carouselLeft}>
           <button
             type="button"
-            className={styles.carouselArrow}
+            className={`${styles.carouselArrow} ${styles.carouselArrowPrev}`}
             onClick={handlePrev}
             aria-label="Previous"
           >
@@ -144,7 +144,7 @@ export default function Services() {
           </div>
           <button
             type="button"
-            className={`${styles.carouselArrow} ${styles.carouselArrowEnd}`}
+            className={`${styles.carouselArrow} ${styles.carouselArrowNext}`}
             onClick={handleNext}
             aria-label="Next"
           >
