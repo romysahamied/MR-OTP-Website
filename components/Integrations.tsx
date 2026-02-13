@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import styles from './Integrations.module.css'
 
 const editorOneCode = `curl -X 'POST' \\
-  'http://papi.mr-otp.com/SendSmsV2' \\
+  'https://papi.mr-otp.com/SendSmsV2' \\
   -H 'accept: text/plain' \\
   -H 'Content-Type: application/json-patch+json' \\
   -d '[

@@ -65,51 +65,74 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true, id: data?.id })
     }
 
-    // Fallback: SMTP via nodemailer (e.g. Hostinger)
+    // Fallback: SMTP via nodemailer (e.g. Hostinger / Titan)
     if (SMTP_HOST && SMTP_USER && SMTP_PASS) {
-      const port = SMTP_PORT ? Number(SMTP_PORT) : 465
-      const secure = port === 465 || SMTP_SECURE === 'true'
       const family = SMTP_FAMILY ? Number(SMTP_FAMILY) : 4
-      let resolvedHost = SMTP_HOST
-      if (family === 4) {
-        try {
-          const lookup = await dns.lookup(SMTP_HOST, { family: 4 })
-          resolvedHost = lookup.address
-        } catch (error) {
-          console.warn('SMTP IPv4 lookup failed, using hostname:', error)
+      // Hostinger has two services: Hostinger Email (smtp.hostinger.com) and Titan (smtp.titan.email)
+      // If webmail is at hostinger.titan.email, use smtp.titan.email
+      const hostsToTry = [
+        SMTP_HOST,
+        ...(SMTP_HOST === 'smtp.hostinger.com' ? ['smtp.titan.email'] : []),
+        ...(SMTP_HOST === 'smtp.titan.email' ? ['smtp.hostinger.com'] : []),
+      ]
+      const primaryPort = SMTP_PORT ? Number(SMTP_PORT) : 465
+      const portsToTry: { port: number; secure: boolean }[] = [
+        { port: primaryPort, secure: primaryPort === 465 },
+        ...(primaryPort === 465 ? [{ port: 587, secure: false }] : []),
+      ]
+      let lastError: unknown
+      for (const host of hostsToTry) {
+        let resolvedHost = host
+        if (family === 4) {
+          try {
+            const lookup = await dns.lookup(host, { family: 4 })
+            resolvedHost = lookup.address
+          } catch {
+            resolvedHost = host
+          }
+        }
+        const baseOptions = {
+          host: resolvedHost,
+          tls: {
+            servername: host,
+            rejectUnauthorized: SMTP_TLS_REJECT_UNAUTHORIZED !== 'false',
+          },
+          auth: { user: SMTP_USER, pass: SMTP_PASS },
+        }
+        for (const { port, secure } of portsToTry) {
+          try {
+            const transportOptions: SMTPTransport.Options = {
+              ...baseOptions,
+              port,
+              secure,
+            }
+            const transporter = nodemailer.createTransport(transportOptions)
+            if (debug) {
+              console.log('[contact] SMTP config', {
+                host,
+                resolvedHost,
+                port,
+                secure,
+                user: SMTP_USER,
+                recipient,
+              })
+            }
+            const fromAddress = MAIL_FROM || `"MR-OTP Website" <${SMTP_USER}>`
+            await transporter.sendMail({
+              from: fromAddress,
+              to: recipient,
+              replyTo: email,
+              subject: `New contact from ${name}`,
+              text,
+            })
+            return NextResponse.json({ success: true })
+          } catch (err) {
+            lastError = err
+            if (debug) console.warn('[contact] SMTP attempt failed', { host, port, secure }, err)
+          }
         }
       }
-      const transportOptions: SMTPTransport.Options = {
-        host: resolvedHost,
-        port,
-        secure,
-        tls: {
-          servername: SMTP_HOST,
-          rejectUnauthorized: SMTP_TLS_REJECT_UNAUTHORIZED !== 'false',
-        },
-        auth: { user: SMTP_USER, pass: SMTP_PASS },
-      }
-      const transporter = nodemailer.createTransport(transportOptions)
-      if (debug) {
-        console.log('[contact] SMTP config', {
-          host: SMTP_HOST,
-          resolvedHost,
-          port,
-          secure,
-          family,
-          user: SMTP_USER,
-          recipient,
-        })
-      }
-      const fromAddress = MAIL_FROM || `"MR-OTP Website" <${SMTP_USER}>`
-      await transporter.sendMail({
-        from: fromAddress,
-        to: recipient,
-        replyTo: email,
-        subject: `New contact from ${name}`,
-        text,
-      })
-      return NextResponse.json({ success: true })
+      throw lastError
     }
 
     return NextResponse.json(

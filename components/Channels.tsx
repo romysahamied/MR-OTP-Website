@@ -2,11 +2,11 @@ import Image from 'next/image'
 import styles from './Channels.module.css'
 
 const channels = [
-  { name: 'WhatsApp', icon: '/whatsapp.svg', isImage: true },
-  { name: 'Viber', icon: '/viber.jpg', isImage: true },
-  { name: 'SMS', icon: '/sms-icon.png', isImage: true },
-  { name: 'Voice', icon: '/voice-icon.png', isImage: true },
-  { name: 'RCS', icon: '/RCS-icon.png', isImage: true },
+  { name: 'WhatsApp', icon: '/whatsapp.svg', isImage: true, size: 'sm' },
+  { name: 'Viber', icon: '/viber-icon.png', isImage: true, size: 'lg' },
+  { name: 'SMS', icon: '/sms-icon.png', isImage: true, size: 'lg' },
+  { name: 'Voice', icon: '/voice-icon.png', isImage: true, size: 'lg' },
+  { name: 'RCS', icon: '/RCS-icon.png', isImage: true, size: 'lg' },
 ]
 
 export default function Channels() {
@@ -19,7 +19,14 @@ export default function Channels() {
             <div key={index} className={styles.channelItem}>
               <span className={styles.channelIcon}>
                 {channel.isImage ? (
-                  <Image src={channel.icon} alt={channel.name} width={48} height={48} className={styles.channelIconImage} />
+                  <Image
+                  src={channel.icon}
+                  alt={channel.name}
+                  width={channel.size === 'lg' ? 112 : 80}
+                  height={channel.size === 'lg' ? 112 : 80}
+                  className={`${styles.channelIconImage} ${channel.size === 'lg' ? styles.channelIconLg : styles.channelIconSm}`}
+                  sizes={channel.size === 'lg' ? '112px' : '80px'}
+                />
                 ) : (
                   <span className={styles.emojiIcon}>{channel.icon}</span>
                 )}
