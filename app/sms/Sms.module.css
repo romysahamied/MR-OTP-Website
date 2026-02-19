@@ -1,0 +1,349 @@
+.wrapper {
+  min-height: 100vh;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+}
+
+/* Intro Section */
+.introSection {
+  margin-bottom: 4rem;
+}
+
+.mainHeading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #f5c46b;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.introText {
+  max-width: 900px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Purple Bubbles Section */
+.bubblesSection {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 -2rem 4rem;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Scattered container - bubbles at random positions */
+.bubblesContainer {
+  position: relative;
+  min-height: 420px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Bubbles - keep all in DOM to prevent blink on reset */
+.bubbleCardVisible {
+  animation: bubbleAppear 0.35s ease forwards;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.bubbleCardHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  animation: none;
+}
+
+@keyframes bubbleAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+/* WhatsApp-style double tick (blue = read) */
+.doubleTick {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  color: #53bdeb;
+  display: flex;
+  align-items: center;
+}
+
+.doubleTick svg {
+  width: 16px;
+  height: 11px;
+}
+
+.bubbleCard {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: max-content;
+  max-width: 260px;
+  transform: translateX(-50%);
+  backface-visibility: hidden;
+}
+
+.bubbleTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f5c46b;
+  margin: 0;
+}
+
+.bubbleWrapper {
+  position: relative;
+}
+
+/* Frosted glass bubble - like blog cards */
+.bubble {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.95);
+  padding: 0.75rem 1rem 0.75rem 2.25rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.15);
+}
+
+.bubbleMessage {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Why Section */
+.whySection {
+  margin-bottom: 2rem;
+}
+
+.whyHeading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #f5c46b;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 2.5rem;
+}
+
+.whyColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.whyColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.whyColumnTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f5c46b;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.whyColumnText {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* Stats Section */
+.statsSection {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 -2rem 4rem;
+  padding: 3.5rem 2rem;
+  border-radius: 12px;
+}
+
+.statsHeading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.statsSubtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin: 0 auto 2.5rem;
+  max-width: 600px;
+}
+
+.statsGrid {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.statCard {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f5c46b;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.statIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.statIconSquare {
+  border-radius: 8px;
+}
+
+.statTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.statText {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.statDivider {
+  width: 1px;
+  min-height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .bubblesContainer {
+    min-height: 380px;
+  }
+
+  .bubbleCard {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 5rem 1.25rem 3rem;
+  }
+
+  .bubblesSection {
+    margin: 0 -1.25rem 3rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .bubblesContainer {
+    min-height: 500px;
+  }
+
+  .bubbleCard {
+    max-width: 260px;
+  }
+
+  .whyColumns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .statsSection {
+    margin: 0 -1.25rem 3rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .statsGrid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .statDivider {
+    width: 100%;
+    height: 1px;
+    min-height: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 4.5rem 1rem 2.5rem;
+  }
+
+  .bubblesSection {
+    margin: 0 -1rem 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .statsSection {
+    margin: 0 -1rem 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .statCard {
+    min-width: 100%;
+  }
+}

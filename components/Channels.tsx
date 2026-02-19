@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styles from './Channels.module.css'
 
 const channels = [
-  { name: 'WhatsApp', icon: '/whatsapp.svg', isImage: true, size: 'sm' },
+  { name: 'WhatsApp', icon: '/whatsapp-icon.png', isImage: true, size: 'lg' },
   { name: 'Viber', icon: '/viber-icon.png', isImage: true, size: 'lg' },
   { name: 'SMS', icon: '/sms-icon.png', isImage: true, size: 'lg' },
   { name: 'Voice', icon: '/voice-icon.png', isImage: true, size: 'lg' },

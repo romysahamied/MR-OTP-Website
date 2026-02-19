@@ -13,7 +13,7 @@ export default function WhatsAppFloating() {
       aria-label="Chat on WhatsApp"
     >
       <Image
-        src="/whatsapp.svg"
+        src="/whatsapp.png"
         alt="WhatsApp Chat"
         width={56}
         height={56}

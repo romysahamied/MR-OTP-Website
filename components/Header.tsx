@@ -59,11 +59,10 @@ export default function Header() {
               <Image
                 src="/logo_mrotp.png"
                 alt="Logo"
-                width={70}
-                height={70}
+                width={48}
+                height={48}
                 className={styles.logoImage}
               />
-              <span className={styles.logoText}>SMS Powerhouse</span>
             </a>
           </div>
           
@@ -103,7 +102,7 @@ export default function Header() {
             </li>
             
             <li><a href="#whatsapp" onClick={isClient ? closeMenu : undefined}>WhatsApp Business</a></li>
-            <li><a href="#contacts" onClick={isClient ? closeMenu : undefined}>Contacts</a></li>
+            <li><a href="/contact" onClick={isClient ? closeMenu : undefined}>Contact Us</a></li>
             <li><a href="#blog" onClick={isClient ? closeMenu : undefined}>Blog</a></li>
             <li><a href="http://dashboard.mr-otp.com" className={styles.loginLink} onClick={isClient ? closeMenu : undefined} target="_blank" rel="noopener noreferrer">Login</a></li>
           </ul>
