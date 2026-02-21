@@ -74,7 +74,7 @@ export default function OtpSmsPage() {
         <section className={styles.ctaSection}>
           <h2>Ready to Get Started?</h2>
           <p>Contact us today to integrate OTP SMS into your application.</p>
-          <Link href="/contact" className={styles.ctaButton}>
+          <Link href="/contact-sales" className={styles.ctaButton}>
             Contact Sales
           </Link>
         </section>

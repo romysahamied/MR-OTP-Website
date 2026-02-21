@@ -1,0 +1,1266 @@
+.wrapper {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
+  padding: 3rem 1.5rem 3.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.heroHeadline {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5b3b13;
+  background: linear-gradient(135deg, #f2c46f, #d9a441);
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(245, 196, 107, 0.4);
+  filter: brightness(1.08);
+}
+
+.ctaBtn:active {
+  transform: translateY(-1px);
+}
+
+/* Business Messaging Section */
+.businessSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.businessGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.businessContent {
+  padding-right: 0.5rem;
+}
+
+.businessHeading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #f5c46b;
+  margin: 0 0 1rem;
+  transition: color 0.2s ease;
+}
+
+.businessContent:hover .businessHeading {
+  color: #ffd992;
+}
+
+.businessList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.businessList li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.businessList li:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.businessText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.businessList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #f5c46b;
+  font-weight: 700;
+}
+
+.businessCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #5b3b13;
+  background: linear-gradient(135deg, #f2c46f, #d9a441);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.businessCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 196, 107, 0.35);
+  filter: brightness(1.08);
+}
+
+/* RCS Image */
+.rcsImageWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rcsImage {
+  width: 100%;
+  height: auto;
+  max-width: 480px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.rcsImageWrap:hover .rcsImage {
+  transform: translateY(-4px);
+}
+
+/* Stats Section */
+.statsSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: stretch;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statBox {
+  padding: 1.5rem 2rem;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.statBox:hover {
+  background: rgba(99, 102, 241, 0.25);
+}
+
+.statText {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.statText strong {
+  color: #f5c46b;
+}
+
+.statDivider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Branding Section */
+.brandingSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.brandingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.brandingContent {
+  padding-right: 0.5rem;
+}
+
+.brandingContent:hover .brandingText {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.brandingHeading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #f5c46b;
+  margin: 0 0 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.brandingContent:hover .brandingHeading {
+  color: #ffd992;
+}
+
+.brandingText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.brandingText:last-child {
+  margin-bottom: 0;
+}
+
+.brandingVisual {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.brandingImageWrap {
+  max-width: 100%;
+}
+
+.brandingImage {
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.brandingImageWrap:hover .brandingImage {
+  transform: translateY(-4px);
+}
+
+/* Features Section (Rich Media + Easy Conversation) */
+.featuresSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.featuresContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-right: 0.5rem;
+}
+
+.featureHeading {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: #f5c46b;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.featureHeading:hover {
+  color: #ffd992;
+}
+
+.featureHeadingAccent {
+  color: inherit;
+}
+
+.featureText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.featuresVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featuresImageWrap {
+  max-width: 100%;
+}
+
+.featuresImage {
+  width: 100%;
+  height: auto;
+  max-width: 480px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.featuresImageWrap:hover .featuresImage {
+  transform: translateY(-4px);
+}
+
+.phoneMockup {
+  background: #fff;
+  border-radius: 32px;
+  padding: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  max-width: 280px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phoneMockup:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(245, 196, 107, 0.2);
+}
+
+.phoneScreen {
+  background: #f8f9fa;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 9 / 19;
+  min-height: 480px;
+}
+
+.phoneHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0.75rem;
+  font-size: 0.9rem;
+  color: #1f2937;
+  background: #f8f9fa;
+}
+
+.phoneBack {
+  opacity: 0.8;
+}
+
+.phoneTitle {
+  font-weight: 600;
+}
+
+.phoneCheck {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.phoneChat {
+  padding: 0.75rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.chatBubble {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 0.6rem 0.9rem;
+  border-radius: 16px 16px 16px 4px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  max-width: 85%;
+}
+
+.chatIcon {
+  color: #2563eb;
+  font-size: 0.5rem;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.chatChip {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #f2c46f, #d9a441);
+  color: #5b3b13;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  max-width: fit-content;
+}
+
+.carousel {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselCard {
+  flex: 0 0 120px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.6rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carouselCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.carouselImg {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-radius: 8px;
+  margin-bottom: 0.25rem;
+}
+
+.carouselCard:nth-child(2) .carouselImg {
+  background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+}
+
+.carouselCard strong {
+  font-size: 0.75rem;
+  color: #1f2937;
+}
+
+.carouselCard span {
+  font-size: 0.65rem;
+  color: #6b7280;
+  line-height: 1.3;
+}
+
+.carouselBtn {
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.carouselBtn:hover {
+  color: #1d4ed8;
+}
+
+.suggestedReplies {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.replyChip {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 0.45rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.replyChip:hover {
+  background: rgba(245, 196, 107, 0.3);
+  color: #5b3b13;
+}
+
+/* Journey Section (RCS for Every Step) - Carousel */
+.journeySection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.journeyFrostedCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 1.5rem 3rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.journeyFrostedCard:hover {
+  border-color: rgba(245, 196, 107, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.journeyArrow,
+.journeyArrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(245, 196, 107, 0.2);
+  border: 1px solid rgba(245, 196, 107, 0.3);
+  color: #f5c46b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.journeyArrow {
+  left: 1rem;
+}
+
+.journeyArrowRight {
+  right: 1rem;
+}
+
+.journeyArrow:hover,
+.journeyArrowRight:hover {
+  background: rgba(245, 196, 107, 0.35);
+  color: #ffd992;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.journeyCarouselInner {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.journeySlidesWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.journeySlidesTrack {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.journeySlide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.journeyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.journeyDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.journeyDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.journeyDot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.journeyDotActive {
+  background: #f5c46b;
+  transform: scale(1.2);
+}
+
+.journeyVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journeyImageWrap {
+  max-width: 100%;
+}
+
+.journeyCarouselImage {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  object-fit: contain;
+  display: block;
+}
+
+.journeyPhone {
+  background: #fff;
+  border-radius: 32px;
+  padding: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  max-width: 280px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journeyPhone:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(245, 196, 107, 0.2);
+}
+
+.journeyScreen {
+  background: #f8f9fa;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 9 / 19;
+  min-height: 480px;
+}
+
+.journeyPhoneHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 0.75rem 0.5rem;
+  font-size: 0.85rem;
+  color: #1f2937;
+  background: #f8f9fa;
+}
+
+.journeyBack {
+  opacity: 0.8;
+}
+
+.journeyProfile {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: #2563eb;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.journeyChatName {
+  flex: 1;
+  font-weight: 600;
+}
+
+.journeyCheck {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.journeyMenu {
+  opacity: 0.7;
+}
+
+.journeyMessage {
+  margin: 0.5rem 1rem 0.75rem;
+  background: #fff;
+  border-radius: 16px;
+  padding: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.journeyMsgText {
+  font-size: 0.7rem;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.journeyMsgImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #93c5fd, #bfdbfe);
+  border-radius: 10px;
+  margin: 0.25rem 0;
+}
+
+.journeyMsgTitle {
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.journeyMsgSubtitle {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.journeyMsgBtn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0.35rem 0;
+  transition: color 0.2s ease;
+}
+
+.journeyMsgBtn:hover {
+  color: #1d4ed8;
+}
+
+.journeyActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.journeyActionBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  color: #374151;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.journeyActionBtn:hover {
+  background: rgba(245, 196, 107, 0.25);
+  color: #5b3b13;
+}
+
+.journeyInput {
+  margin: 0 1rem 0.75rem;
+  padding: 0.6rem 1rem;
+  background: #e5e7eb;
+  border-radius: 24px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.journeyChat {
+  padding: 0.5rem 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.journeyUserBubble {
+  align-self: flex-end;
+  background: #2563eb;
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  border-radius: 16px 16px 4px 16px;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.journeyBankCarousel {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.journeyBankCarousel::-webkit-scrollbar {
+  display: none;
+}
+
+.journeyBankCard {
+  flex: 0 0 110px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.6rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.journeyBankCardImg {
+  width: 100%;
+  aspect-ratio: 1.5;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-radius: 8px;
+}
+
+.journeyBankCardImg2 {
+  width: 100%;
+  aspect-ratio: 1.5;
+  background: linear-gradient(135deg, #93c5fd, #bfdbfe);
+  border-radius: 8px;
+}
+
+.journeyBankCard strong {
+  font-size: 0.7rem;
+  color: #1f2937;
+}
+
+.journeyBankCard span {
+  font-size: 0.6rem;
+  color: #6b7280;
+}
+
+.journeyContent {
+  padding-left: 0.5rem;
+}
+
+.journeyHeading {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: #f5c46b;
+  margin: 0 0 0.35rem;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.journeyHeading:hover {
+  color: #ffd992;
+}
+
+.journeySubheading {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  color: #f5c46b;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.journeySubheading:hover {
+  color: #ffd992;
+}
+
+.journeyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.journeyList li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.journeyList li:last-child {
+  margin-bottom: 0;
+}
+
+.journeyList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #f5c46b;
+  font-weight: 700;
+}
+
+/* Resources Section */
+.resourcesSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.resourcesHeading {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: #f5c46b;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.resourceCard {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.resourceCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(245, 196, 107, 0.3);
+}
+
+.resourceIcon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+}
+
+.resourceIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.resourceTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.resourceText {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .businessGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .businessContent {
+    padding-right: 0;
+    order: 1;
+  }
+
+  .rcsImageWrap {
+    order: 2;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statDivider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .statBox {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .brandingGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .brandingContent {
+    padding-right: 0;
+    order: 1;
+  }
+
+  .brandingVisual {
+    order: 2;
+    justify-content: center;
+  }
+
+  .brandingImageWrap {
+    max-width: 360px;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .featuresContent {
+    padding-right: 0;
+    order: 1;
+  }
+
+  .featuresVisual {
+    order: 2;
+  }
+
+  .featuresImage {
+    max-width: 360px;
+  }
+
+  .phoneMockup {
+    max-width: 260px;
+  }
+
+  .journeyFrostedCard {
+    padding: 1.5rem 3rem;
+  }
+
+  .journeyArrow,
+  .journeyArrowRight {
+    width: 40px;
+    height: 40px;
+  }
+
+  .journeyArrow {
+    left: 0.75rem;
+  }
+
+  .journeyArrowRight {
+    right: 0.75rem;
+  }
+
+  .journeyGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .journeyVisual {
+    order: 1;
+  }
+
+  .journeyContent {
+    order: 2;
+    padding-left: 0;
+  }
+
+  .journeyPhone {
+    max-width: 260px;
+  }
+
+  .journeyCarouselImage {
+    max-width: 260px;
+  }
+
+  .resourcesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  .businessSection,
+  .statsSection,
+  .brandingSection,
+  .featuresSection,
+  .journeySection,
+  .resourcesSection {
+    padding: 3rem 1rem;
+  }
+
+  .statsSection {
+    padding: 2rem 1.25rem;
+  }
+
+  .statText {
+    font-size: 0.95rem;
+  }
+
+  .brandingImageWrap {
+    max-width: 320px;
+  }
+
+  .featuresImage {
+    max-width: 320px;
+  }
+
+  .phoneMockup {
+    max-width: 240px;
+  }
+
+  .phoneScreen {
+    min-height: 420px;
+  }
+
+  .journeyFrostedCard {
+    padding: 1.25rem 2.25rem;
+  }
+
+  .journeyArrow,
+  .journeyArrowRight {
+    width: 36px;
+    height: 36px;
+  }
+
+  .journeyArrow {
+    left: 0.5rem;
+  }
+
+  .journeyArrowRight {
+    right: 0.5rem;
+  }
+
+  .journeyPhone {
+    max-width: 240px;
+  }
+
+  .journeyCarouselImage {
+    max-width: 240px;
+  }
+
+  .journeyScreen {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .heroHeadline {
+    font-size: 1.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .businessSection,
+  .statsSection,
+  .brandingSection,
+  .featuresSection,
+  .journeySection,
+  .resourcesSection {
+    padding: 2rem 1rem;
+  }
+
+  .statsSection {
+    padding: 1.5rem 1rem;
+  }
+
+  .statBox {
+    padding: 1.25rem 1rem;
+  }
+
+  .statText {
+    font-size: 0.9rem;
+  }
+
+  .businessHeading,
+  .brandingHeading {
+    font-size: 1.35rem;
+  }
+
+  .brandingImageWrap {
+    max-width: 280px;
+  }
+
+  .featuresContent {
+    gap: 2rem;
+  }
+
+  .featuresImage {
+    max-width: 280px;
+  }
+
+  .phoneMockup {
+    max-width: 220px;
+  }
+
+  .phoneScreen {
+    min-height: 380px;
+  }
+
+  .journeyFrostedCard {
+    padding: 1rem 2rem;
+  }
+
+  .journeyArrow,
+  .journeyArrowRight {
+    width: 32px;
+    height: 32px;
+  }
+
+  .journeyArrow svg,
+  .journeyArrowRight svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .journeyPhone {
+    max-width: 220px;
+  }
+
+  .journeyCarouselImage {
+    max-width: 220px;
+  }
+
+  .journeyScreen {
+    min-height: 380px;
+  }
+
+  .journeyBankCard {
+    flex: 0 0 95px;
+  }
+
+  .carouselCard {
+    flex: 0 0 100px;
+  }
+
+  .resourceCard {
+    padding: 1.5rem;
+  }
+}

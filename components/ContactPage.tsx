@@ -5,21 +5,19 @@ import styles from './ContactPage.module.css'
 
 const STATS = [
   { value: '24/7', label: 'Support Available', icon: 'clock' },
-  { value: '5', label: 'Global Offices', icon: 'globe' },
+  { value: '3', label: 'Global Offices', icon: 'globe' },
   { value: '1000+', label: 'Happy Clients', icon: 'users' },
 ]
 
 const CONTACT_NUMBERS = [
-  { code: 'AE', country: 'UAE', phone: '+971-50-35-95083', tel: '+971503595083' },
-  { code: 'US', country: 'USA', phone: '+1-302-492-9037', tel: '+13024929037' },
-  { code: 'SG', country: 'Singapore', phone: '+65-315-92108', tel: '+6531592108' },
-  { code: 'AU', country: 'Australia', phone: '+61-29-0988360', tel: '+61290988360' },
-  { code: 'ZM', country: 'Zambia', phone: '+260-97-8511820', tel: '+260978511820' },
+  { code: 'AE', country: 'UAE', phone: '+1 (267) 805-5853', tel: '+1(267)805-5853' },
+  { code: 'UK', country: 'UK', phone: '+44 7360 539406', tel: '+447360539406' },  
+  { code: 'ZM', country: 'Zambia', phone: '+260 766879147', tel: '+260766879147' },
 ]
 
 const OFFICES = [
   { name: 'Mr-OTP Technologies LLC', address: 'Shams Business Center, Sharjah Media City, Sharjah, United Arab Emirates' },
-  { name: 'Mr-OTP Pte. Ltd', address: '68 Circular Road, #02-01, 049422, Singapore' },
+  { name: 'Mr-OTP Ltd', address: '71-75 Shelton Street, Covent Garden, London, WC2H 9JQ ,UNITED KINGDOM' },
   { name: 'Mr-OTP Technologies Limited', address: '6955 Haile Selassie Avenue, Lusaka, Zambia' },
 ]
 

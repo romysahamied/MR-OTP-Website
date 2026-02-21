@@ -45,9 +45,9 @@ export default function Footer() {
             <h3 className={styles.columnHeading}>CHANNELS</h3>
             <ul className={styles.linkList}>
               <li><Link href="/sms">SMS</Link></li>
-              <li><Link href="/#channels">RCS</Link></li>
+              <li><Link href="/rcs">RCS</Link></li>
               <li><Link href="/#channels">Voice</Link></li>
-              <li><Link href="/#channels">Viber Business</Link></li>
+              <li><Link href="/viber">Viber Business</Link></li>
               <li><Link href="/#channels">WhatsApp Business</Link></li>
             </ul>
           </div>
