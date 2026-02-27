@@ -28,7 +28,13 @@ type Props = { backTo?: string }
 export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
   const backConfig = backTo === 'viber'
     ? { href: '/viber', label: 'Back to Viber' }
-    : { href: '/rcs', label: 'Back to RCS' }
+    : backTo === 'voice'
+      ? { href: '/voice', label: 'Back to Voice' }
+      : backTo === 'whatsapp'
+        ? { href: '/whatsapp', label: 'Back to WhatsApp Business' }
+        : backTo === 'otp'
+          ? { href: '/sms/otp', label: 'Back to OTP SMS' }
+          : { href: '/rcs', label: 'Back to RCS' }
   const [step, setStep] = useState(1)
   const [form, setForm] = useState({
     firstName: '',
@@ -82,8 +88,6 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
     else if (!validatePhone(form.phone)) next.phone = 'Please enter a valid phone number'
     if (!form.email.trim()) next.email = 'Business email is required'
     else if (!validateEmail(form.email)) next.email = 'Please enter a valid email'
-    if (!form.jobTitle.trim()) next.jobTitle = 'Job title is required'
-    if (!form.company.trim()) next.company = 'Company name is required'
     if (!form.country.trim()) next.country = 'Company HQ country is required'
     setErrors(next)
     return Object.keys(next).length === 0
@@ -113,8 +117,8 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
       `Name: ${form.firstName} ${form.lastName}`,
       `Email: ${form.email}`,
       `Phone: ${form.countryCode} ${form.phone}`,
-      `Job Title: ${form.jobTitle}`,
-      `Company: ${form.company}`,
+      `Job Title: ${form.jobTitle || 'Not provided'}`,
+      `Company: ${form.company || 'Not provided'}`,
       `Website: ${form.website || 'Not provided'}`,
       `Country: ${form.country}`,
       `Service Interest: ${form.service || 'Not specified'}`,
@@ -314,7 +318,7 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
                     {errors.email && <span className={styles.error}>{errors.email}</span>}
                   </div>
                   <div className={styles.field}>
-                    <label htmlFor="jobTitle">Job Title *</label>
+                    <label htmlFor="jobTitle">Job Title</label>
                     <input
                       id="jobTitle"
                       name="jobTitle"
@@ -330,7 +334,7 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
 
                 <div className={styles.fieldRow}>
                   <div className={styles.field}>
-                    <label htmlFor="company">Company Name *</label>
+                    <label htmlFor="company">Company Name</label>
                     <input
                       id="company"
                       name="company"
@@ -381,8 +385,8 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
                   <p><strong>Name:</strong> {form.firstName} {form.lastName}</p>
                   <p><strong>Email:</strong> {form.email}</p>
                   <p><strong>Phone:</strong> {form.countryCode} {form.phone}</p>
-                  <p><strong>Job Title:</strong> {form.jobTitle}</p>
-                  <p><strong>Company:</strong> {form.company}</p>
+                  {form.jobTitle && <p><strong>Job Title:</strong> {form.jobTitle}</p>}
+                  {form.company && <p><strong>Company:</strong> {form.company}</p>}
                   {form.website && <p><strong>Website:</strong> {form.website}</p>}
                   <p><strong>Country:</strong> {form.country}</p>
                   {form.service && (

@@ -21,6 +21,12 @@
   letter-spacing: 0.02em;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.mainHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .introText {
@@ -160,6 +166,12 @@
   text-align: center;
   letter-spacing: 0.02em;
   margin-bottom: 2.5rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.whyHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .whyColumns {
@@ -207,6 +219,12 @@
   text-align: center;
   letter-spacing: 0.02em;
   margin-bottom: 0.75rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.statsHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .statsSubtitle {

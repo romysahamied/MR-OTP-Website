@@ -93,6 +93,12 @@
   font-weight: 700;
   color: #f5c46b;
   margin-bottom: 0.75rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.sectionHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .sectionIntro {
@@ -122,8 +128,8 @@
 
 .featureCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
-  border-color: rgba(245, 196, 107, 0.2);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3);
+  border-color: rgba(245, 196, 107, 0.5);
 }
 
 .cardIcon {
@@ -251,8 +257,8 @@
 
 .useCaseCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
-  border-color: rgba(245, 196, 107, 0.2);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3);
+  border-color: rgba(245, 196, 107, 0.5);
 }
 
 .useCaseCard h3 {

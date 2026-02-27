@@ -8,7 +8,7 @@ const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 const GetStartedForm = dynamic(() => import('@/components/GetStartedForm'), { ssr: true })
 
-const WHATSAPP_URL = 'https://wa.me/919070821537?text=Hi%20I%20am%20interested%20in%20your%20Bulk%20SMS%20services'
+const WHATSAPP_URL = 'https://wa.me/447360539406?text=Hi%20I%20am%20interested%20in%20your%20Bulk%20SMS%20services'
 
 export const metadata: Metadata = {
   title: 'Bulk SMS | Marketing Automation | Mr-OTP',

@@ -6,7 +6,7 @@ import styles from './Rcs.module.css'
 
 const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
-const JourneyCarousel = dynamic(() => import('@/components/JourneyCarousel'), { ssr: true })
+const RCSCarousel = dynamic(() => import('@/components/RCSCarousel'), { ssr: true })
 
 export const metadata: Metadata = {
   title: 'RCS Business Messaging | Rich Communication Services | Mr-OTP',
@@ -20,10 +20,10 @@ export default function RcsPage() {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroHeadline}>
-            Rich Communication for Your Business
+            Powerful Conversations That Strengthen Your Brand
           </h1>
           <p className={styles.heroSubtitle}>
-            Rich, secure, and branded conversational experience for higher engagement and better results.
+            Create immersive, secure messaging experiences designed to boost interaction and improve outcomes.
           </p>
           <Link href="/get-started?from=rcs" className={styles.ctaBtn}>
             Get Started
@@ -34,15 +34,15 @@ export default function RcsPage() {
       <section className={styles.businessSection}>
         <div className={styles.businessGrid}>
           <div className={styles.businessContent}>
-            <h2 className={styles.businessHeading}>RCS Business Messaging</h2>
+            <h2 className={styles.businessHeading}>RCS Business Messaging Infrastructure</h2>
             <p className={styles.businessText}>
-              RCS brings the best from multiple channels for your brand. The immediacy and simplicity of SMS, combined with rich media and branding from email and chat apps. Messages land directly in the native messaging app on your customer&apos;s phone (Android and iOS). Increase conversions, engagement, and open rates with Mr-OTP.
+              RCS blends the strengths of traditional messaging with modern interactive features to create a powerful brand experience. It combines the speed and direct reach of SMS with the visual richness and personalization typically found in email and messaging platforms. Conversations appear seamlessly within your customer’s default messaging app on both Android and iOS devices. With Mr-OTP, you can drive stronger engagement, higher response rates, and improved conversion performance.
             </p>
             <ul className={styles.businessList}>
-              <li>Rich media: images, videos, and carousels</li>
-              <li>Interactive buttons and quick replies</li>
-              <li>Verified sender branding for trust</li>
-              <li>Read receipts and typing indicators</li>
+              <li>Multimedia payload support including high-resolution images, video, and carousel modules</li>
+              <li>Action-driven UI elements such as embedded buttons and structured quick replies</li>
+              <li>Verified sender authentication with branded identity displayt</li>
+              <li>Real-time delivery status, read confirmations, and typing indicators</li>
             </ul>
             <Link href="/contact-sales" className={styles.businessCta}>
               Contact Sales
@@ -68,13 +68,13 @@ export default function RcsPage() {
         <div className={styles.statsGrid}>
           <div className={styles.statBox}>
             <p className={styles.statText}>
-              Customers are <strong>35x more likely to read RCS messages</strong> than emails.
+              <strong> 35x </strong> Higher Visibility Than Email.
             </p>
           </div>
           <div className={styles.statDivider} aria-hidden />
           <div className={styles.statBox}>
             <p className={styles.statText}>
-              <strong>72%</strong> are more likely to purchase online if they can ask questions in real-time.
+              <strong>72%</strong> Higher Purchase Intent With Real-Time Conversations.
             </p>
           </div>
         </div>
@@ -83,12 +83,12 @@ export default function RcsPage() {
       <section className={styles.brandingSection}>
         <div className={styles.brandingGrid}>
           <div className={styles.brandingContent}>
-            <h2 className={styles.brandingHeading}>Branding for Trust</h2>
+            <h2 className={styles.brandingHeading}>Trust That Converts</h2>
             <p className={styles.brandingText}>
-              Every RCS message displays your full brand name, logo, and company overview—so customers instantly recognize who&apos;s reaching out.
+              Customers engage more when they know who’s contacting them. RCS displays your verified brand identity directly within the chat interface—eliminating uncertainty.
             </p>
             <p className={styles.brandingText}>
-              A verified business badge confirms your identity, builds confidence, and encourages customers to engage with your messages.
+              Authentication badges increase open rates, accelerate response time, and remove friction from the buying journey—turning conversations into measurable revenue.
             </p>
           </div>
           <div className={styles.brandingVisual}>
@@ -110,18 +110,27 @@ export default function RcsPage() {
           <div className={styles.featuresContent}>
             <div className={styles.featureBlock}>
               <h2 className={styles.featureHeading}>
-                Rich Media for <span className={styles.featureHeadingAccent}>Engagement</span>
+                Advanced Rich Media Messaging Capabilities
               </h2>
               <p className={styles.featureText}>
-                Share images, videos, and GIFs with RCS. Use color and interactive elements to capture attention and drive clicks. Build carousels to showcase products, promotions, and offers—all within the native messaging experience.
+                Deploy high-resolution images, video assets, and animated media directly within RCS conversations. Leverage structured message templates, branded color elements, and interactive UI components to enhance engagement.
+              </p>
+              <p className={styles.featureText}>
+                Configure multi-card carousels to present product catalogs, promotional campaigns, and dynamic offers—delivered seamlessly within the native messaging environment.
               </p>
             </div>
             <div className={styles.featureBlock}>
               <h2 className={styles.featureHeading}>
-                Easy <span className={styles.featureHeadingAccent}>Conversation</span>
+              Conversations Made Effortless
               </h2>
               <p className={styles.featureText}>
-                Suggested replies keep conversations simple. Add time-saving actions like links, maps, and calendar invites. Get real-time insights with read receipts and typing indicators.
+                Suggested replies eliminate guesswork and make responding effortless for customers.
+              </p>
+              <p className={styles.featureText}>
+                Add one-tap actions like directions, website visits, and calendar bookings to remove friction from the decision-making process.
+              </p>
+              <p className={styles.featureText}>
+                Real-time read receipts and typing indicators help your team engage at the perfect moment—shortening sales cycles and increasing close rates.
               </p>
             </div>
           </div>
@@ -139,44 +148,7 @@ export default function RcsPage() {
         </div>
       </section>
 
-      <JourneyCarousel />
-
-      <section className={styles.resourcesSection}>
-        <h2 className={styles.resourcesHeading}>Resources</h2>
-        <div className={styles.resourcesGrid}>
-          <a href="/get-started?from=rcs" className={styles.resourceCard}>
-            <div className={styles.resourceIcon}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" strokeLinecap="round" strokeLinejoin="round" />
-                <polyline points="14 2 14 8 20 8" strokeLinecap="round" strokeLinejoin="round" />
-                <line x1="16" y1="13" x2="8" y2="13" strokeLinecap="round" strokeLinejoin="round" />
-                <line x1="16" y1="17" x2="8" y2="17" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <h3 className={styles.resourceTitle}>Documentation</h3>
-            <p className={styles.resourceText}>API guides and integration docs</p>
-          </a>
-          <a href="/get-started?from=rcs" className={styles.resourceCard}>
-            <div className={styles.resourceIcon}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 6v6l4 2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <h3 className={styles.resourceTitle}>Get Started</h3>
-            <p className={styles.resourceText}>Start building with RCS today</p>
-          </a>
-          <a href="/get-started?from=rcs" className={styles.resourceCard}>
-            <div className={styles.resourceIcon}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <h3 className={styles.resourceTitle}>Support</h3>
-            <p className={styles.resourceText}>Talk to our team</p>
-          </a>
-        </div>
-      </section>
+      <RCSCarousel />
 
       <Footer />
     </main>

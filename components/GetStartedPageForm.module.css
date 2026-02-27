@@ -1,6 +1,7 @@
 .wrapper {
   min-height: 100vh;
   background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 40%, #312e81 70%, #1e1b4b 100%);
+  padding-top: 6rem;
   padding-bottom: 4rem;
   overflow-x: hidden;
 }
@@ -16,6 +17,12 @@
   color: #f5c46b;
   margin: 0 0 0.75rem;
   letter-spacing: 0.02em;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.headline:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .subtitle {
@@ -58,8 +65,8 @@
 }
 
 .formCard:hover {
-  border-color: rgba(245, 196, 107, 0.2);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(245, 196, 107, 0.5);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .backToRcs {
@@ -566,6 +573,10 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+
   .hero {
     padding: 3rem 1.25rem 1.5rem;
   }
@@ -603,6 +614,10 @@
 }
 
 @media (max-width: 480px) {
+  .wrapper {
+    padding-top: 4.5rem;
+  }
+
   .hero {
     padding: 2rem 1rem 1rem;
   }

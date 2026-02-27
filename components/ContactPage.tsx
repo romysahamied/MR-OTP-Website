@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import PhoneInputWithCountry, { validatePhone } from './PhoneInputWithCountry'
 import styles from './ContactPage.module.css'
 
 const STATS = [
@@ -22,13 +23,12 @@ const OFFICES = [
 ]
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', countryCode: '+971', subject: '', message: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [status, setStatus] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-  const validatePhone = (phone: string) => /^[\d\s\-+()]{10,20}$/.test(phone.replace(/\s/g, ''))
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -60,7 +60,7 @@ export default function ContactPage() {
     const message = [
       `Name: ${form.name}`,
       `Email: ${form.email}`,
-      `Phone: ${form.phone}`,
+      `Phone: ${form.countryCode} ${form.phone}`,
       `Subject: ${form.subject}`,
       '',
       'Message:',
@@ -78,7 +78,7 @@ export default function ContactPage() {
 
       if (res.ok) {
         setStatus('Message sent successfully! We will get back to you soon.')
-        setForm({ name: '', email: '', phone: '', subject: '', message: '' })
+        setForm({ name: '', email: '', phone: '', countryCode: '+971', subject: '', message: '' })
       } else {
         setStatus(errorMsg || 'Failed to send. Please try again or email info@mr-otp.com')
       }
@@ -133,7 +133,13 @@ export default function ContactPage() {
           {CONTACT_NUMBERS.map((item) => (
             <div key={item.code} className={styles.contactCard}>
               <div className={styles.contactHeader}>
-                <span className={styles.countryCode}>{item.code}</span>
+                <img
+                  src={`https://flagcdn.com/32x24/${item.code === 'UK' ? 'gb' : item.code.toLowerCase()}.png`}
+                  alt=""
+                  className={styles.contactFlag}
+                  width={32}
+                  height={24}
+                />
                 <span className={styles.countryName}>{item.country}</span>
               </div>
               <a href={`tel:${item.tel}`} className={styles.phoneLink}>
@@ -196,19 +202,23 @@ export default function ContactPage() {
                 />
                 {errors.email && <span className={styles.error}>{errors.email}</span>}
               </div>
-              <div className={styles.field}>
-                <label htmlFor="phone">Phone *</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+1-234-567-8900"
-                  value={form.phone}
-                  onChange={handleChange}
-                  className={errors.phone ? styles.inputError : ''}
-                />
-                {errors.phone && <span className={styles.error}>{errors.phone}</span>}
-              </div>
+              <PhoneInputWithCountry
+                countryCode={form.countryCode}
+                onCountryCodeChange={(code) => {
+                  setForm((prev) => ({ ...prev, countryCode: code }))
+                  if (errors.phone) setErrors((prev) => ({ ...prev, phone: '' }))
+                  if (status) setStatus('')
+                }}
+                phone={form.phone}
+                onPhoneChange={(value) => {
+                  setForm((prev) => ({ ...prev, phone: value }))
+                  if (errors.phone) setErrors((prev) => ({ ...prev, phone: '' }))
+                  if (status) setStatus('')
+                }}
+                error={errors.phone}
+                label="Phone"
+                id="phone"
+              />
               <div className={styles.field}>
                 <label htmlFor="subject">Subject *</label>
                 <input
@@ -250,16 +260,18 @@ export default function ContactPage() {
             </form>
           </div>
           <div className={styles.mapCard}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.0!2d55.41!3d25.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6a7b8c9d0e1f%3A0x2a3b4c5d6e7f8a9b!2sShams%20Business%20Center%2C%20Sharjah%20Media%20City!5e0!3m2!1sen!2sae!4v1"
-              width="100%"
-              height="100%"
-              style={{ border: 0, borderRadius: 12 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Mr-OTP Office Location"
-            />
+            <div className={styles.mapWrapper}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.0!2d55.68037!3d25.27757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sShams%20Business%20Center%2C%20Sharjah%20Media%20City%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2sae!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mr-OTP Office - Shams Business Center, Sharjah Media City, UAE"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -292,7 +304,7 @@ export default function ContactPage() {
             <h3 className={styles.supportHeadingWhatsApp}>Need quick help?</h3>
             <p className={styles.supportSubtitleWhatsApp}>Chat with our support team on WhatsApp</p>
             <a
-              href="https://wa.me/919070821537?text=Hi%2C%20I%20need%20help%20with%20my%20inquiry"
+              href="https://wa.me/447360539406?text=Hi%2C%20I%20need%20help%20with%20my%20inquiry"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.whatsappBtn}

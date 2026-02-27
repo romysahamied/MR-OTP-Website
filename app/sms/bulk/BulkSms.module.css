@@ -177,6 +177,12 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.trustedHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .industryGrid {
@@ -206,8 +212,8 @@
 
 .industryCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border-color: rgba(245, 196, 107, 0.3);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(245, 196, 107, 0.5);
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -239,8 +245,8 @@
 
 .metricsCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-  border-color: rgba(245, 196, 107, 0.2);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(245, 196, 107, 0.5);
 }
 
 .metricsHeader {
@@ -389,6 +395,12 @@
   font-weight: 700;
   color: #f5c46b;
   margin-bottom: 1rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.whatIsHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .whatIsIntro {
@@ -426,21 +438,21 @@
 
 .statCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 0.08);
 }
 
 .statCardBlue { border-color: rgba(59, 130, 246, 0.3); }
-.statCardBlue:hover { border-color: rgba(59, 130, 246, 0.5); }
+.statCardBlue:hover { border-color: rgba(245, 196, 107, 0.5); box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3); }
 
 .statCardGreen { border-color: rgba(34, 197, 94, 0.3); }
-.statCardGreen:hover { border-color: rgba(34, 197, 94, 0.5); }
+.statCardGreen:hover { border-color: rgba(245, 196, 107, 0.5); box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3); }
 
 .statCardPurple { border-color: rgba(139, 92, 246, 0.3); }
-.statCardPurple:hover { border-color: rgba(139, 92, 246, 0.5); }
+.statCardPurple:hover { border-color: rgba(245, 196, 107, 0.5); box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3); }
 
 .statCardOrange { border-color: rgba(249, 115, 22, 0.3); }
-.statCardOrange:hover { border-color: rgba(249, 115, 22, 0.5); }
+.statCardOrange:hover { border-color: rgba(245, 196, 107, 0.5); box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3); }
 
 .statValue {
   font-size: 1.75rem;
@@ -470,6 +482,12 @@
   font-weight: 700;
   color: #f5c46b;
   margin-bottom: 0.75rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.howWorksHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .howWorksIntro {
@@ -502,7 +520,8 @@
 
 .workflowStep:hover {
   transform: translateY(-4px);
-  border-color: rgba(245, 196, 107, 0.3);
+  border-color: rgba(245, 196, 107, 0.5);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4);
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -558,7 +577,7 @@
 
 .advantageCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3);
 }
 
 .advantageCardGreen {
@@ -566,7 +585,8 @@
 }
 
 .advantageCardGreen:hover {
-  border-color: rgba(34, 197, 94, 0.45);
+  border-color: rgba(245, 196, 107, 0.5);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3);
 }
 
 .advantageCardOrange {
@@ -574,7 +594,8 @@
 }
 
 .advantageCardOrange:hover {
-  border-color: rgba(249, 115, 22, 0.45);
+  border-color: rgba(245, 196, 107, 0.5);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3);
 }
 
 .advantageCardHeader {
@@ -684,7 +705,12 @@
   font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 700;
   color: #f5c46b;
-  margin-bottom: 0.75rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.touchpointHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .touchpointSub {
@@ -720,27 +746,27 @@
 
 .touchpointCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 0.08);
 }
 
 .touchpointBlue { border-color: rgba(59, 130, 246, 0.25); }
-.touchpointBlue:hover { border-color: rgba(59, 130, 246, 0.5); }
+.touchpointBlue:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .touchpointGreen { border-color: rgba(34, 197, 94, 0.25); }
-.touchpointGreen:hover { border-color: rgba(34, 197, 94, 0.5); }
+.touchpointGreen:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .touchpointPurple { border-color: rgba(139, 92, 246, 0.25); }
-.touchpointPurple:hover { border-color: rgba(139, 92, 246, 0.5); }
+.touchpointPurple:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .touchpointOrange { border-color: rgba(249, 115, 22, 0.25); }
-.touchpointOrange:hover { border-color: rgba(249, 115, 22, 0.5); }
+.touchpointOrange:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .touchpointTeal { border-color: rgba(20, 184, 166, 0.25); }
-.touchpointTeal:hover { border-color: rgba(20, 184, 166, 0.5); }
+.touchpointTeal:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .touchpointRed { border-color: rgba(239, 68, 68, 0.25); }
-.touchpointRed:hover { border-color: rgba(239, 68, 68, 0.5); }
+.touchpointRed:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .touchpointIcon {
   width: 48px;
@@ -811,6 +837,12 @@
   font-weight: 700;
   color: #f5c46b;
   margin-bottom: 0.75rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.enterpriseHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .enterpriseSub {
@@ -844,36 +876,36 @@
 
 .enterpriseCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 36px rgba(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 0.08);
 }
 
 .enterpriseBlue { border-color: rgba(59, 130, 246, 0.25); }
-.enterpriseBlue:hover { border-color: rgba(59, 130, 246, 0.5); }
+.enterpriseBlue:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterpriseGreen { border-color: rgba(34, 197, 94, 0.25); }
-.enterpriseGreen:hover { border-color: rgba(34, 197, 94, 0.5); }
+.enterpriseGreen:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterprisePurple { border-color: rgba(139, 92, 246, 0.25); }
-.enterprisePurple:hover { border-color: rgba(139, 92, 246, 0.5); }
+.enterprisePurple:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterpriseOrange { border-color: rgba(249, 115, 22, 0.25); }
-.enterpriseOrange:hover { border-color: rgba(249, 115, 22, 0.5); }
+.enterpriseOrange:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterpriseRed { border-color: rgba(239, 68, 68, 0.25); }
-.enterpriseRed:hover { border-color: rgba(239, 68, 68, 0.5); }
+.enterpriseRed:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterpriseTeal { border-color: rgba(20, 184, 166, 0.25); }
-.enterpriseTeal:hover { border-color: rgba(20, 184, 166, 0.5); }
+.enterpriseTeal:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterpriseViolet { border-color: rgba(167, 139, 250, 0.25); }
-.enterpriseViolet:hover { border-color: rgba(167, 139, 250, 0.5); }
+.enterpriseViolet:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterprisePink { border-color: rgba(236, 72, 153, 0.25); }
-.enterprisePink:hover { border-color: rgba(236, 72, 153, 0.5); }
+.enterprisePink:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterpriseSlate { border-color: rgba(100, 116, 139, 0.35); }
-.enterpriseSlate:hover { border-color: rgba(100, 116, 139, 0.6); }
+.enterpriseSlate:hover { border-color: rgba(245, 196, 107, 0.5); }
 
 .enterpriseIcon {
   width: 48px;

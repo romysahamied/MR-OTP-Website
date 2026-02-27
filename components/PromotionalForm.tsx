@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import PhoneInputWithCountry, { validatePhone } from './PhoneInputWithCountry'
 import styles from './TransactionalForm.module.css'
 
 const VOLUME_OPTIONS = [
@@ -15,6 +16,7 @@ const VOLUME_OPTIONS = [
 export default function PromotionalForm() {
   const [form, setForm] = useState({
     phone: '',
+    countryCode: '+971',
     email: '',
     volume: '',
   })
@@ -37,6 +39,7 @@ export default function PromotionalForm() {
   const validate = () => {
     const next: Record<string, string> = {}
     if (!form.phone.trim()) next.phone = 'Phone number is required'
+    else if (!validatePhone(form.phone)) next.phone = 'Please enter a valid phone number'
     if (!form.email.trim()) next.email = 'Email address is required'
     else if (!validateEmail(form.email))
       next.email = 'Please enter a valid email address'
@@ -55,7 +58,7 @@ export default function PromotionalForm() {
     const message = [
       'Promotional SMS - Request Demo',
       '',
-      `Phone: ${form.phone}`,
+      `Phone: ${form.countryCode} ${form.phone}`,
       `Email: ${form.email}`,
       `Monthly SMS Volume: ${form.volume}`,
     ].join('\n')
@@ -76,7 +79,7 @@ export default function PromotionalForm() {
 
       if (res.ok) {
         setStatus('Thank you! We will contact you shortly.')
-        setForm({ phone: '', email: '', volume: '' })
+        setForm({ phone: '', countryCode: '+971', email: '', volume: '' })
       } else {
         setStatus(errorMsg || 'Request failed. Please try again or email info@mr-otp.com')
       }
@@ -95,21 +98,24 @@ export default function PromotionalForm() {
       </p>
 
       <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.field}>
-          <label htmlFor="phone">Phone Number *</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="+971 XX XXXX XXXX"
-            value={form.phone}
-            onChange={handleChange}
-            className={errors.phone ? styles.inputError : ''}
-          />
-          {errors.phone && (
-            <span className={styles.error}>{errors.phone}</span>
-          )}
-        </div>
+        <PhoneInputWithCountry
+          countryCode={form.countryCode}
+          onCountryCodeChange={(code) => {
+            setForm((prev) => ({ ...prev, countryCode: code }))
+            if (errors.phone) setErrors((prev) => ({ ...prev, phone: '' }))
+            if (status) setStatus('')
+          }}
+          phone={form.phone}
+          onPhoneChange={(value) => {
+            setForm((prev) => ({ ...prev, phone: value }))
+            if (errors.phone) setErrors((prev) => ({ ...prev, phone: '' }))
+            if (status) setStatus('')
+          }}
+          error={errors.phone}
+          label="Phone Number"
+          id="phone"
+          placeholder="123 456 7890"
+        />
 
         <div className={styles.field}>
           <label htmlFor="email">Email Address *</label>

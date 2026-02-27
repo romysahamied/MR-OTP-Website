@@ -116,8 +116,8 @@ export default function Contact() {
 
         {/* BOTTOM RIGHT – ADDRESS */}
         <div className={styles.address}>
-          <p>📍 151 New Park Ave, Hartford, CT 06106</p>
-          <p>📞 +91 (203) 302-9545</p>
+          <p>📍Shams Business Center, Sharjah Media City, Sharjah, United Arab Emirates </p>
+          <p>📞 +1 (267) 805-5853</p>
           <p>✉️ info@mr-otp.com</p>
         </div>
       </div>

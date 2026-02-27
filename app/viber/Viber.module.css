@@ -1,10 +1,19 @@
 .wrapper {
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding-top: 6rem;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0 1.5rem 0;
+  border-radius: 16px;
   padding: 3rem 1.5rem 3.5rem;
   text-align: center;
   position: relative;
@@ -22,6 +31,12 @@
   line-height: 1.25;
   margin: 0 0 0.75rem;
   letter-spacing: 0.02em;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.heroHeadline:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .heroSubheading {
@@ -65,62 +80,254 @@
   transform: translateY(-1px);
 }
 
-/* Content Section */
-.contentSection {
-  max-width: 800px;
+/* Transactional Section */
+.transactionalSection {
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 1.5rem 4rem;
+  position: relative;
+  box-sizing: border-box;
 }
 
-.contentCard {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 2rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+.transactionalLabel {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(245, 196, 107, 0.9);
 }
 
-.contentCard:hover {
-  border-color: rgba(245, 196, 107, 0.2);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+.transactionalGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  min-width: 0;
 }
 
-.contentHeading {
-  font-size: clamp(1.35rem, 3vw, 1.75rem);
+.transactionalContent {
+  padding-right: 1rem;
+}
+
+.transactionalHeading {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   font-weight: 700;
   color: #f5c46b;
   margin: 0 0 1rem;
+  line-height: 1.3;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.contentList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.25rem;
+.transactionalHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
-.contentList li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
+.transactionalText {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  margin: 0 0 1rem;
 }
 
-.contentList li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: #f5c46b;
+.transactionalSubheading {
+  font-size: 1.1rem;
   font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 1rem 0 0.5rem;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.ctaLink {
-  display: inline-flex;
+.transactionalSubheading:hover {
+  color: #f5c46b;
+  transform: translateX(4px);
+}
+
+.transactionalVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transactionalImageWrap {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.transactionalImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+.phoneMockup {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 12px;
+  max-width: 280px;
+  width: 100%;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+.phoneStatusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.phoneStatusBar .phoneIcons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.phoneStatusBar .phoneIcons svg {
+  opacity: 0.8;
+}
+
+.phoneHeader {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.phoneBack {
+  color: #f5c46b;
+  font-size: 1rem;
+}
+
+.phoneTitle {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.phoneHeaderIcons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: #f5c46b;
+  opacity: 0.9;
+}
+
+.phoneChat {
+  padding: 0.5rem 0;
+}
+
+.chatDate {
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.75rem;
+}
+
+.chatBubble {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px 12px 12px 4px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.chatBubble p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.45;
+  margin: 0 0 0.25rem;
+}
+
+.chatBubble a {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.chatTime {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.phoneInput {
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Stats Banner */
+.statsBanner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+}
+
+.statsBannerContent {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.statsBannerContent:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(245, 196, 107, 0.25);
+  box-shadow: 0 4px 24px rgba(245, 196, 107, 0.12);
+  transform: translateY(-2px);
+}
+
+.statsBannerIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statsBannerIconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.statsBannerText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statsBannerValue {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.statsBannerSub {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.statsBannerCta {
+  flex-shrink: 0;
   padding: 0.75rem 1.5rem;
   font-size: 0.95rem;
   font-weight: 600;
@@ -131,53 +338,681 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-.ctaLink:hover {
+.statsBannerCta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(245, 196, 107, 0.35);
   filter: brightness(1.08);
 }
 
+/* Trust Section */
+.trustSection {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+.trustMainHeading {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #f5c46b;
+  text-align: center;
+  margin: 0 0 2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.trustMainHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
+}
+
+.trustGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.trustContent {
+  padding-right: 1rem;
+}
+
+.trustHeading {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #f5c46b;
+  margin: 0 0 1rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.trustHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
+}
+
+.trustText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+
+.trustText:last-child {
+  margin-bottom: 0;
+}
+
+.trustVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trustPhones {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trustPhoneLeft,
+.trustPhoneRight {
+  max-width: 200px;
+  padding: 10px;
+}
+
+.trustPhoneTabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.trustTabActive {
+  color: #f5c46b;
+  font-weight: 600;
+}
+
+.trustChatList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.trustChatItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.trustChatVerified {
+  color: #f5c46b;
+}
+
+.trustChatDate {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.trustProfileHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.trustProfileLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f2c46f, #d9a441);
+  color: #5b3b13;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trustProfileHeader span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.trustProfileBanner {
+  font-size: 0.7rem;
+  color: #f5c46b;
+  padding: 0.4rem 0.75rem;
+  background: rgba(245, 196, 107, 0.15);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.trustProfileSection {
+  margin-bottom: 0.6rem;
+}
+
+.trustProfileSection strong {
+  display: block;
+  font-size: 0.7rem;
+  color: #f5c46b;
+  margin-bottom: 0.2rem;
+}
+
+.trustProfileSection p {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Business Inbox Section */
+.businessInboxSection {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+.businessInboxGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.businessInboxVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.businessInboxImageWrap {
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+}
+
+.businessInboxImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.businessInboxContent {
+  padding-left: 1rem;
+}
+
+.businessInboxHeading {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #f5c46b;
+  margin: 0 0 1rem;
+  line-height: 1.4;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.businessInboxHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
+}
+
+.businessInboxText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+
+.businessInboxText:last-child {
+  margin-bottom: 0;
+}
+
+.businessInboxBold {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Seamless Communications Section */
+.seamlessSection {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+.seamlessHeading {
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #f5c46b;
+  text-align: center;
+  margin: 0 0 2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.seamlessHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
+}
+
+.seamlessCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.seamlessCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: background 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.seamlessCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(245, 196, 107, 0.5);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 32px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.seamlessCardIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5c46b;
+  margin-bottom: 1rem;
+}
+
+.seamlessCardIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.seamlessCardTitle {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  color: #f5c46b;
+  margin: 0 0 0.75rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.seamlessCardTitle:hover {
+  color: #ffd992;
+  transform: translateX(4px);
+}
+
+.seamlessCardText {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+.ctaSectionInner {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.ctaSectionInner:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(245, 196, 107, 0.2);
+
+}
+
+.ctaHeading {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin: 0 0 0.75rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ctaHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
+}
+
+.ctaSubtext {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5b3b13;
+  background: linear-gradient(135deg, #f2c46f, #d9a441);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(245, 196, 107, 0.4);
+  filter: brightness(1.08);
+}
+
+.ctaButton:active {
+  transform: translateY(-1px);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+
   .hero {
-    padding: 2rem 1.25rem 4rem;
+    margin: 0 1rem 0;
+    padding: 2rem 1.25rem 2.5rem;
   }
 
-  .contentSection {
-    padding: 3rem 1.25rem;
+  .heroContent {
+    max-width: 100%;
   }
 
-  .contentCard {
-    padding: 1.75rem;
+  .transactionalSection {
+    padding: 2rem 1.25rem 3rem;
+  }
+
+  .transactionalLabel {
+    position: static;
+    display: block;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+
+  .transactionalGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    min-width: 0;
+  }
+
+  .transactionalContent {
+    order: 1;
+    padding-right: 0;
+    min-width: 0;
+  }
+
+  .transactionalVisual {
+    order: 2;
+  }
+
+  .phoneMockup {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .transactionalImageWrap {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .statsBannerContent {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .statsBannerIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .statsBannerText {
+    align-items: center;
+  }
+
+  .trustGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .trustContent {
+    order: 1;
+    padding-right: 0;
+  }
+
+  .trustVisual {
+    order: 2;
+  }
+
+  .trustPhones {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trustPhoneLeft,
+  .trustPhoneRight {
+    max-width: 220px;
+  }
+
+  .businessInboxGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .businessInboxContent {
+    order: 1;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .businessInboxVisual {
+    order: 2;
+  }
+
+  .businessInboxImageWrap {
+    max-width: 100%;
+  }
+
+  .seamlessCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .seamlessCard {
+    padding: 1.25rem 1rem;
+  }
+
+  .ctaSectionInner {
+    padding: 2rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
+  .wrapper {
+    padding-top: 4.5rem;
+  }
+
   .hero {
-    padding: 1.5rem 1rem 3rem;
+    margin: 0 0.75rem 0;
+    padding: 1.5rem 1rem 2rem;
   }
 
   .heroHeadline {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
   .heroSubheading {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .heroSubtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
-  .contentSection {
-    padding: 2rem 1rem;
+  .ctaBtn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
   }
 
-  .contentCard {
-    padding: 1.5rem;
+  .transactionalSection {
+    padding: 1.5rem 1rem 2.5rem;
   }
 
-  .contentList li {
+  .transactionalHeading {
+    font-size: 1.2rem;
+  }
+
+  .transactionalText {
+    font-size: 0.95rem;
+  }
+
+  .phoneMockup {
+    max-width: 240px;
+  }
+
+  .transactionalImageWrap {
+    max-width: 240px;
+  }
+
+  .statsBanner {
+    padding: 0 1rem 1.5rem;
+  }
+
+  .statsBannerContent {
+    padding: 1rem 1.25rem;
+  }
+
+  .statsBannerIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .statsBannerValue {
+    font-size: 1.15rem;
+  }
+
+  .trustSection {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .trustMainHeading {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .trustHeading {
+    font-size: 1.05rem;
+  }
+
+  .trustText {
+    font-size: 0.95rem;
+  }
+
+  .trustPhoneLeft,
+  .trustPhoneRight {
+    max-width: 200px;
+  }
+
+  .businessInboxSection {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .businessInboxHeading {
+    font-size: 1.15rem;
+  }
+
+  .businessInboxText {
+    font-size: 0.95rem;
+  }
+
+  .seamlessSection {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .seamlessHeading {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .seamlessCards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .seamlessCard {
+    padding: 1.25rem 1rem;
+  }
+
+  .seamlessCardTitle {
+    font-size: 1.05rem;
+  }
+
+  .seamlessCardText {
+    font-size: 0.9rem;
+  }
+
+  .ctaSection {
+    padding: 0 1rem 2.5rem;
+  }
+
+  .ctaSectionInner {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .ctaHeading {
+    font-size: 1.2rem;
+  }
+
+  .ctaSubtext {
+    font-size: 0.95rem;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
   }
 }

@@ -145,3 +145,17 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .content {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .section h2 {
+    font-size: 1.15rem;
+  }
+
+  .section h3 {
+    font-size: 1rem;
+  }
+}

@@ -72,7 +72,7 @@
 
 .faqItem:hover {
   border-color: rgba(245, 196, 107, 0.5);
-  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 25px 55px rgba(0, 0, 0, 0.6);
 }
 
 /* Question button */

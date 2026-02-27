@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { COUNTRIES } from '@/lib/countries'
 import styles from './GetStartedForm.module.css'
 
 const VOLUME_OPTIONS = [
@@ -166,16 +167,21 @@ export default function GetStartedForm() {
 
           <div className={styles.field}>
             <label htmlFor="country">Country *</label>
-            <input
+            <select
               id="country"
               name="country"
-              type="text"
-              placeholder="United Arab Emirates"
               value={form.country}
               onChange={handleChange}
               className={errors.country ? styles.inputError : ''}
               aria-invalid={!!errors.country}
-            />
+            >
+              <option value="">Select country</option>
+              {COUNTRIES.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
             {errors.country && (
               <span className={styles.error}>{errors.country}</span>
             )}

@@ -22,7 +22,7 @@ export default function Footer() {
             <div className={styles.contactBlock}>
               <h3 className={styles.contactHeading}>Contact Support</h3>
               <a href="mailto:support@mr-otp.com" className={styles.contactLink}>
-                support@mr-otp.com
+                noc@mr-otp.com
               </a>
             </div>
           </div>
@@ -46,9 +46,9 @@ export default function Footer() {
             <ul className={styles.linkList}>
               <li><Link href="/sms">SMS</Link></li>
               <li><Link href="/rcs">RCS</Link></li>
-              <li><Link href="/#channels">Voice</Link></li>
+              <li><Link href="/voice">Voice</Link></li>
               <li><Link href="/viber">Viber Business</Link></li>
-              <li><Link href="/#channels">WhatsApp Business</Link></li>
+              <li><Link href="/whatsapp">WhatsApp Business</Link></li>
             </ul>
           </div>
           <div className={styles.linkColumn}>
@@ -63,7 +63,7 @@ export default function Footer() {
 
         {/* Bottom: Copyright + Legal */}
         <div className={styles.bottomSection}>
-          <p className={styles.copyright}>© 2026 Mr-OTP - All Rights Reserved.</p>
+          <p className={styles.copyright}>© 2026 Mr-OTP All Rights Reserved | Incorporated in UK, UAE & Zambia</p>
           <nav className={styles.legalLinks}>
             <Link href="/privacy">Privacy Policy</Link>
             <span className={styles.sep}>·</span>

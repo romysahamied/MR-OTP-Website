@@ -1,0 +1,198 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.phoneRow {
+  display: flex;
+  gap: 0.5rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.countrySelectWrap {
+  position: relative;
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.countrySelectBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.countrySelectBtn:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.countrySelectBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.countryFlagImg {
+  width: 24px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.countryDial {
+  flex: 1;
+  text-align: left;
+}
+
+.countryChevron {
+  width: 10px;
+  height: 10px;
+  opacity: 0.7;
+}
+
+.countryDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.25rem;
+  background: #1e1b4b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.countrySearch {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.countrySearch::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.countryList {
+  max-height: 220px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.countryOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.countryOption:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.countryOptionActive {
+  background: rgba(245, 196, 107, 0.15);
+  color: #f5c46b;
+}
+
+.countryOptionFlagImg {
+  width: 24px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.countryOptionName {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.countryOptionDial {
+  color: rgba(255, 255, 255, 0.7);
+  flex-shrink: 0;
+}
+
+.countryOptionEmpty {
+  padding: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.phoneInput {
+  flex: 1 1 50%;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.phoneInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.phoneInput:focus {
+  border-color: rgba(245, 196, 107, 0.5);
+}
+
+.phoneInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.inputError {
+  border-color: #ef4444 !important;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: #f87171;
+}
+
+@media (max-width: 600px) {
+  .phoneRow {
+    flex-direction: column;
+  }
+
+  .countrySelectWrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .phoneInput {
+    width: 100%;
+    min-width: 0;
+  }
+}

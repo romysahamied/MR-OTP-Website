@@ -1,11 +1,17 @@
 .wrapper {
   min-height: 100vh;
+  padding-top: 6rem;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
-  padding: 3rem 1.5rem 3.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0 1.5rem 0;
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem 2rem;
   text-align: center;
   position: relative;
 }
@@ -22,6 +28,12 @@
   line-height: 1.2;
   margin: 0 0 1rem;
   letter-spacing: 0.02em;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.heroHeadline:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .heroSubtitle {
@@ -61,13 +73,13 @@
 .businessSection {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 .businessGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -80,11 +92,13 @@
   font-weight: 700;
   color: #f5c46b;
   margin: 0 0 1rem;
-  transition: color 0.2s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
+.businessHeading:hover,
 .businessContent:hover .businessHeading {
   color: #ffd992;
+  transform: scale(1.02);
 }
 
 .businessList {
@@ -165,7 +179,7 @@
 .statsSection {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 .statsGrid {
@@ -180,7 +194,7 @@
 }
 
 .statBox {
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.5rem;
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
@@ -208,13 +222,13 @@
 .brandingSection {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 .brandingGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -231,11 +245,13 @@
   font-weight: 700;
   color: #f5c46b;
   margin: 0 0 0.75rem;
-  transition: color 0.2s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
+.brandingHeading:hover,
 .brandingContent:hover .brandingHeading {
   color: #ffd992;
+  transform: scale(1.02);
 }
 
 .brandingText {
@@ -277,13 +293,13 @@
 .featuresSection {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 .featuresGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -305,6 +321,7 @@
 
 .featureHeading:hover {
   color: #ffd992;
+  transform: scale(1.02);
 }
 
 .featureHeadingAccent {
@@ -449,7 +466,7 @@
 
 .carouselCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 2px rgba(245, 196, 107, 0.5), 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .carouselImg {
@@ -518,23 +535,21 @@
 .journeySection {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 .journeyFrostedCard {
   position: relative;
   background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
-  padding: 1.5rem 3rem;
+  padding: 1.25rem 2.5rem;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .journeyFrostedCard:hover {
-  border-color: rgba(245, 196, 107, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-color: rgba(245, 196, 107, 0.5);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
 .journeyArrow,
@@ -542,8 +557,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(245, 196, 107, 0.2);
   border: 1px solid rgba(245, 196, 107, 0.3);
@@ -556,12 +571,18 @@
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+.journeyArrow svg,
+.journeyArrowRight svg {
+  width: 14px;
+  height: 14px;
+}
+
 .journeyArrow {
-  left: 1rem;
+  left: 0.5rem;
 }
 
 .journeyArrowRight {
-  right: 1rem;
+  right: 0.5rem;
 }
 
 .journeyArrow:hover,
@@ -574,6 +595,7 @@
 .journeyCarouselInner {
   min-width: 0;
   overflow: hidden;
+  padding: 0 1.5rem;
 }
 
 .journeySlidesWrapper {
@@ -594,7 +616,7 @@
 .journeyGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -602,7 +624,7 @@
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 .journeyDot {
@@ -643,220 +665,6 @@
   display: block;
 }
 
-.journeyPhone {
-  background: #fff;
-  border-radius: 32px;
-  padding: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  max-width: 280px;
-  width: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.journeyPhone:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(245, 196, 107, 0.2);
-}
-
-.journeyScreen {
-  background: #f8f9fa;
-  border-radius: 24px;
-  overflow: hidden;
-  aspect-ratio: 9 / 19;
-  min-height: 480px;
-}
-
-.journeyPhoneHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.75rem 0.75rem 0.5rem;
-  font-size: 0.85rem;
-  color: #1f2937;
-  background: #f8f9fa;
-}
-
-.journeyBack {
-  opacity: 0.8;
-}
-
-.journeyProfile {
-  display: block;
-  width: 28px;
-  height: 28px;
-  background: #2563eb;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.journeyChatName {
-  flex: 1;
-  font-weight: 600;
-}
-
-.journeyCheck {
-  color: #2563eb;
-  font-weight: 700;
-}
-
-.journeyMenu {
-  opacity: 0.7;
-}
-
-.journeyMessage {
-  margin: 0.5rem 1rem 0.75rem;
-  background: #fff;
-  border-radius: 16px;
-  padding: 0.9rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.journeyMsgText {
-  font-size: 0.7rem;
-  color: #374151;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.journeyMsgImage {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #93c5fd, #bfdbfe);
-  border-radius: 10px;
-  margin: 0.25rem 0;
-}
-
-.journeyMsgTitle {
-  font-size: 0.9rem;
-  color: #1f2937;
-}
-
-.journeyMsgSubtitle {
-  font-size: 0.75rem;
-  color: #6b7280;
-}
-
-.journeyMsgBtn {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #2563eb;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  padding: 0.35rem 0;
-  transition: color 0.2s ease;
-}
-
-.journeyMsgBtn:hover {
-  color: #1d4ed8;
-}
-
-.journeyActions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.25rem;
-}
-
-.journeyActionBtn {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  font-size: 0.7rem;
-  color: #374151;
-  background: #f3f4f6;
-  border: none;
-  border-radius: 10px;
-  padding: 0.5rem 0.6rem;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.journeyActionBtn:hover {
-  background: rgba(245, 196, 107, 0.25);
-  color: #5b3b13;
-}
-
-.journeyInput {
-  margin: 0 1rem 0.75rem;
-  padding: 0.6rem 1rem;
-  background: #e5e7eb;
-  border-radius: 24px;
-  font-size: 0.8rem;
-  color: #9ca3af;
-}
-
-.journeyChat {
-  padding: 0.5rem 1rem 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.journeyUserBubble {
-  align-self: flex-end;
-  background: #2563eb;
-  color: #fff;
-  padding: 0.6rem 0.9rem;
-  border-radius: 16px 16px 4px 16px;
-  font-size: 0.7rem;
-  line-height: 1.4;
-  max-width: 90%;
-}
-
-.journeyBankCarousel {
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  padding: 0.25rem 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.journeyBankCarousel::-webkit-scrollbar {
-  display: none;
-}
-
-.journeyBankCard {
-  flex: 0 0 110px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 0.6rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.journeyBankCardImg {
-  width: 100%;
-  aspect-ratio: 1.5;
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
-  border-radius: 8px;
-}
-
-.journeyBankCardImg2 {
-  width: 100%;
-  aspect-ratio: 1.5;
-  background: linear-gradient(135deg, #93c5fd, #bfdbfe);
-  border-radius: 8px;
-}
-
-.journeyBankCard strong {
-  font-size: 0.7rem;
-  color: #1f2937;
-}
-
-.journeyBankCard span {
-  font-size: 0.6rem;
-  color: #6b7280;
-}
-
 .journeyContent {
   padding-left: 0.5rem;
 }
@@ -872,6 +680,7 @@
 
 .journeyHeading:hover {
   color: #ffd992;
+  transform: scale(1.02);
 }
 
 .journeySubheading {
@@ -918,7 +727,7 @@
 .resourcesSection {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 .resourcesHeading {
@@ -926,22 +735,26 @@
   font-weight: 700;
   color: #f5c46b;
   text-align: center;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.resourcesHeading:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .resourcesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .resourceCard {
   background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem;
   text-decoration: none;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -949,8 +762,8 @@
 
 .resourceCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-  border-color: rgba(245, 196, 107, 0.3);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4), 0 16px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(245, 196, 107, 0.5);
 }
 
 .resourceIcon {
@@ -985,7 +798,7 @@
 @media (max-width: 900px) {
   .businessGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .businessContent {
@@ -1012,7 +825,7 @@
 
   .brandingGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .brandingContent {
@@ -1057,21 +870,31 @@
 
   .journeyArrow,
   .journeyArrowRight {
-    width: 40px;
-    height: 40px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .journeyArrow svg,
+  .journeyArrowRight svg {
+    width: 12px;
+    height: 12px;
   }
 
   .journeyArrow {
-    left: 0.75rem;
+    left: 0.5rem;
   }
 
   .journeyArrowRight {
-    right: 0.75rem;
+    right: 0.5rem;
+  }
+
+  .journeyCarouselInner {
+    padding: 0 1rem;
   }
 
   .journeyGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .journeyVisual {
@@ -1081,10 +904,6 @@
   .journeyContent {
     order: 2;
     padding-left: 0;
-  }
-
-  .journeyPhone {
-    max-width: 260px;
   }
 
   .journeyCarouselImage {
@@ -1097,8 +916,13 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+
   .hero {
-    padding: 2rem 1.25rem 4rem;
+    margin: 0 1rem 0;
+    padding: 2rem 1.25rem 1.5rem;
   }
 
   .businessSection,
@@ -1107,11 +931,11 @@
   .featuresSection,
   .journeySection,
   .resourcesSection {
-    padding: 3rem 1rem;
+    padding: 1.25rem 1rem;
   }
 
   .statsSection {
-    padding: 2rem 1.25rem;
+    padding: 1rem 1.25rem;
   }
 
   .statText {
@@ -1140,33 +964,40 @@
 
   .journeyArrow,
   .journeyArrowRight {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .journeyArrow svg,
+  .journeyArrowRight svg {
+    width: 11px;
+    height: 11px;
   }
 
   .journeyArrow {
-    left: 0.5rem;
+    left: 0.4rem;
   }
 
   .journeyArrowRight {
-    right: 0.5rem;
+    right: 0.4rem;
   }
 
-  .journeyPhone {
-    max-width: 240px;
+  .journeyCarouselInner {
+    padding: 0 0.75rem;
   }
 
   .journeyCarouselImage {
     max-width: 240px;
   }
-
-  .journeyScreen {
-    min-height: 420px;
-  }
 }
 
 @media (max-width: 480px) {
+  .wrapper {
+    padding-top: 4.5rem;
+  }
+
   .hero {
+    margin: 0 0.75rem 0;
     padding: 1.5rem 1rem 3rem;
   }
 
@@ -1184,11 +1015,11 @@
   .featuresSection,
   .journeySection,
   .resourcesSection {
-    padding: 2rem 1rem;
+    padding: 1rem;
   }
 
   .statsSection {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
   }
 
   .statBox {
@@ -1209,7 +1040,7 @@
   }
 
   .featuresContent {
-    gap: 2rem;
+    gap: 1.25rem;
   }
 
   .featuresImage {
@@ -1230,30 +1061,30 @@
 
   .journeyArrow,
   .journeyArrowRight {
-    width: 32px;
-    height: 32px;
+    width: 22px;
+    height: 22px;
   }
 
   .journeyArrow svg,
   .journeyArrowRight svg {
-    width: 18px;
-    height: 18px;
+    width: 10px;
+    height: 10px;
   }
 
-  .journeyPhone {
-    max-width: 220px;
+  .journeyArrow {
+    left: 0.35rem;
+  }
+
+  .journeyArrowRight {
+    right: 0.35rem;
+  }
+
+  .journeyCarouselInner {
+    padding: 0 0.6rem;
   }
 
   .journeyCarouselImage {
     max-width: 220px;
-  }
-
-  .journeyScreen {
-    min-height: 380px;
-  }
-
-  .journeyBankCard {
-    flex: 0 0 95px;
   }
 
   .carouselCard {

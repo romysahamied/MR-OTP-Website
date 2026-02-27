@@ -101,9 +101,9 @@ export default function Header() {
               </ul>
             </li>
             
-            <li><a href="#whatsapp" onClick={isClient ? closeMenu : undefined}>WhatsApp Business</a></li>
+            <li><a href="/whatsapp" onClick={isClient ? closeMenu : undefined}>WhatsApp Business</a></li>
             <li><a href="/contact" onClick={isClient ? closeMenu : undefined}>Contact Us</a></li>
-            <li><a href="#blog" onClick={isClient ? closeMenu : undefined}>Blog</a></li>
+            <li><a href="/blog" onClick={isClient ? closeMenu : undefined}>Blog</a></li>
             <li><a href="http://dashboard.mr-otp.com" className={styles.loginLink} onClick={isClient ? closeMenu : undefined} target="_blank" rel="noopener noreferrer">Login</a></li>
           </ul>
         </div>

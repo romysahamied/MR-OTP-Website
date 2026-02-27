@@ -36,6 +36,15 @@
 
   padding: 4.5rem 5rem;
   overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glassCard:hover {
+  border-color: rgba(245, 196, 107, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(245, 196, 107, 0.4),
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
 /* soft frozen light */

@@ -17,16 +17,16 @@ export default function Channels() {
         <div className={styles.channelList}>
           {channels.map((channel, index) => (
             <div key={index} className={styles.channelItem}>
-              <span className={styles.channelIcon}>
+              <span className={`${styles.channelIcon} ${channel.size === 'lg' ? styles.channelIconLg : styles.channelIconSm}`}>
                 {channel.isImage ? (
                   <Image
-                  src={channel.icon}
-                  alt={channel.name}
-                  width={channel.size === 'lg' ? 112 : 80}
-                  height={channel.size === 'lg' ? 112 : 80}
-                  className={`${styles.channelIconImage} ${channel.size === 'lg' ? styles.channelIconLg : styles.channelIconSm}`}
-                  sizes={channel.size === 'lg' ? '112px' : '80px'}
-                />
+                    src={channel.icon}
+                    alt={channel.name}
+                    width={channel.size === 'lg' ? 112 : 80}
+                    height={channel.size === 'lg' ? 112 : 80}
+                    className={styles.channelIconImage}
+                    sizes={channel.size === 'lg' ? '(max-width: 768px) 80px, (max-width: 480px) 64px, 112px' : '80px'}
+                  />
                 ) : (
                   <span className={styles.emojiIcon}>{channel.icon}</span>
                 )}

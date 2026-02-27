@@ -22,7 +22,7 @@ export default function Home() {
       <Header />
       <Hero3D />
       <Welcome />
-      <BrandScroll />
+      {false && <BrandScroll />}
       <Services />
       <Integrations />
       <Blog />
