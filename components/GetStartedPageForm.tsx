@@ -26,15 +26,17 @@ const SERVICES = [
 type Props = { backTo?: string }
 
 export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
-  const backConfig = backTo === 'viber'
-    ? { href: '/viber', label: 'Back to Viber' }
-    : backTo === 'voice'
-      ? { href: '/voice', label: 'Back to Voice' }
-      : backTo === 'whatsapp'
-        ? { href: '/whatsapp', label: 'Back to WhatsApp Business' }
-        : backTo === 'otp'
-          ? { href: '/sms/otp', label: 'Back to OTP SMS' }
-          : { href: '/rcs', label: 'Back to RCS' }
+  const backConfig = backTo === 'sms'
+    ? { href: '/sms', label: 'Back to SMS' }
+    : backTo === 'viber'
+      ? { href: '/viber', label: 'Back to Viber' }
+      : backTo === 'voice'
+        ? { href: '/voice', label: 'Back to Voice' }
+        : backTo === 'whatsapp'
+          ? { href: '/whatsapp', label: 'Back to WhatsApp Business' }
+          : backTo === 'otp'
+            ? { href: '/sms/otp', label: 'Back to OTP SMS' }
+            : { href: '/rcs', label: 'Back to RCS' }
   const [step, setStep] = useState(1)
   const [form, setForm] = useState({
     firstName: '',

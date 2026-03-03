@@ -411,6 +411,30 @@
   align-items: center;
 }
 
+.trustImagesRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.trustImageWrap {
+  flex: 0 0 auto;
+  width: min(280px, calc(50% - 0.5rem));
+  max-width: 280px;
+  min-width: 120px;
+}
+
+.trustImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+  display: block;
+}
+
 .trustPhones {
   display: flex;
   gap: 1rem;
@@ -544,10 +568,20 @@
   align-items: center;
 }
 
-.businessInboxImageWrap {
+.businessInboxImagesRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
   width: 100%;
-  max-width: 550px;
-  position: relative;
+}
+
+.businessInboxImageItem {
+  flex: 0 0 auto;
+  width: min(280px, calc(50% - 0.5rem));
+  max-width: 280px;
+  min-width: 120px;
 }
 
 .businessInboxImage {
@@ -555,6 +589,7 @@
   height: auto;
   object-fit: contain;
   border-radius: 16px;
+  display: block;
 }
 
 .businessInboxContent {
@@ -828,13 +863,11 @@
     order: 2;
   }
 
-  .trustPhones {
-    flex-direction: column;
-    align-items: center;
+  .trustImagesRow {
+    gap: 0.75rem;
   }
 
-  .trustPhoneLeft,
-  .trustPhoneRight {
+  .trustImageWrap {
     max-width: 220px;
   }
 
@@ -853,8 +886,12 @@
     order: 2;
   }
 
-  .businessInboxImageWrap {
-    max-width: 100%;
+  .businessInboxImagesRow {
+    gap: 0.75rem;
+  }
+
+  .businessInboxImageItem {
+    max-width: 220px;
   }
 
   .seamlessCards {
@@ -952,9 +989,12 @@
     font-size: 0.95rem;
   }
 
-  .trustPhoneLeft,
-  .trustPhoneRight {
-    max-width: 200px;
+  .trustImageWrap {
+    max-width: 160px;
+  }
+
+  .businessInboxImageItem {
+    max-width: 160px;
   }
 
   .businessInboxSection {

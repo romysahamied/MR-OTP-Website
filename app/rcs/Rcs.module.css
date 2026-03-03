@@ -654,15 +654,15 @@
 }
 
 .journeyImageWrap {
-  max-width: 100%;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
 }
 
 .journeyCarouselImage {
-  width: 100%;
-  height: auto;
-  max-width: 320px;
   object-fit: contain;
-  display: block;
 }
 
 .journeyContent {
@@ -906,7 +906,7 @@
     padding-left: 0;
   }
 
-  .journeyCarouselImage {
+  .journeyImageWrap {
     max-width: 260px;
   }
 
@@ -986,7 +986,7 @@
     padding: 0 0.75rem;
   }
 
-  .journeyCarouselImage {
+  .journeyImageWrap {
     max-width: 240px;
   }
 }
@@ -1083,7 +1083,7 @@
     padding: 0 0.6rem;
   }
 
-  .journeyCarouselImage {
+  .journeyImageWrap {
     max-width: 220px;
   }
 

@@ -1,5 +1,8 @@
 .wrapper {
   min-height: 100vh;
+  padding-top: 6rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Hero: Left content + Right form */
@@ -14,10 +17,12 @@
   grid-template-columns: 1fr 400px;
   gap: 3rem;
   align-items: start;
+  min-width: 0;
 }
 
 .heroLeft {
   max-width: 560px;
+  min-width: 0;
 }
 
 .badge {
@@ -94,6 +99,7 @@
 .heroForm {
   position: sticky;
   top: 6rem;
+  min-width: 0;
 }
 
 /* Why & Features sections */
@@ -195,6 +201,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  min-width: 0;
+}
+
+.cardsGrid > * {
+  min-width: 0;
 }
 
 .featureCard {
@@ -266,6 +277,8 @@
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.55;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Industry / Use Cases grid */
@@ -321,13 +334,15 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* Info sections */
+/* Info sections - content block centered, text center-aligned */
 .infoSection {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 2rem 3rem;
-  text-align: left;
+  text-align: center;
+  min-width: 0;
 }
+
 
 .infoHeading {
   font-size: clamp(1.35rem, 3vw, 1.75rem);
@@ -346,67 +361,106 @@
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
-  margin: 0;
-  text-align: left;
+  margin: 0 auto 1rem;
+  text-align: center;
+  max-width: 720px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.stepsList {
+.infoText:last-child {
+  margin-bottom: 0;
+}
+
+/* How it Works - card grid like bulk page */
+.workflowSteps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.workflowStep {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
-.stepItem {
-  display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
-  text-align: left;
+.workflowStep:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 196, 107, 0.5);
+  box-shadow: 0 0 0 1px rgba(245, 196, 107, 0.4);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.stepNumber {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  border-radius: 50%;
+.stepNum {
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #f5c46b;
+  color: #000;
   font-weight: 700;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.stepBlue { background: #3b82f6; }
-.stepTeal { background: #14b8a6; }
-.stepGreen { background: #22c55e; }
-
-.stepTitle {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 0.25rem;
-}
-
-.stepItem p {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.55;
-  margin: 0;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.stepText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f5c46b;
+  margin-bottom: 0.35rem;
+}
+
+.stepDesc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
 }
 
 .benefitsList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem 2rem;
-  text-align: left;
+  text-align: center;
+  min-width: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.benefitsList > * {
+  min-width: 0;
 }
 
 .benefitItem {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.9);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.benefitItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 196, 107, 0.4);
 }
 
 .benefitItem svg {
@@ -419,18 +473,55 @@
 .comparisonTable {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 0 1.5rem;
   padding: 1.5rem;
   background: rgba(59, 130, 246, 0.1);
   border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: 16px;
+  min-width: 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.comparisonColumn {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
+.comparisonTable .comparisonTitle {
+  grid-column: span 1;
   text-align: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.comparisonTable .comparisonTitle:first-of-type {
+  grid-column: 1;
+}
+
+.comparisonTable .comparisonTitle:last-of-type {
+  grid-column: 2;
+}
+
+.comparisonRow {
+  display: contents;
+}
+
+.comparisonRow > * {
+  min-width: 0;
+}
+
+.comparisonItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+}
+
+.comparisonRow:last-child .comparisonItem {
+  border-bottom: none;
 }
 
 .comparisonTitle {
@@ -440,23 +531,12 @@
   margin: 0 0 1rem;
 }
 
-.comparisonList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.comparisonList li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 0.5rem;
-}
-
-.comparisonList li:last-child {
-  margin-bottom: 0;
+.comparisonItem .checkIcon,
+.comparisonItem .crossIcon {
+  flex-shrink: 0;
+  width: 1.25em;
+  display: inline-block;
+  text-align: center;
 }
 
 .checkIcon {
@@ -587,15 +667,36 @@
   color: #f5c46b;
 }
 
+/* Tablet landscape */
+@media (max-width: 1024px) {
+  .heroContent {
+    gap: 2.5rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workflowSteps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet portrait */
 @media (max-width: 900px) {
   .heroContent {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
+  .heroLeft {
+    max-width: 100%;
+  }
+
   .heroForm {
     position: static;
-    max-width: 400px;
+    max-width: 100%;
+    width: 100%;
   }
 
   .benefitsGrid {
@@ -603,6 +704,10 @@
   }
 
   .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowSteps {
     grid-template-columns: 1fr;
   }
 
@@ -620,6 +725,84 @@
   }
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+
+  .hero {
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .heading {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .whySection {
+    padding: 0 1.25rem 3rem;
+  }
+
+  .sectionHeading,
+  .whyHeading {
+    font-size: clamp(1.35rem, 4vw, 1.75rem);
+  }
+
+  .sectionIntro {
+    font-size: 0.95rem;
+  }
+
+  .salesCallout {
+    padding: 0 1.25rem 2rem;
+  }
+
+  .heroStats {
+    gap: 1.5rem;
+  }
+
+  .infoSection {
+    padding: 0 1.25rem 2.5rem;
+  }
+
+  .infoHeading {
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+  }
+
+  .featureCard,
+  .industryCard {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .featureCard h3,
+  .industryCard h3 {
+    font-size: 1.05rem;
+  }
+
+  .featureCard p,
+  .industryCard p {
+    font-size: 0.85rem;
+  }
+
+  .workflowSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowStep {
+    padding: 1rem 1.25rem;
+  }
+
+  .stepDesc {
+    font-size: 0.8rem;
+  }
+
+  .benefitItem {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 600px) {
   .benefitsGrid {
     grid-template-columns: 1fr;
@@ -631,14 +814,25 @@
 
   .benefitsList {
     grid-template-columns: 1fr;
+    gap: 0.65rem 1rem;
   }
 
   .comparisonTable {
     grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .comparisonTable .comparisonTitle:first-of-type,
+  .comparisonTable .comparisonTitle:last-of-type {
+    grid-column: 1;
+  }
+
+  .comparisonItem {
+    font-size: 0.85rem;
   }
 
   .useCasesSection {
-    padding: 0 1.25rem 3rem;
+    padding: 0 1.25rem 2.5rem;
   }
 
   .useCaseCard {
@@ -651,35 +845,29 @@
   }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    padding: 4rem 1.25rem 3rem;
-  }
-
-  .whySection {
-    padding: 0 1.25rem 3rem;
-  }
-
-  .salesCallout {
-    padding: 0 1.25rem 2rem;
-  }
-
-  .useCasesSection {
-    padding: 0 1.25rem 3rem;
-  }
-
-  .heroStats {
-    gap: 1.5rem;
-  }
-
-  .infoSection {
-    padding: 0 1.25rem 2.5rem;
-  }
-}
-
+/* Mobile */
 @media (max-width: 480px) {
+  .wrapper {
+    padding-top: 4.5rem;
+  }
+
   .hero {
     padding: 3rem 1rem 2.5rem;
+  }
+
+  .badge {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
   }
 
   .heroStats {
@@ -690,8 +878,23 @@
     font-size: 1.5rem;
   }
 
+  .statLabel {
+    font-size: 0.85rem;
+  }
+
   .whySection {
     padding: 0 1rem 2.5rem;
+  }
+
+  .sectionHeading,
+  .whyHeading {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sectionIntro {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
   }
 
   .salesCallout {
@@ -703,11 +906,32 @@
   }
 
   .featureCard {
-    padding: 1.5rem 1.25rem;
+    padding: 1.25rem 1rem;
   }
 
   .industryCard {
-    padding: 1.5rem 1.25rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .cardIcon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.75rem;
+  }
+
+  .cardIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .featureCard h3,
+  .industryCard h3 {
+    font-size: 1rem;
+  }
+
+  .featureCard p,
+  .industryCard p {
+    font-size: 0.8rem;
   }
 
   .exampleTags span {
@@ -719,12 +943,89 @@
     padding: 0 1rem 2.5rem;
   }
 
-  .stepItem {
-    flex-direction: column;
+  .infoHeading {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .infoText {
+    font-size: 0.95rem;
+  }
+
+  .workflowSteps {
+    grid-template-columns: 1fr;
     gap: 0.75rem;
+  }
+
+  .workflowStep {
+    padding: 1rem;
+  }
+
+  .stepText {
+    font-size: 0.95rem;
+  }
+
+  .stepDesc {
+    font-size: 0.8rem;
+  }
+
+  .benefitItem {
+    font-size: 0.85rem;
   }
 
   .comparisonTable {
     padding: 1rem;
+  }
+
+  .comparisonTitle {
+    font-size: 1rem;
+  }
+
+  .comparisonItem {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .wrapper {
+    padding-top: 4rem;
+  }
+
+  .hero {
+    padding: 2.5rem 0.75rem 2rem;
+  }
+
+  .heading {
+    font-size: 1.35rem;
+  }
+
+  .whySection,
+  .infoSection,
+  .useCasesSection {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .salesCallout {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .featureCard,
+  .industryCard {
+    padding: 1rem 0.85rem;
+  }
+
+  .infoHeading {
+    font-size: 1.05rem;
+  }
+
+  .infoText {
+    font-size: 0.9rem;
+  }
+
+  .comparisonTable {
+    padding: 0.85rem;
   }
 }

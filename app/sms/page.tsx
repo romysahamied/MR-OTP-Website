@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import styles from './Sms.module.css'
 
@@ -16,11 +17,22 @@ export default function SmsPage() {
   return (
     <main className={styles.wrapper}>
       <Header />
+      <section className={styles.smsHero}>
+        <div className={styles.smsHeroContent}>
+          <h1 className={styles.smsHeroHeadline}>Power Your Growth with SMS</h1>
+          <p className={styles.smsHeroSubtitle}>
+            Engage customers effortlessly through our robust SMS API or easy-to-use platform.
+          </p>
+          <Link href="/get-started?from=sms" className={styles.smsHeroCta}>
+            Get Started
+          </Link>
+        </div>
+      </section>
       <article className={styles.content}>
         <section className={styles.introSection}>
-          <h1 className={styles.mainHeading}>A MESSAGE FOR EVERY BUSINESS NEED</h1>
+          <h1 className={styles.mainHeading}>Power Every Customer Interaction with SMS</h1>
           <p className={styles.introText}>
-            SMS is the world&apos;s most popular and highest-performing business messaging tool. With Mr-OTP, you can leverage our powerful SMS API to enhance your business communication. From delivery notifications and appointment scheduling to one-time passcodes, SMS offers a range of use cases that drive engagement and conversions.
+            SMS remains one of the most effective and widely used communication channels worldwide. With Mr-OTP’s advanced SMS API, you can streamline notifications, appointment reminders, OTP delivery, and more—driving stronger engagement and measurable results.
           </p>
         </section>
 
@@ -32,36 +44,36 @@ export default function SmsPage() {
           <h2 className={styles.whyHeading}>WHY CHOOSE SMS FOR YOUR BUSINESS</h2>
           <div className={styles.whyColumns}>
             <div className={styles.whyColumn}>
-              <h3 className={styles.whyColumnTitle}>ACCESSIBILITY</h3>
+              <h3 className={styles.whyColumnTitle}>Universal Reach</h3>
               <p className={styles.whyColumnText}>
-                SMS is a widely accessible communication channel. This allows businesses to reach a wider audience, including customers who may not have access to other communication channels.
+                Text messaging works on virtually every mobile device, allowing you to connect with customers regardless of internet access or smartphone usage.
               </p>
             </div>
             <div className={styles.whyColumn}>
-              <h3 className={styles.whyColumnTitle}>COST-EFFECTIVENESS</h3>
+              <h3 className={styles.whyColumnTitle}> Budget-Friendly Impact</h3>
               <p className={styles.whyColumnText}>
-                Compared to other channels, SMS is an efficient form of B2C communication. With low costs and high open rates, businesses can reach a large audience without breaking the bank.
+                SMS delivers strong engagement at a minimal cost, helping businesses maximize outreach while maintaining an efficient communication budget.
               </p>
             </div>
             <div className={styles.whyColumn}>
-              <h3 className={styles.whyColumnTitle}>CONVENIENCE</h3>
+              <h3 className={styles.whyColumnTitle}>Effortless Interaction</h3>
               <p className={styles.whyColumnText}>
-                SMS allows customers to interact with businesses without the need for a data connection. This leads to improved customer satisfaction and increased engagement.
+                No apps, downloads, or data required—customers can easily receive and respond to messages anytime, anywhere.
               </p>
             </div>
             <div className={styles.whyColumn}>
-              <h3 className={styles.whyColumnTitle}>SPEED</h3>
+              <h3 className={styles.whyColumnTitle}>Instant Delivery</h3>
               <p className={styles.whyColumnText}>
-                In today&apos;s fast-paced world, customers expect timely communication. SMS allows businesses to deliver information almost instantly, improving the overall customer experience.
+                Messages are transmitted within seconds, enabling real-time updates that keep customers informed and engaged when it matters most.
               </p>
             </div>
           </div>
         </section>
 
         <section className={styles.statsSection}>
-          <h2 className={styles.statsHeading}>THE STATS DON&apos;T LIE!</h2>
+          <h2 className={styles.statsHeading}>Messaging That Moves the Metrics</h2>
           <p className={styles.statsSubtitle}>
-            The world&apos;s most popular and highest-performing business messaging tool is here to stay. Here&apos;s why.
+            High open rates, instant delivery, measurable impact—SMS turns every message into opportunity.
           </p>
           <div className={styles.statsGrid}>
             <div className={styles.statCard}>
@@ -70,8 +82,8 @@ export default function SmsPage() {
                   <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h3 className={styles.statTitle}>98% Open Rate</h3>
-              <p className={styles.statText}>Anywhere across the globe, send messages that get read</p>
+              <h3 className={styles.statTitle}>98% Visibility Rate</h3>
+              <p className={styles.statText}>Deliver messages worldwide with confidence—nearly every text gets seen.</p>
             </div>
             <div className={styles.statDivider} aria-hidden />
             <div className={styles.statCard}>
@@ -81,7 +93,7 @@ export default function SmsPage() {
                 </svg>
               </div>
               <h3 className={styles.statTitle}>30% Response Rate</h3>
-              <p className={styles.statText}>Increase engagement and conversions with 2-way interactions</p>
+              <p className={styles.statText}>Drive meaningful conversations and boost conversions through seamless two-way messaging.</p>
             </div>
             <div className={styles.statDivider} aria-hidden />
             <div className={styles.statCard}>
@@ -90,8 +102,8 @@ export default function SmsPage() {
                   <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h3 className={styles.statTitle}>Global Ubiquity</h3>
-              <p className={styles.statText}>Leverage the channel that reaches 7.4B active users</p>
+              <h3 className={styles.statTitle}>Worldwide Reach</h3>
+              <p className={styles.statText}>Tap into a communication channel used by over 7.4 billion active mobile users across the globe.</p>
             </div>
           </div>
         </section>

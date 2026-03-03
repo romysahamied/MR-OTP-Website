@@ -94,7 +94,7 @@ export default function PromotionalForm() {
     <div className={styles.card}>
       <h2 className={styles.title}>Get Started Today</h2>
       <p className={styles.subtitle}>
-        See how promotional SMS can boost your marketing ROI.
+        Unlock higher engagement and stronger returns with promotional SMS.
       </p>
 
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -164,7 +164,7 @@ export default function PromotionalForm() {
         )}
 
         <p className={styles.privacy}>
-          Your data is secure. We respect your privacy and comply with opt-out regulations.
+          Built with strict data protection standards and fully aligned with opt-out and consent regulations.
         </p>
       </form>
     </div>

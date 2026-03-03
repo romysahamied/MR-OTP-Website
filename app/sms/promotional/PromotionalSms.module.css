@@ -1,5 +1,8 @@
 .wrapper {
   min-height: 100vh;
+  padding-top: 6rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .hero {
@@ -13,10 +16,12 @@
   grid-template-columns: 1fr 400px;
   gap: 3rem;
   align-items: start;
+  min-width: 0;
 }
 
 .heroLeft {
   max-width: 560px;
+  min-width: 0;
 }
 
 .badge {
@@ -47,8 +52,8 @@
 
 .trustBadges {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .trustItem {
@@ -69,6 +74,7 @@
 .heroForm {
   position: sticky;
   top: 6rem;
+  min-width: 0;
 }
 
 .whySection {
@@ -76,6 +82,7 @@
   margin: 0 auto;
   padding: 0 2rem 4rem;
   text-align: center;
+  min-width: 0;
 }
 
 .sectionTag {
@@ -113,6 +120,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  min-width: 0;
+}
+
+.cardsGrid > * {
+  min-width: 0;
 }
 
 .featureCard {
@@ -184,12 +196,15 @@
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.55;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .salesCallout {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 2rem 2rem;
+  min-width: 0;
 }
 
 .salesCalloutInner {
@@ -209,6 +224,15 @@
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.5;
+  flex: 1 1 280px;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.salesCalloutQuestion {
+  color: #f5c46b;
+  font-weight: 700;
 }
 
 .salesCta {
@@ -223,6 +247,7 @@
   border-radius: 10px;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
 }
 
 .salesCta:hover {
@@ -235,6 +260,7 @@
   margin: 0 auto;
   padding: 0 2rem 4rem;
   text-align: center;
+  min-width: 0;
 }
 
 .useCasesGrid {
@@ -242,6 +268,11 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
+  min-width: 0;
+}
+
+.useCasesGrid > * {
+  min-width: 0;
 }
 
 .useCaseCard {
@@ -273,6 +304,8 @@
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.55;
   margin: 0 0 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .useCaseTag {
@@ -283,6 +316,9 @@
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.9);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .complianceNotice {
@@ -296,21 +332,41 @@
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 
 .complianceNotice strong {
   color: #f5c46b;
 }
 
+/* Tablet landscape */
+@media (max-width: 1024px) {
+  .heroContent {
+    gap: 2.5rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet portrait */
 @media (max-width: 900px) {
   .heroContent {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
+  .heroLeft {
+    max-width: 100%;
+  }
+
   .heroForm {
     position: static;
-    max-width: 400px;
+    max-width: 100%;
+    width: 100%;
   }
 
   .cardsGrid {
@@ -325,57 +381,170 @@
     flex-direction: column;
     text-align: center;
   }
+
+  .salesCalloutInner p {
+    flex: 1 1 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+
   .hero {
     padding: 4rem 1.25rem 3rem;
   }
 
+  .heading {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .trustItem {
+    font-size: 0.9rem;
+  }
+
   .whySection {
     padding: 0 1.25rem 3rem;
+  }
+
+  .sectionHeading {
+    font-size: clamp(1.35rem, 4vw, 1.75rem);
+  }
+
+  .sectionIntro {
+    font-size: 0.95rem;
   }
 
   .salesCallout {
     padding: 0 1.25rem 2rem;
   }
 
+  .salesCalloutInner {
+    padding: 1rem 1.25rem;
+  }
+
+  .salesCalloutInner p {
+    font-size: 0.95rem;
+  }
+
   .useCasesSection {
     padding: 0 1.25rem 3rem;
   }
 
-  .trustBadges {
-    flex-direction: column;
-    gap: 0.75rem;
+  .featureCard,
+  .useCaseCard {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .featureCard h3,
+  .useCaseCard h3 {
+    font-size: 1.05rem;
+  }
+
+  .featureCard p,
+  .useCaseCard p {
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 600px) {
   .useCasesSection {
-    padding: 0 1.25rem 3rem;
+    padding: 0 1.25rem 2.5rem;
   }
 
   .useCaseCard {
-    padding: 1.5rem 1.25rem;
+    padding: 1.25rem 1rem;
   }
 
   .complianceNotice {
     padding: 1rem 1.25rem;
     font-size: 0.85rem;
   }
+
+  .cardsGrid {
+    gap: 1.25rem;
+  }
+
+  .useCasesGrid {
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
+  .wrapper {
+    padding-top: 4.5rem;
+  }
+
   .hero {
     padding: 3rem 1rem 2.5rem;
+  }
+
+  .badge {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .trustItem {
+    font-size: 0.85rem;
+  }
+
+  .trustItem svg {
+    width: 18px;
+    height: 18px;
   }
 
   .whySection {
     padding: 0 1rem 2.5rem;
   }
 
+  .sectionTag {
+    font-size: 0.8rem;
+  }
+
+  .sectionHeading {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sectionIntro {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
   .salesCallout {
     padding: 0 1rem 1.5rem;
+  }
+
+  .salesCalloutInner {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .salesCalloutInner p {
+    font-size: 0.9rem;
+  }
+
+  .salesCta {
+    font-size: 0.9rem;
+    padding: 0.55rem 1rem;
   }
 
   .useCasesSection {
@@ -383,6 +552,77 @@
   }
 
   .featureCard {
-    padding: 1.5rem 1.25rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .cardIcon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.75rem;
+  }
+
+  .cardIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .featureCard h3,
+  .useCaseCard h3 {
+    font-size: 1rem;
+  }
+
+  .featureCard p,
+  .useCaseCard p {
+    font-size: 0.8rem;
+  }
+
+  .useCaseTag {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .complianceNotice {
+    padding: 0.85rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .wrapper {
+    padding-top: 4rem;
+  }
+
+  .hero {
+    padding: 2.5rem 0.75rem 2rem;
+  }
+
+  .heading {
+    font-size: 1.35rem;
+  }
+
+  .whySection,
+  .useCasesSection {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .salesCallout {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .salesCalloutInner {
+    padding: 0.85rem;
+  }
+
+  .featureCard,
+  .useCaseCard {
+    padding: 1rem 0.85rem;
+  }
+
+  .complianceNotice {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.75rem;
   }
 }

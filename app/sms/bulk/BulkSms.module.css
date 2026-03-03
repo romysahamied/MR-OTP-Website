@@ -1,5 +1,8 @@
 .wrapper {
   min-height: 100vh;
+  padding-top: 6rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Hero Section */
@@ -167,6 +170,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 2rem 4rem;
+  min-width: 0;
 }
 
 .trustedHeading {
@@ -272,6 +276,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 2rem 1.5rem;
+  min-width: 0;
+}
+
+.metricsGrid > * {
+  min-width: 0;
 }
 
 .metricColumn {
@@ -337,6 +346,9 @@
 .metricSub {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.6);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
 }
 
 .metricsFeatures {
@@ -725,6 +737,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
+  min-width: 0;
+}
+
+.touchpointGrid > * {
+  min-width: 0;
 }
 
 .touchpointCard {
@@ -804,6 +821,8 @@
   line-height: 1.55;
   margin: 0 0 1rem;
   flex-grow: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .touchpointLink {
@@ -1069,6 +1088,10 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+
   .hero {
     padding: 4rem 1.25rem 3rem;
   }
@@ -1183,6 +1206,23 @@
 }
 
 @media (max-width: 480px) {
+  .wrapper {
+    padding-top: 4.5rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .headingLine1,
+  .headingLine2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .heroIntro {
+    font-size: 1rem;
+  }
+
   .trustedSection {
     padding: 0 1rem 2.5rem;
   }
@@ -1247,6 +1287,26 @@
     font-size: 0.85rem;
   }
 
+  .metricsCard {
+    margin: 0 0.5rem;
+  }
+
+  .metricsGrid {
+    padding: 1.25rem 1rem;
+  }
+
+  .metricColumn {
+    padding: 0.85rem;
+  }
+
+  .metricLabel {
+    font-size: 0.9rem;
+  }
+
+  .metricSub {
+    font-size: 0.75rem;
+  }
+
   .metricsHeader {
     font-size: 1rem;
     padding: 0.875rem 1rem;
@@ -1254,5 +1314,56 @@
 
   .metricValue {
     font-size: 1.5rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .wrapper {
+    padding-top: 4rem;
+  }
+
+  .hero {
+    padding: 2.5rem 0.75rem 2rem;
+  }
+
+  .trustedSection,
+  .whatIsSection,
+  .advantagesSection,
+  .touchpointSection,
+  .enterpriseSection {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .metricsCard {
+    margin: 0;
+  }
+
+  .metricsGrid {
+    padding: 1rem 0.75rem;
+  }
+
+  .metricValue {
+    font-size: 1.35rem;
+  }
+
+  .metricLabel {
+    font-size: 0.85rem;
+  }
+
+  .metricSub {
+    font-size: 0.7rem;
+  }
+
+  .statCard,
+  .industryCard {
+    padding: 1rem 0.85rem;
+  }
+
+  .advantageCard,
+  .touchpointCard,
+  .enterpriseCard {
+    padding: 1rem 0.85rem;
   }
 }

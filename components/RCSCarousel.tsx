@@ -117,8 +117,8 @@ export default function RCSCarousel() {
                                 : '/RCS-Notification.png'
                           }
                           alt={slide.subheading}
-                          width={400}
-                          height={500}
+                          fill
+                          sizes="(max-width: 480px) 220px, (max-width: 768px) 240px, (max-width: 900px) 260px, 320px"
                           className={styles.journeyCarouselImage}
                         />
                       </div>

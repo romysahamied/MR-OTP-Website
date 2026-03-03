@@ -94,7 +94,7 @@ export default function TransactionalForm() {
     <div className={styles.card}>
       <h2 className={styles.title}>Get Started Today</h2>
       <p className={styles.subtitle}>
-        See how transactional SMS can power your business communications.
+      Discover how transactional SMS can strengthen and streamline your business communications.
       </p>
 
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -164,7 +164,7 @@ export default function TransactionalForm() {
         )}
 
         <p className={styles.privacy}>
-          Your data is secure. We respect your privacy and comply with opt-out regulations.
+          Built with strict data protection standards and fully aligned with opt-out and consent regulations.
         </p>
       </form>
     </div>

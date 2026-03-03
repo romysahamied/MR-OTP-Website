@@ -19,7 +19,7 @@ export default function VoicePage() {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroHeadline}>
-            Enhance Global Connections, One Call at a Time
+            Empowering Global Communication Through Every Call
           </h1>
           <p className={styles.heroSubtitle}>
             Converse and convert with customized voice calling experiences through a carrier-grade platform.
@@ -34,16 +34,16 @@ export default function VoicePage() {
         <div className={styles.useCasesGrid}>
           <div className={styles.useCasesContent}>
             <h2 className={styles.useCasesHeading}>
-              Voice – Accessible, Seamless & Personalized Communication
+              Voice Communication – Direct, Human & Globally Connected
             </h2>
             <p className={styles.useCasesText}>
-              With just a number you can reach anyone with a phone (mobile or landline) to ensure your brand&apos;s voice is heard loud anywhere in the world.
+              Reach any phone worldwide—mobile or landline—using just a number, and deliver your message with clarity and impact wherever your customers are located.
             </p>
             <p className={styles.useCasesText}>
-              Mr-OTP Voice solutions let you add a personalized touch with <strong>local languages</strong> and stand out by including names and other personal details in the call, directly from your CRM system.
+              Mr-OTP Voice services enable customized calling experiences with localized language options and dynamic personalization, including names and relevant customer data pulled directly from your CRM platform.
             </p>
             <p className={styles.useCasesText}>
-              Enhance your support system, make calls, send OTPs, notifications or marketing messages.
+              Strengthen customer support operations, initiate outbound calls, deliver one-time passwords, share critical alerts, or run voice-based marketing campaigns—all through a scalable and intelligent voice infrastructure.
             </p>
           </div>
           <div className={styles.useCasesVisual}>
@@ -63,46 +63,46 @@ export default function VoicePage() {
 
       <section className={styles.solutionsSection}>
         <h2 className={styles.solutionsHeading}>
-          Multiple Solutions for Numerous Use Cases
+          Versatile Solutions for Diverse Business Needs
         </h2>
         <div className={styles.solutionsGrid}>
           <div className={styles.solutionsColumn}>
             <div className={styles.solutionItem}>
-              <h3 className={styles.solutionTitle}>Text-to-Speech</h3>
+              <h3 className={styles.solutionTitle}>Text-to-Speech Capabilities</h3>
               <p className={styles.solutionText}>
-                Scale calls by converting text to speech in multiple languages and dialects. Listen to users in 150+ languages with automatic speech recognition.
+                Expand your outbound calling capacity by transforming written content into natural-sounding voice messages across multiple languages and regional accents. Capture and interpret customer responses in over 150 languages using advanced speech recognition technology.
               </p>
             </div>
             <div className={styles.solutionItem}>
-              <h3 className={styles.solutionTitle}>Voice OTP</h3>
+              <h3 className={styles.solutionTitle}>Voice-Based OTP Verification</h3>
               <p className={styles.solutionText}>
-                Voice OTP verifies new user registrations on apps or websites. Play a sequence of digits; users confirm the sequence to verify their number.
+                Authenticate new user sign-ups by delivering a one-time passcode through an automated voice call. A numeric code is read aloud, and users enter it to confirm their phone number.
               </p>
             </div>
             <div className={styles.solutionItem}>
-              <h3 className={styles.solutionTitle}>Number Masking</h3>
+              <h3 className={styles.solutionTitle}>Secure Number Masking</h3>
               <p className={styles.solutionText}>
-                Number Masking API enables communication between two parties without revealing their phone numbers, keeping personal data safe.
+                Enable seamless communication between two users without exposing their actual phone numbers. Our API protects personal contact details while maintaining uninterrupted connectivity.
               </p>
             </div>
           </div>
           <div className={styles.solutionsColumn}>
             <div className={styles.solutionItem}>
-              <h3 className={styles.solutionTitle}>Interactive Voice Response (IVR)</h3>
+              <h3 className={styles.solutionTitle}>Smart IVR Call Routing System</h3>
               <p className={styles.solutionText}>
-                Run inbound and outbound polls and route calls via DTMF key prompts to users, departments, or mobile devices.
+                Design automated voice workflows that manage inbound and outbound polling while routing calls dynamically through DTMF-based inputs to departments, users, or endpoints.
               </p>
             </div>
             <div className={styles.solutionItem}>
-              <h3 className={styles.solutionTitle}>Flash Call</h3>
+              <h3 className={styles.solutionTitle}>Flash Call Authentication</h3>
               <p className={styles.solutionText}>
-                Flash call authenticates a mobile number without user action. The process uses digits from the incoming call as the passcode and auto-fills the field for a seamless experience.
+                Verify mobile numbers instantly without requiring user input. The system captures digits from an incoming call and automatically populates the verification field for a frictionless login experience.
               </p>
             </div>
             <div className={styles.solutionItem}>
               <h3 className={styles.solutionTitle}>SIP Trunking</h3>
               <p className={styles.solutionText}>
-                SIP Trunking runs voice over an internet connection, so you can connect with customers worldwide with better cost control.
+                Enable internet-based voice connectivity to reach customers globally while optimizing operational costs and call efficiency.
               </p>
             </div>
           </div>
@@ -113,15 +113,15 @@ export default function VoicePage() {
         <div className={styles.billingCard}>
           <div className={styles.billingCardContent}>
             <div className={styles.billingColumn}>
-              <h3 className={styles.billingCardTitle}>Efficient Per-Second Billing</h3>
+              <h3 className={styles.billingCardTitle}>Precise Per-Second Billing</h3>
               <p className={styles.billingCardText}>
-                Voice services are billed per second—pay only for the time you use. Available in most countries; contact Sales for details.
+                Pay strictly for actual usage with second-by-second charging. Offered across most regions—connect with our Sales team for country-specific availability.
               </p>
             </div>
             <div className={styles.billingColumn}>
-              <h3 className={styles.billingCardTitle}>Intelligent Automatic Routing</h3>
+              <h3 className={styles.billingCardTitle}>Real-Time Route Optimization</h3>
               <p className={styles.billingCardText}>
-                Calls are routed through a proprietary system that evaluates routes in real time for optimal deliverability.
+              Our advanced routing infrastructure continuously evaluates carrier paths and traffic conditions, automatically selecting the most reliable route for superior call completion rates.
               </p>
             </div>
           </div>
@@ -132,9 +132,9 @@ export default function VoicePage() {
       </section>
 
       <section className={styles.engageSection}>
-        <p className={styles.engageSubheading}>Voice for Every Step of the Way</p>
+        <p className={styles.engageSubheading}>End-to-End Voice Engagement</p>
         <h2 className={styles.engageHeading}>
-          Engage and Support Through the Customer Journey
+        Deliver consistent communication and proactive support across every phase of the customer lifecycle.
         </h2>
       </section>
 
@@ -142,41 +142,40 @@ export default function VoicePage() {
         <div className={styles.featuresGrid}>
           <div className={styles.featuresColumn}>
             <div className={styles.featureCard}>
-              <h3 className={styles.featureTitle}>Customer Notifications</h3>
+              <h3 className={styles.featureTitle}>Proactive Customer Communication</h3>
               <p className={styles.featureText}>
-                Add value with personalized reminders, invites, and critical time-sensitive alerts.
+              Automate tailored reminders, event invitations, and mission-critical notifications to drive engagement and reliability.
               </p>
             </div>
             <div className={styles.featureCard}>
-              <h3 className={styles.featureTitle}>Contactless Customer Service</h3>
+              <h3 className={styles.featureTitle}>Safe, Seamless Interactions</h3>
               <p className={styles.featureText}>
-                Keep interactions safe with convenient mobile connectivity for deliveries, pickups, viewings, and more.
-              </p>
+              Enable contactless communication for deliveries, curbside pickups, appointments, and on-site visits—simple, secure, and efficient.</p>
             </div>
             <div className={styles.featureCard}>
-              <h3 className={styles.featureTitle}>Onboarding and Security</h3>
+              <h3 className={styles.featureTitle}>Secure Sign-Ups, Safer Logins</h3>
               <p className={styles.featureText}>
-                Authenticate new and existing customers by delivering pins and passcodes in various ways.
-              </p>
+              Protect accounts from day one by sending one-time codes and verification credentials via flexible delivery methods.
+               </p>
             </div>
           </div>
           <div className={styles.featuresColumn}>
             <div className={styles.featureCard}>
-              <h3 className={styles.featureTitle}>Customer Support</h3>
+              <h3 className={styles.featureTitle}>Support That’s Always Within Reach</h3>
               <p className={styles.featureText}>
-                Provide an accessible, cost-efficient channel for two-way troubleshooting.
+              Enable real-time, two-way communication to resolve issues quickly and affordably.
               </p>
             </div>
             <div className={styles.featureCard}>
-              <h3 className={styles.featureTitle}>Promotions</h3>
+              <h3 className={styles.featureTitle}>Scalable Promotional Outreach</h3>
               <p className={styles.featureText}>
-                Promote special offers and new products, follow up with interested customers, and manage call center workload efficiently.
+              Drive product awareness, automate follow-ups, and balance call center capacity with intelligent campaign management.
               </p>
             </div>
             <div className={styles.featureCard}>
-              <h3 className={styles.featureTitle}>Surveys</h3>
+              <h3 className={styles.featureTitle}>Turn Feedback into Growth</h3>
               <p className={styles.featureText}>
-                Collect feedback after a purchase or service. Learn what customers like or dislike to improve satisfaction.
+              Collect insights after every interaction to discover what customers love—and what needs improvement.
               </p>
             </div>
           </div>
@@ -187,11 +186,11 @@ export default function VoicePage() {
         <div className={styles.voiceCtaCard}>
           <div className={styles.voiceCtaContent}>
             <h2 className={styles.voiceCtaHeading}>
-              Ready to Reach Your Audience?
+              Start Engaging Your Audience Today
             </h2>
             <ul className={styles.voiceCtaList}>
-              <li>Choose between Voice API solutions and an easy-to-use no-code interface</li>
-              <li>CRM and third-party integrations</li>
+              <li>Use powerful Voice APIs or launch quickly with a no-code interface.</li>
+              <li>Connect with your CRM and third-party tools for seamless automation.</li>
             </ul>
           </div>
           <div className={styles.voiceCtaVisual}>
@@ -210,7 +209,6 @@ export default function VoicePage() {
           </div>
         </div>
       </section>
-
       <Footer />
     </main>
   )

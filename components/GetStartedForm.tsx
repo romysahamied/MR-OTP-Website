@@ -110,7 +110,7 @@ export default function GetStartedForm() {
       <div className={styles.card}>
         <h2 className={styles.title}>Get Started Today</h2>
         <p className={styles.subtitle}>
-          Tell us about your requirements and we&apos;ll help you choose the right plan.
+          Outline your messaging goals, and we’ll design a plan aligned with your business needs.
         </p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -215,7 +215,7 @@ export default function GetStartedForm() {
                 className={styles.checkbox}
               />
               <span>
-                I agree to receive communications from Mr-OTP regarding my inquiry. By submitting this form, I acknowledge that my information will be processed in accordance with Mr-OTP&apos;s{' '}
+                I consent to receive communications from MR-OTP related to my inquiry. By submitting this form, I confirm that my information will be handled in accordance with Mr-OTP&apos;s{' '}
                 <Link href="/privacy">Privacy Policy</Link>.
               </span>
             </label>
@@ -239,7 +239,7 @@ export default function GetStartedForm() {
           )}
 
           <p className={styles.privacy}>
-            We respect your privacy. Your data is secure and will never be shared with third parties.
+            Built with strict data protection standards and fully aligned with opt-out and consent regulations..
           </p>
         </form>
       </div>

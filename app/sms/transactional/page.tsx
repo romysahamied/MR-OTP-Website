@@ -24,30 +24,30 @@ export default function TransactionalSmsPage() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Trusted by 2,000+ Brands
+              Delivering Secure Verification at Scale for 2,000+ Brands
             </div>
             <h1 className={styles.heading}>
-              Transactional SMS That{' '}
+              Transactional Messaging{' '}
               <span className={styles.headingHighlight}>
-                <span className={styles.highlightBlue}>Delivers</span>{' '}
-                <span className={styles.highlightTeal}>Results</span>
+                <span className={styles.highlightBlue}>Delivered</span>{' '}
+                <span className={styles.highlightTeal}>Instantly</span>
               </span>
             </h1>
             <p className={styles.intro}>
-              Send OTPs, alerts, and notifications instantly with 99.8% delivery rate. Enterprise-grade reliability for your critical messages.
+              Deliver OTPs, alerts, and time-sensitive notifications in real time with a 99.8% delivery success rate. Built on enterprise-grade infrastructure to ensure your most critical communications never fail.
             </p>
             <div className={styles.heroStats}>
               <div className={styles.statItem}>
                 <span className={styles.statValue}>99.8%</span>
-                <span className={styles.statLabel}>Delivery Rate</span>
+                <span className={styles.statLabel}>Delivery Success Rate</span>
               </div>
               <div className={styles.statItem}>
                 <span className={styles.statValue}>&lt;3s</span>
-                <span className={styles.statLabel}>Avg. Speed</span>
+                <span className={styles.statLabel}>Average Message Speed</span>
               </div>
               <div className={styles.statItem}>
                 <span className={`${styles.statValue} ${styles.statValueGreen}`}>24/7</span>
-                <span className={styles.statLabel}>Support</span>
+                <span className={styles.statLabel}>Dedicated Technical Support</span>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function TransactionalSmsPage() {
       <section className={styles.whySection}>
         <h2 className={styles.whyHeading}>Why Transactional SMS?</h2>
         <p className={styles.sectionIntro}>
-          Transactional SMS delivers time-sensitive information directly to your customers&apos; phones with unmatched reliability and speed.
+          Transactional SMS ensures mission-critical information reaches customers instantly and reliably. From authentication codes to payment confirmations, messages are delivered directly to mobile devices with carrier-grade speed and dependability.
         </p>
         <div className={styles.benefitsGrid}>
           <div className={styles.benefitCard}>
@@ -70,7 +70,7 @@ export default function TransactionalSmsPage() {
                 <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span>Instant delivery of critical messages</span>
+            <span>Ultra-Fast Delivery for Time-Sensitive Alerts</span>
           </div>
           <div className={styles.benefitCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -78,7 +78,7 @@ export default function TransactionalSmsPage() {
                 <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span>98% open rate within 3 minutes</span>
+            <span>Up to 98% Open Rate in the First 3 Minutes</span>
           </div>
           <div className={styles.benefitCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -86,7 +86,7 @@ export default function TransactionalSmsPage() {
                 <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span>No app installation required</span>
+            <span>Direct-to-Device Delivery Without App Dependency</span>
           </div>
           <div className={styles.benefitCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -94,7 +94,7 @@ export default function TransactionalSmsPage() {
                 <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span>Works on all mobile devices</span>
+            <span>Compatible with All Mobile Devices</span>
           </div>
           <div className={styles.benefitCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -102,7 +102,7 @@ export default function TransactionalSmsPage() {
                 <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span>Automated workflow integration</span>
+            <span>Real-Time Messaging Integrated into Your Operational Flows</span>
           </div>
           <div className={styles.benefitCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -110,7 +110,7 @@ export default function TransactionalSmsPage() {
                 <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span>Real-time delivery tracking</span>
+            <span>End-to-End Delivery Insights in Real Time</span>
           </div>
         </div>
       </section>
@@ -118,9 +118,9 @@ export default function TransactionalSmsPage() {
       {/* Features */}
       <section className={styles.whySection}>
         <span className={styles.sectionTag}>Features</span>
-        <h2 className={styles.sectionHeading}>Everything You Need to Send Transactional SMS</h2>
+        <h2 className={styles.sectionHeading}>End-to-End Solution for Secure, Scalable Transactional SMS Delivery</h2>
         <p className={styles.sectionIntro}>
-          Powerful features built for developers and trusted by enterprises.
+          Developer-First Architecture with Enterprise-Grade Reliability
         </p>
         <div className={styles.cardsGrid}>
           <div className={styles.featureCard}>
@@ -129,8 +129,8 @@ export default function TransactionalSmsPage() {
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3>Lightning Fast Delivery</h3>
-            <p>Messages delivered in under 3 seconds with priority routing and redundant carriers.</p>
+            <h3>High-Speed, High-Availability Delivery</h3>
+            <p>Messages transmitted in under 3 seconds through priority routing and multi-carrier redundancy.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconBlue}`}>
@@ -138,8 +138,9 @@ export default function TransactionalSmsPage() {
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3>99.8% Delivery Rate</h3>
-            <p>Industry-leading delivery rates backed by tier-1 carrier partnerships worldwide.</p>
+            <h3>Proven 99.8% Message Delivery</h3>
+            <p>Powered by direct integrations and premium carrier routes worldwide.
+            </p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconPurple}`}>
@@ -148,8 +149,8 @@ export default function TransactionalSmsPage() {
                 <polyline points="8 6 2 12 8 18" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3>Developer-Friendly API</h3>
-            <p>RESTful API with SDKs for major languages. Get started in minutes with clear documentation.</p>
+            <h3>API-First Architecture</h3>
+            <p>REST-based messaging APIs with multi-language SDKs, built for rapid deployment and seamless system integration.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -157,8 +158,8 @@ export default function TransactionalSmsPage() {
                 <path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3>Real-Time Analytics</h3>
-            <p>Track delivery, opens, and engagement with detailed dashboards and webhooks.</p>
+            <h3>Live Messaging Intelligence</h3>
+            <p>Gain full visibility into delivery reports, user engagement, and performance trends with advanced analytics and real-time webhooks.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconYellow}`}>
@@ -167,8 +168,9 @@ export default function TransactionalSmsPage() {
                 <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3>Global Coverage</h3>
-            <p>Send SMS to 190+ countries with local sender ID support and competitive pricing.</p>
+            <h3>Worldwide SMS Reach</h3>
+            <p>Connect with customers across 190+ countries through trusted carrier partnerships, local sender ID enablement, and market-competitive pricing.
+            </p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconSlate}`}>
@@ -177,18 +179,19 @@ export default function TransactionalSmsPage() {
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3>Enterprise Security</h3>
-            <p>End-to-end encryption in transit with strict data handling and compliance standards.</p>
+            <h3>Enterprise-Grade Security</h3>
+            <p>From encrypted transmission to disciplined data handling, every layer is designed to protect sensitive business messaging.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Built for Every Industry */}
       <section className={styles.whySection}>
-        <span className={styles.sectionTag}>Use Cases</span>
-        <h2 className={styles.sectionHeading}>Built for Every Industry</h2>
+        <span className={styles.sectionTag}>Transactional SMS Use Cases Across Industries</span>
+        <h2 className={styles.sectionHeading}>Engineered for Cross-Industry Scale</h2>
         <p className={styles.sectionIntro}>
-          Trusted by businesses across sectors to deliver critical communications.
+          Delivering secure, high-speed SMS solutions for organizations of every size and sector.
         </p>
         <div className={styles.industryGrid}>
           <div className={styles.industryCard}>
@@ -200,12 +203,13 @@ export default function TransactionalSmsPage() {
               </svg>
             </div>
             <h3>E-Commerce</h3>
-            <p>Order confirmations, shipping updates, delivery notifications, and payment alerts.</p>
+            <p>Deliver real-time transactional updates that keep customers informed and engaged at every stage of their purchase journey. From order confirmation to final delivery, SMS ensures instant visibility and higher customer trust.
+            </p>
             <div className={styles.exampleTags}>
-              <span>Order placed</span>
-              <span>Out for delivery</span>
-              <span>Payment received</span>
-              <span>Return status</span>
+              <span>Order Placed</span>
+              <span>Out For Delivery</span>
+              <span>Payment Received</span>
+              <span>Return Status</span>
             </div>
           </div>
           <div className={styles.industryCard}>
@@ -216,12 +220,13 @@ export default function TransactionalSmsPage() {
               </svg>
             </div>
             <h3>Banking & Finance</h3>
-            <p>Transaction alerts, OTPs, balance updates, and security notifications.</p>
+            <p>Enable secure, real-time financial communication with high-priority SMS delivery. From authentication to transaction monitoring, ensure customers receive critical updates instantly while strengthening fraud prevention and regulatory compliance.
+            </p>
             <div className={styles.exampleTags}>
               <span>Login OTP</span>
-              <span>Transaction alert</span>
-              <span>Low balance</span>
-              <span>Card blocked</span>
+              <span>Transaction Alert</span>
+              <span>Low Balance Notification</span>
+              <span>Card Blocked Alert</span>
             </div>
           </div>
           <div className={styles.industryCard}>
@@ -231,12 +236,13 @@ export default function TransactionalSmsPage() {
               </svg>
             </div>
             <h3>Healthcare</h3>
-            <p>Appointment reminders, test results, prescription refills, and emergency alerts.</p>
+            <p>Deliver timely and confidential medical updates with reliable SMS communication. From appointment coordination to critical health notifications, ensure patients stay informed while maintaining data privacy and operational efficiency.
+            </p>
             <div className={styles.exampleTags}>
-              <span>Appointment reminder</span>
-              <span>Test results ready</span>
-              <span>Prescription due</span>
-              <span>Check-in alert</span>
+              <span>Appointment Reminder</span>
+              <span>Test Results Ready</span>
+              <span>Prescription Due</span>
+              <span>Check-In Alert</span>
             </div>
           </div>
           <div className={styles.industryCard}>
@@ -247,12 +253,13 @@ export default function TransactionalSmsPage() {
               </svg>
             </div>
             <h3>Travel & Hospitality</h3>
-            <p>Booking confirmations, check-in reminders, flight updates, and reservation changes.</p>
+            <p>Keep travelers informed at every stage of their journey with real-time SMS updates. From reservations to departures, ensure timely communication that enhances customer experience and operational efficiency.
+            </p>
             <div className={styles.exampleTags}>
-              <span>Booking confirmed</span>
-              <span>Flight delay</span>
-              <span>Check-in open</span>
-              <span>Reservation modified</span>
+              <span>Booking Confirmed</span>
+              <span>Flight Delay Alert</span>
+              <span>Check-In Reminder</span>
+              <span>Reservation Modified</span>
             </div>
           </div>
         </div>
@@ -262,34 +269,31 @@ export default function TransactionalSmsPage() {
       <section className={styles.infoSection}>
         <h2 className={styles.infoHeading}>What is Transactional SMS?</h2>
         <p className={styles.infoText}>
-          Transactional SMS is different from promotional messages. It delivers time-critical, event-triggered notifications such as OTPs, order confirmations, shipping updates, and account alerts. These messages are essential for your business operations and customer communication, with high delivery and read rates that ensure your customers stay informed.
+          Transactional SMS consists of API-triggered, event-based notifications such as authentication codes, transaction alerts, and system updates. These messages are automatically generated through workflow integrations and routed via high-priority channels to ensure low latency and maximum delivery reliability.
+        </p>
+        <p className={styles.infoText}>
+          Designed for mission-critical use, transactional messaging supports compliance standards, secure transmission protocols, and detailed delivery reporting.
         </p>
       </section>
 
       {/* How Does Transactional SMS Work */}
       <section className={styles.infoSection}>
         <h2 className={styles.infoHeading}>How Does Transactional SMS Work?</h2>
-        <div className={styles.stepsList}>
-          <div className={styles.stepItem}>
-            <div className={`${styles.stepNumber} ${styles.stepBlue}`}>1</div>
-            <div>
-              <h3 className={styles.stepTitle}>Trigger Event</h3>
-              <p>Your application triggers an SMS through our API when an event occurs (login, purchase, etc.)</p>
-            </div>
+        <div className={styles.workflowSteps}>
+          <div className={styles.workflowStep}>
+            <span className={styles.stepNum}>1</span>
+            <span className={styles.stepText}>Trigger Event</span>
+            <span className={styles.stepDesc}>Your system detects an action (login, payment, signup) and instantly sends an API request automatically.</span>
           </div>
-          <div className={styles.stepItem}>
-            <div className={`${styles.stepNumber} ${styles.stepTeal}`}>2</div>
-            <div>
-              <h3 className={styles.stepTitle}>Smart Routing</h3>
-              <p>Our platform intelligently routes your message through the best carrier for optimal delivery</p>
-            </div>
+          <div className={styles.workflowStep}>
+            <span className={styles.stepNum}>2</span>
+            <span className={styles.stepText}>Smart Routing</span>
+            <span className={styles.stepDesc}>The platform analyzes network conditions and selects the fastest, most reliable carrier path.</span>
           </div>
-          <div className={styles.stepItem}>
-            <div className={`${styles.stepNumber} ${styles.stepGreen}`}>3</div>
-            <div>
-              <h3 className={styles.stepTitle}>Instant Delivery</h3>
-              <p>Message reaches the recipient in under 3 seconds with real-time delivery confirmation</p>
-            </div>
+          <div className={styles.workflowStep}>
+            <span className={styles.stepNum}>3</span>
+            <span className={styles.stepText}>Instant Delivery</span>
+            <span className={styles.stepDesc}>The message reaches the recipient in under 3 seconds, with real-time delivery confirmation.</span>
           </div>
         </div>
       </section>
@@ -300,64 +304,68 @@ export default function TransactionalSmsPage() {
         <div className={styles.benefitsList}>
           <div className={styles.benefitItem}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Instant delivery with 99.8% success rate
+            Messages transmitted instantly with up to 99.8% success rates.
           </div>
           <div className={styles.benefitItem}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            No internet required on recipient device
+            Direct-to-network delivery — no data required.
           </div>
           <div className={styles.benefitItem}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Works on all mobile phones
+            Works seamlessly on all mobile phones and across global carriers.
           </div>
           <div className={styles.benefitItem}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            98% open rate within 3 minutes
+            Up to 98% open rate within the first 3 minutes.
           </div>
           <div className={styles.benefitItem}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Automated and scalable
+            API-driven workflows designed for high-volume messaging.
           </div>
           <div className={styles.benefitItem}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Real-time delivery tracking
+            Live delivery reports and status updates for full visibility.
           </div>
           <div className={styles.benefitItem}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Cost-effective at scale
+            Optimized routing keeps performance high and costs predictable.
           </div>
           <div className={styles.benefitItem}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Regulatory compliance built-in
+            Built with regulatory standards and data protection controls in mind.
           </div>
         </div>
       </section>
 
       {/* Why Choose Mr-OTP */}
       <section className={styles.infoSection}>
-        <h2 className={styles.infoHeading}>Why Choose Mr-OTP for Transactional SMS?</h2>
+        <h2 className={styles.infoHeading}>Upgrade to Smarter Transactional SMS with MR-OTP</h2>
         <div className={styles.comparisonTable}>
-          <div className={styles.comparisonColumn}>
-            <h3 className={styles.comparisonTitle}>Mr-OTP</h3>
-            <ul className={styles.comparisonList}>
-              <li><span className={styles.checkIcon}>✓</span> 99.8% delivery rate</li>
-              <li><span className={styles.checkIcon}>✓</span> Under 3 second delivery</li>
-              <li><span className={styles.checkIcon}>✓</span> Global coverage (190+ countries)</li>
-              <li><span className={styles.checkIcon}>✓</span> Developer-friendly API</li>
-              <li><span className={styles.checkIcon}>✓</span> 24/7 support</li>
-              <li><span className={styles.checkIcon}>✓</span> Real-time analytics</li>
-            </ul>
+          <h3 className={styles.comparisonTitle}>Mr-OTP</h3>
+          <h3 className={styles.comparisonTitle}>Traditional Providers</h3>
+          <div className={styles.comparisonRow}>
+            <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> 99.8% Delivery Success Rate</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> 92–95% Average Delivery Rate</div>
           </div>
-          <div className={styles.comparisonColumn}>
-            <h3 className={styles.comparisonTitle}>Traditional Providers</h3>
-            <ul className={styles.comparisonList}>
-              <li><span className={styles.crossIcon}>✕</span> 92-95% delivery rate</li>
-              <li><span className={styles.crossIcon}>✕</span> 5-10 second delays</li>
-              <li><span className={styles.crossIcon}>✕</span> Limited coverage</li>
-              <li><span className={styles.crossIcon}>✕</span> Complex integration</li>
-              <li><span className={styles.crossIcon}>✕</span> Business hours only</li>
-              <li><span className={styles.crossIcon}>✕</span> Basic reporting</li>
-            </ul>
+          <div className={styles.comparisonRow}>
+            <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Under 3-Second Message Delivery</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> 5–10 Second Message Delays</div>
+          </div>
+          <div className={styles.comparisonRow}>
+            <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Global Coverage in 190+ Countries</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Limited International Reach</div>
+          </div>
+          <div className={styles.comparisonRow}>
+            <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Developer-Friendly REST API</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Complex & Slow Integration</div>
+          </div>
+          <div className={styles.comparisonRow}>
+            <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> 24/7 Dedicated Support</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Support During Business Hours Only</div>
+          </div>
+          <div className={styles.comparisonRow}>
+            <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Advanced Real-Time Analytics</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Basic Reporting & Visibility</div>
           </div>
         </div>
       </section>

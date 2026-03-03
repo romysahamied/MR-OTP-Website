@@ -19,12 +19,12 @@ export default function PromotionalSmsPage() {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.heroLeft}>
-            <div className={styles.badge}>99.8% Average Delivery Rate</div>
+            <div className={styles.badge}>99.8% Delivery SuccessRate</div>
             <h1 className={styles.heading}>
-              Promotional SMS that reaches customers instantly
+              Promotional SMS That Delivers Instant Reach
             </h1>
             <p className={styles.intro}>
-              Send targeted bulk SMS campaigns with real-time delivery reports and local sender IDs. Start your free trial or get flexible pricing for high-volume campaigns.
+              Launch targeted bulk SMS campaigns with real-time delivery tracking and localized sender IDs. Reach your audience at scale with reliable routing and performance-driven infrastructure.
             </p>
             <div className={styles.trustBadges}>
               <div className={styles.trustItem}>
@@ -37,13 +37,13 @@ export default function PromotionalSmsPage() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                24/7 support
+                24/7 Dedicated Support
               </div>
               <div className={styles.trustItem}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                No hidden fees
+                Transparent Pricing — No Hidden Fees
               </div>
             </div>
           </div>
@@ -55,9 +55,9 @@ export default function PromotionalSmsPage() {
 
       <section className={styles.whySection}>
         <span className={styles.sectionTag}>Why Promotional SMS</span>
-        <h2 className={styles.sectionHeading}>Marketing that reaches customers instantly</h2>
+        <h2 className={styles.sectionHeading}>Promotional SMS That Drives Instant Results</h2>
         <p className={styles.sectionIntro}>
-          Promotional SMS delivers measurable results for businesses of all sizes. Reach your audience directly with bulk SMS marketing that drives action.
+          Reach your customers in seconds with targeted bulk SMS campaigns designed for engagement, conversions, and measurable ROI. Deliver high-impact marketing messages directly to any mobile device — no apps, no delays.
         </p>
         <div className={styles.cardsGrid}>
           <div className={styles.featureCard}>
@@ -68,7 +68,7 @@ export default function PromotionalSmsPage() {
             </div>
             <h3>98% Open Rate</h3>
             <span className={styles.cardSub}>Unmatched Engagement</span>
-            <p>SMS messages are read within 3 minutes on average, delivering 6x higher engagement than email marketing campaigns.</p>
+            <p>SMS messages are typically read within minutes, generating up to 6x higher engagement compared to traditional email campaigns.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -77,8 +77,8 @@ export default function PromotionalSmsPage() {
               </svg>
             </div>
             <h3>5x Lower CPA</h3>
-            <span className={styles.cardSub}>Cost-Effective Marketing</span>
-            <p>Reduce customer acquisition costs with direct, targeted promotional SMS that converts at higher rates than traditional channels.</p>
+            <span className={styles.cardSub}>Cost-Efficient Growth</span>
+            <p>Lower your customer acquisition costs with targeted promotional SMS that delivers stronger response rates than conventional marketing channels.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconOrange}`}>
@@ -87,18 +87,18 @@ export default function PromotionalSmsPage() {
                 <path d="M12 6v6l4 2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3>25% Conversion Uplift</h3>
-            <span className={styles.cardSub}>Measurable Results</span>
-            <p>Track delivery, opens, and conversions in real-time. Optimize campaigns with detailed analytics and delivery reports.</p>
+            <h3>25% Conversion Lift</h3>
+            <span className={styles.cardSub}>Measurable Performance</span>
+            <p>Monitor delivery, engagement, and conversions in real time. Use detailed analytics and reporting to continuously optimize campaign results.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.whySection}>
         <span className={styles.sectionTag}>Features</span>
-        <h2 className={styles.sectionHeading}>Everything you need for promotional SMS campaigns</h2>
+        <h2 className={styles.sectionHeading}>Everything You Need for High-Impact Promotional SMS</h2>
         <p className={styles.sectionIntro}>
-          Enterprise-grade bulk SMS platform with tools for campaign management, delivery tracking, and compliance.
+          Run smarter bulk SMS campaigns with intelligent routing, live performance insights, and compliance-ready infrastructure — all built for high-volume marketing execution.
         </p>
         <div className={styles.cardsGrid}>
           <div className={styles.featureCard}>
@@ -109,8 +109,9 @@ export default function PromotionalSmsPage() {
               </svg>
             </div>
             <span className={styles.cardTag}>High Volume</span>
+
             <h3>Bulk Sending</h3>
-            <p>Send thousands of promotional SMS messages in seconds with our high-throughput SMS gateway.</p>
+            <p>Launch thousands of promotional SMS messages within seconds using a high-throughput gateway built for scale and performance.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -120,7 +121,7 @@ export default function PromotionalSmsPage() {
             </div>
             <span className={styles.cardTag}>Brand Identity</span>
             <h3>Dedicated Sender ID</h3>
-            <p>Increase recognition and response with a custom sender name registered for your brand.</p>
+            <p>Strengthen brand recognition with a registered, custom sender ID that builds trust and improves response rates.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconPurple}`}>
@@ -128,9 +129,9 @@ export default function PromotionalSmsPage() {
                 <path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className={styles.cardTag}>Real-Time</span>
+            <span className={styles.cardTag}>Real-Time Insights</span>
             <h3>Delivery Reports</h3>
-            <p>Real-time DLRs and comprehensive analytics to track campaign performance and message status.</p>
+            <p>Access instant delivery reports (DLRs) and detailed analytics to monitor campaign reach and message status.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconOrange}`}>
@@ -139,9 +140,9 @@ export default function PromotionalSmsPage() {
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className={styles.cardTag}>Developer Friendly</span>
+            <span className={styles.cardTag}>Developer-Friendly</span>
             <h3>API & Integrations</h3>
-            <p>Seamless SMS API integration with your CRM, e-commerce platform, or marketing automation tools.</p>
+            <p>Integrate seamlessly with your CRM, e-commerce system, or marketing automation tools through flexible API connectivity.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconYellow}`}>
@@ -153,9 +154,9 @@ export default function PromotionalSmsPage() {
                 <polyline points="10 9 9 9 8 9" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className={styles.cardTag}>Ready to Use</span>
-            <h3>Campaign Templates</h3>
-            <p>Pre-built SMS templates for retail offers, event promotions, logistics alerts, and more.</p>
+            <span className={styles.cardTag}>Campaign Ready</span>
+            <h3>Pre-Built Templates</h3>
+            <p>Deploy faster with ready-to-use SMS templates for retail promotions, events, service updates, and more.</p>
           </div>
           <div className={styles.featureCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconSlate}`}>
@@ -164,16 +165,20 @@ export default function PromotionalSmsPage() {
                 <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className={styles.cardTag}>Compliant</span>
-            <h3>Opt-out Management</h3>
-            <p>Built-in compliance tools for opt-out handling, DND lists, and regional SMS regulations.</p>
+            <span className={styles.cardTag}>Compliance Built-In</span>
+            <h3>Opt-Out Management</h3>
+            <p>Automated opt-out processing, DND list management, and regional regulatory compliance controls included by default.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.salesCallout}>
         <div className={styles.salesCalloutInner}>
-          <p>Need help choosing a plan? Our team can help you find the right SMS solution for your business goals.</p>
+          <p>
+            <span className={styles.salesCalloutQuestion}>Not sure which plan fits your needs?</span>
+            <br />
+            Speak with our experts to find the ideal SMS solution tailored to your growth strategy.
+          </p>
           <a href="/contact-sales" className={styles.salesCta}>
             Talk to Sales
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -185,9 +190,9 @@ export default function PromotionalSmsPage() {
 
       <section className={styles.useCasesSection}>
         <span className={styles.sectionTag}>Use Cases</span>
-        <h2 className={styles.sectionHeading}>Promotional SMS for every industry</h2>
+        <h2 className={styles.sectionHeading}>Industry-Ready Promotional SMS</h2>
         <p className={styles.sectionIntro}>
-          From retail to logistics, events to political campaigns — bulk SMS marketing that delivers results.
+        Empower organizations across retail, finance, logistics, hospitality, education, and public sectors with scalable bulk messaging built for performance and compliance.
         </p>
         <div className={styles.useCasesGrid}>
           <div className={styles.useCaseCard}>
@@ -198,8 +203,8 @@ export default function PromotionalSmsPage() {
               </svg>
             </div>
             <h3>Retail Offers & Promotions</h3>
-            <p>Drive foot traffic and online sales with flash sale alerts, exclusive discount codes, and seasonal promotional SMS campaigns.</p>
-            <span className={styles.useCaseTag}>35% average conversion rate on SMS offers</span>
+            <p>Drive in-store traffic and online revenue with flash sale alerts, exclusive discount codes, and seasonal SMS campaigns designed for immediate action.</p>
+            <span className={styles.useCaseTag}>35% average conversion rate on SMS promotions</span>
           </div>
           <div className={styles.useCaseCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconGreen}`}>
@@ -211,8 +216,8 @@ export default function PromotionalSmsPage() {
               </svg>
             </div>
             <h3>Logistics & Delivery Alerts</h3>
-            <p>Keep customers informed with package tracking updates, delivery confirmations, and time-sensitive shipping notifications.</p>
-            <span className={styles.useCaseTag}>92% customer satisfaction improvement</span>
+            <p>Keep customers informed at every step with shipment tracking updates, delivery confirmations, and time-sensitive notifications.</p>
+            <span className={styles.useCaseTag}>92% improvement in customer satisfaction</span>
           </div>
           <div className={styles.useCaseCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconPurple}`}>
@@ -224,8 +229,8 @@ export default function PromotionalSmsPage() {
               </svg>
             </div>
             <h3>Event Promotion & Reminders</h3>
-            <p>Boost event attendance with promotional SMS for conferences, webinars, concerts, and exclusive invitations.</p>
-            <span className={styles.useCaseTag}>45% increase in event attendance</span>
+            <p>Increase registrations and attendance with targeted SMS campaigns for conferences, webinars, concerts, and VIP invitations.</p>
+            <span className={styles.useCaseTag}>Up to 45% boost in event turnout</span>
           </div>
           <div className={styles.useCaseCard}>
             <div className={`${styles.cardIcon} ${styles.cardIconOrange}`}>
@@ -236,12 +241,12 @@ export default function PromotionalSmsPage() {
               </svg>
             </div>
             <h3>Political & NGO Campaigns</h3>
-            <p>Reach voters and supporters with compliant bulk SMS for fundraising, awareness campaigns, and community engagement.</p>
-            <span className={styles.useCaseTag}>Full opt-out compliance and reporting</span>
+            <p>Engage supporters and communities through compliant bulk SMS for fundraising, awareness initiatives, and outreach programs.</p>
+            <span className={styles.useCaseTag}>Built-in opt-out compliance and transparent reporting</span>
           </div>
         </div>
         <div className={styles.complianceNotice}>
-          <strong>Compliance Notice:</strong> All promotional SMS campaigns must include opt-out mechanisms and comply with local DND regulations. Mr-OTP provides built-in tools for managing consent and unsubscribe requests.
+          <strong>Compliance Notice:</strong> Promotional SMS must follow opt-out and DND regulations. MR-OTP includes integrated tools for consent management and unsubscribe handling.
         </div>
       </section>
 

@@ -1,6 +1,11 @@
 .wrapper {
   min-height: 100vh;
+  padding-top: 6rem;
   padding-bottom: 4rem;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .hero {
@@ -15,6 +20,12 @@
   font-weight: 700;
   color: #f5c46b;
   margin-bottom: 0.75rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.title:hover {
+  color: #ffd992;
+  transform: scale(1.02);
 }
 
 .subtitle {
@@ -578,6 +589,22 @@
   text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+  .wrapper {
+    padding-top: 5.5rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+
+  .statsGrid,
+  .contactsGrid,
+  .officesGrid {
+    gap: 1.25rem;
+  }
+}
+
 @media (max-width: 900px) {
   .statsGrid {
     grid-template-columns: 1fr;
@@ -606,8 +633,12 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+
   .hero {
-    padding: 4rem 1.25rem 2.5rem;
+    padding: 2.5rem 1.25rem 2rem;
   }
 
   .section {
@@ -633,16 +664,39 @@
 }
 
 @media (max-width: 480px) {
+  .wrapper {
+    padding-top: 4.5rem;
+  }
+
   .hero {
-    padding: 3rem 1rem 2rem;
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .section {
     padding: 0 1rem 2rem;
   }
 
+  .sectionHeading {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
   .formSection {
     padding: 0 1rem 2rem;
+  }
+
+  .formHeading {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
   }
 
   .supportOptions {
@@ -671,7 +725,43 @@
   }
 
   .mapWrapper {
-    min-height: 240px;
+    min-height: 220px;
     aspect-ratio: 16 / 10;
+  }
+
+  .supportHeading,
+  .supportHeadingWhatsApp {
+    font-size: 1.1rem;
+  }
+
+  .supportSubtitle,
+  .supportSubtitleWhatsApp {
+    font-size: 0.85rem;
+  }
+
+  .whatsappBtn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding-top: 4rem;
+  }
+
+  .hero {
+    padding: 1.5rem 0.75rem 1.25rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .section,
+  .formSection,
+  .supportOptions {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }

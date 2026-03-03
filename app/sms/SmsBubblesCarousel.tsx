@@ -20,16 +20,17 @@ const ITEM_DURATION_MS = 800
 const INITIAL_DELAY_MS = 200
 const PAUSE_AFTER_ALL_MS = CYCLE_DURATION_MS - useCases.length * ITEM_DURATION_MS
 
+/* Equal gaps: cols 20%/50%/80% (30% gap), rows scattered with ~32% vertical gap */
 const BUBBLE_POSITIONS = [
   { top: '10%', left: '20%' },
   { top: '8%', left: '50%' },
-  { top: '6%', left: '75%' },
-  { top: '42%', left: '18%' },
-  { top: '40%', left: '50%' },
-  { top: '48%', left: '78%' },
+  { top: '12%', left: '80%' },
+  { top: '40%', left: '18%' },
+  { top: '44%', left: '50%' },
+  { top: '42%', left: '82%' },
   { top: '72%', left: '20%' },
-  { top: '70%', left: '50%' },
-  { top: '74%', left: '78%' },
+  { top: '76%', left: '50%' },
+  { top: '74%', left: '80%' },
 ]
 
 function WhatsAppDoubleTick() {
