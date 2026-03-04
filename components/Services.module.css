@@ -244,6 +244,7 @@
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
 }
 
 .carouselWrap.visible {
@@ -251,24 +252,38 @@
   transform: translateY(0);
 }
 
+/* Arrows row - both aligned on same horizontal line */
+.carouselArrowsRow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carouselArrowsRow .carouselArrow {
+  pointer-events: auto;
+}
+
 .carouselLeft {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
   flex: 0 1 520px;
   min-width: 0;
-  position: relative;
-  justify-content: center;
   padding: 0 44px;
 }
 
 .carouselRight {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   flex: 1;
   min-width: 260px;
-  justify-content: space-between;
 }
 
 .carouselArrow {
@@ -332,17 +347,6 @@
   padding: 0 0.5rem;
 }
 
-.carouselArrowPrev {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-
-.carouselArrowNext {
-  margin-left: 1rem;
-}
 
 .slideRight {
   animation: slideInFromRight 0.45s ease both;
@@ -393,13 +397,19 @@
     margin-top: 3rem;
     gap: 1.5rem;
     position: relative;
+    min-height: 420px;
+  }
+
+  .carouselArrowsRow {
+    top: 50%;
+    left: 0.5rem;
+    right: 0.5rem;
   }
 
   .carouselLeft {
     width: 100%;
     max-width: 480px;
     justify-content: center;
-    position: relative;
     padding: 0 36px;
   }
 
@@ -414,5 +424,17 @@
     padding: 0;
     text-align: center;
   }
+}
 
+@media (max-width: 600px) {
+  .carouselArrowsRow {
+    left: 0.25rem;
+    right: 0.25rem;
+  }
+
+  .carouselArrow {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+  }
 }

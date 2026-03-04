@@ -105,7 +105,7 @@ export default function Services() {
         ref={sectionRef}
         className={`${styles.carouselWrap} ${visible ? styles.visible : ''}`}
       >
-        <div className={styles.carouselLeft}>
+        <div className={styles.carouselArrowsRow}>
           <button
             type="button"
             className={`${styles.carouselArrow} ${styles.carouselArrowPrev}`}
@@ -114,6 +114,16 @@ export default function Services() {
           >
             <span className={styles.carouselArrowIcon}>‹</span>
           </button>
+          <button
+            type="button"
+            className={`${styles.carouselArrow} ${styles.carouselArrowNext}`}
+            onClick={handleNext}
+            aria-label="Next"
+          >
+            <span className={styles.carouselArrowIcon}>›</span>
+          </button>
+        </div>
+        <div className={styles.carouselLeft}>
           <div className={styles.carouselTile}>
             <div
               className={`${styles.carouselImageWrap} ${
@@ -142,14 +152,6 @@ export default function Services() {
             <h3 className={styles.carouselTitle}>{item.title}</h3>
             <p className={styles.carouselDescription}>{item.description}</p>
           </div>
-          <button
-            type="button"
-            className={`${styles.carouselArrow} ${styles.carouselArrowNext}`}
-            onClick={handleNext}
-            aria-label="Next"
-          >
-            <span className={styles.carouselArrowIcon}>›</span>
-          </button>
         </div>
       </div>
     </section>

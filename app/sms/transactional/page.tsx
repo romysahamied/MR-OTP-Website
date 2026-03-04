@@ -341,30 +341,22 @@ export default function TransactionalSmsPage() {
       <section className={styles.infoSection}>
         <h2 className={styles.infoHeading}>Upgrade to Smarter Transactional SMS with MR-OTP</h2>
         <div className={styles.comparisonTable}>
-          <h3 className={styles.comparisonTitle}>Mr-OTP</h3>
-          <h3 className={styles.comparisonTitle}>Traditional Providers</h3>
-          <div className={styles.comparisonRow}>
+          <div className={styles.comparisonColumn}>
+            <h3 className={styles.comparisonTitle}>Mr-OTP</h3>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> 99.8% Delivery Success Rate</div>
-            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> 92–95% Average Delivery Rate</div>
-          </div>
-          <div className={styles.comparisonRow}>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Under 3-Second Message Delivery</div>
-            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> 5–10 Second Message Delays</div>
-          </div>
-          <div className={styles.comparisonRow}>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Global Coverage in 190+ Countries</div>
-            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Limited International Reach</div>
-          </div>
-          <div className={styles.comparisonRow}>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Developer-Friendly REST API</div>
-            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Complex & Slow Integration</div>
-          </div>
-          <div className={styles.comparisonRow}>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> 24/7 Dedicated Support</div>
-            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Support During Business Hours Only</div>
-          </div>
-          <div className={styles.comparisonRow}>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Advanced Real-Time Analytics</div>
+          </div>
+          <div className={styles.comparisonColumn}>
+            <h3 className={styles.comparisonTitle}>Traditional Providers</h3>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> 92–95% Average Delivery Rate</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> 5–10 Second Message Delays</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Limited International Reach</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Complex & Slow Integration</div>
+            <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Support During Business Hours Only</div>
             <div className={styles.comparisonItem}><span className={styles.crossIcon}>✕</span> Basic Reporting & Visibility</div>
           </div>
         </div>

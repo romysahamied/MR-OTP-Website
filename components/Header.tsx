@@ -19,6 +19,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMenuOpen])
+
   const toggleMenu = () => {
     if (typeof window !== 'undefined') {
       setIsMenuOpen(!isMenuOpen)
@@ -40,7 +51,12 @@ export default function Header() {
   const closeMenu = () => {
     if (typeof window !== 'undefined') {
       setIsMenuOpen(false)
+      setActiveDropdown(null)
     }
+  }
+
+  const toggleSmsDropdown = () => {
+    setActiveDropdown((prev) => (prev === 'sms' ? null : 'sms'))
   }
 
   const smsItems = [
@@ -83,11 +99,21 @@ export default function Header() {
             <li><a href="/#hero" onClick={isClient ? closeMenu : undefined}>Home</a></li>
             
             <li
-              className={styles.dropdown}
+              className={`${styles.dropdown} ${activeDropdown === 'sms' ? styles.dropdownOpen : ''}`}
               onMouseEnter={isClient ? handleDropdownEnter : undefined}
               onMouseLeave={isClient ? handleDropdownLeave : undefined}
             >
-              <a href="#sms">
+              <a
+                href="#sms"
+                onClick={(e) => {
+                  if (isMenuOpen) {
+                    e.preventDefault()
+                    toggleSmsDropdown()
+                  }
+                }}
+                aria-expanded={activeDropdown === 'sms'}
+                aria-haspopup="true"
+              >
                 SMS <span className={styles.dropdownArrow}>▼</span>
               </a>
               <ul className={`${styles.dropdownMenu} ${activeDropdown === 'sms' ? styles.active : ''}`}>

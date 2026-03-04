@@ -108,40 +108,42 @@ export default function Integrations() {
     <section className={styles.section}>
       <h2 className={styles.heading}>Integrations</h2>
 
-      {/* Curly brace } – proper shape, points down at editors */}
+      {/* Curly brace } – labels at bracket endpoints */}
       <div className={styles.curlyWrap}>
-        <svg
-          className={styles.curlyBracket}
-          viewBox="0 0 300 60"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden
-        >
-          {/* Closing brace: full width span */}
-          <path
-            d="M 18 60
-               C 18 44 28 42 44 40
-               L 122 34
-               C 138 33 144 28 150 20
-               C 156 28 162 33 178 34
-               L 256 40
-               C 272 42 282 44 282 60"
-            stroke="url(#curlyGradient)"
-            strokeWidth="3"
+        <div className={styles.curlyBracketContainer}>
+          <svg
+            className={styles.curlyBracket}
+            viewBox="0 0 300 60"
             fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <defs>
-            <linearGradient id="curlyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#f6e27a" />
-              <stop offset="100%" stopColor="#d4af37" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <div className={styles.curlyLabels}>
-          <span className={styles.curlyLabelLeft}>APIs Editor</span>
-          <span className={styles.curlyLabelRight}>SMPP</span>
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <path
+              d="M 18 60
+                 C 18 44 28 42 44 40
+                 L 122 34
+                 C 138 33 144 28 150 20
+                 C 156 28 162 33 178 34
+                 L 256 40
+                 C 272 42 282 44 282 60"
+              stroke="url(#curlyGradient)"
+              strokeWidth="3"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <defs>
+              <linearGradient id="curlyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f6e27a" />
+                <stop offset="100%" stopColor="#d4af37" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div className={styles.curlyLabels}>
+            <span className={styles.curlyLabelLeft}>APIs Editor</span>
+            <span className={styles.curlyLabelRight}>SMPP</span>
+          </div>
         </div>
       </div>
 

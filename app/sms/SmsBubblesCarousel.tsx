@@ -20,19 +20,6 @@ const ITEM_DURATION_MS = 800
 const INITIAL_DELAY_MS = 200
 const PAUSE_AFTER_ALL_MS = CYCLE_DURATION_MS - useCases.length * ITEM_DURATION_MS
 
-/* Equal gaps: cols 20%/50%/80% (30% gap), rows scattered with ~32% vertical gap */
-const BUBBLE_POSITIONS = [
-  { top: '10%', left: '20%' },
-  { top: '8%', left: '50%' },
-  { top: '12%', left: '80%' },
-  { top: '40%', left: '18%' },
-  { top: '44%', left: '50%' },
-  { top: '42%', left: '82%' },
-  { top: '72%', left: '20%' },
-  { top: '76%', left: '50%' },
-  { top: '74%', left: '80%' },
-]
-
 function WhatsAppDoubleTick() {
   return (
     <span className={styles.doubleTick} aria-hidden>
@@ -82,24 +69,23 @@ export default function SmsBubblesCarousel() {
 
   return (
     <div className={styles.bubblesContainer}>
-      {useCases.slice(0, visibleCount).map((item, index) => (
-        <div
-          key={item.title}
-          className={`${styles.bubbleCard} ${styles.bubbleCardVisible}`}
-          style={{
-            top: BUBBLE_POSITIONS[index].top,
-            left: BUBBLE_POSITIONS[index].left,
-          }}
-        >
-          <h3 className={styles.bubbleTitle}>{item.title}</h3>
-          <div className={styles.bubbleWrapper}>
-            <div className={styles.bubble}>
-              <p className={styles.bubbleMessage}>{item.message}</p>
+      {useCases.map((item, index) => {
+        const isVisible = index < visibleCount
+        return (
+          <div
+            key={item.title}
+            className={`${styles.bubbleCard} ${isVisible ? styles.bubbleCardVisible : styles.bubbleCardHidden}`}
+          >
+            <h3 className={styles.bubbleTitle}>{item.title}</h3>
+            <div className={styles.bubbleWrapper}>
+              <div className={styles.bubble}>
+                <p className={styles.bubbleMessage}>{item.message}</p>
+                <WhatsAppDoubleTick />
+              </div>
             </div>
-            <WhatsAppDoubleTick />
           </div>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
