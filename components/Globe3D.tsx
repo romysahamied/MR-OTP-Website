@@ -20,8 +20,15 @@ function latLngToXYZ(lat: number, lng: number, r = 1.015) {
 
 /* ---------------- COMPONENT ---------------- */
 
-export default function Globe3D() {
+export default function Globe3D({
+  isMobile = false,
+  isSmallMobile = false,
+}: {
+  isMobile?: boolean
+  isSmallMobile?: boolean
+}) {
   const groupRef = useRef<THREE.Group>(null)
+  const scale = isSmallMobile ? 1.5 : isMobile ? 1.85 : 2.6
 
   const earthMask = useLoader(TextureLoader, '/goldenglobe.png')
 
@@ -77,7 +84,7 @@ export default function Globe3D() {
   /* ---------- RENDER ---------- */
 
   return (
-    <group ref={groupRef} scale={2.6}>
+    <group ref={groupRef} scale={scale}>
 
       {/* 1️⃣ SOLID CORE — BLOCKS STARS */}
       <mesh renderOrder={1}>

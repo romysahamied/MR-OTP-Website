@@ -31,11 +31,16 @@ class WebGLErrorBoundary extends React.Component<
 
 export default function Hero3D() {
   const [isMobile, setIsMobile] = useState(false)
+  const [isSmallMobile, setIsSmallMobile] = useState(false)
   const [isSceneReady, setIsSceneReady] = useState(false)
   const [hasWebGLError, setHasWebGLError] = useState(false)
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768)
+    const check = () => {
+      const w = window.innerWidth
+      setIsMobile(w < 768)
+      setIsSmallMobile(w < 480)
+    }
     check()
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
@@ -52,7 +57,12 @@ export default function Hero3D() {
         <WebGLErrorBoundary onError={() => setHasWebGLError(true)}>
           <Suspense fallback={null}>
             <Canvas
-              camera={{ position: [0, 0, 6], fov: 55, near: 0.1, far: 200 }}
+              camera={{
+                position: [0, 0, isSmallMobile ? 8 : isMobile ? 7.5 : 6],
+                fov: isMobile ? 50 : 55,
+                near: 0.1,
+                far: 200,
+              }}
               gl={{ antialias: true, alpha: true }}
               onCreated={({ gl }) => {
                 gl.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -73,7 +83,7 @@ export default function Hero3D() {
 
               {/* 🌍 GLOBE */}
               <group renderOrder={10}>
-                <Globe3D />
+                <Globe3D isMobile={isMobile} isSmallMobile={isSmallMobile} />
               </group>
             </Canvas>
           </Suspense>
