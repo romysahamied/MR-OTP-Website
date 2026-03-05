@@ -65,16 +65,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true, id: data?.id })
     }
 
-    // Fallback: SMTP via nodemailer (e.g. Hostinger / Titan)
+    // Fallback: SMTP via nodemailer (Hostinger Email – smtp.hostinger.com)
     if (SMTP_HOST && SMTP_USER && SMTP_PASS) {
       const family = SMTP_FAMILY ? Number(SMTP_FAMILY) : 4
-      // Hostinger has two services: Hostinger Email (smtp.hostinger.com) and Titan (smtp.titan.email)
-      // If webmail is at hostinger.titan.email, use smtp.titan.email
-      const hostsToTry = [
-        SMTP_HOST,
-        ...(SMTP_HOST === 'smtp.hostinger.com' ? ['smtp.titan.email'] : []),
-        ...(SMTP_HOST === 'smtp.titan.email' ? ['smtp.hostinger.com'] : []),
-      ]
+      const hostsToTry = [SMTP_HOST]
       const primaryPort = SMTP_PORT ? Number(SMTP_PORT) : 465
       const portsToTry: { port: number; secure: boolean }[] = [
         { port: primaryPort, secure: primaryPort === 465 },
