@@ -17,9 +17,9 @@ const CONTACT_NUMBERS = [
 ]
 
 const OFFICES = [
-  { name: 'Mr-OTP Technologies LLC', address: 'Shams Business Center, Sharjah Media City, Sharjah, United Arab Emirates' },
-  { name: 'Mr-OTP Ltd', address: '71-75 Shelton Street, Covent Garden, London, WC2H 9JQ ,UNITED KINGDOM' },
-  { name: 'Mr-OTP Technologies Limited', address: '6955 Haile Selassie Avenue, Lusaka, Zambia' },
+  { name: 'Mr OTP LLC', address: 'Shams Business Center, Sharjah Media City, Sharjah, United Arab Emirates' },
+  { name: 'Mr OTP LTD', address: '71-75 Shelton Street, Covent Garden, London, WC2H 9JQ ,UNITED KINGDOM' },
+  { name: 'Mr OTP LTD', address: 'Great North Business Centre, Elizabeth Villa, Along Great North Road, Lusaka, Zambia' },
 ]
 
 export default function ContactPage() {
