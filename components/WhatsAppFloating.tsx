@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import styles from './WhatsAppFloating.module.css'
 
 export default function WhatsAppFloating() {
@@ -12,13 +11,7 @@ export default function WhatsAppFloating() {
       className={styles.whatsapp}
       aria-label="Chat on WhatsApp"
     >
-      <Image
-        src="/whatsapp.png"
-        alt="WhatsApp Chat"
-        width={56}
-        height={56}
-        priority
-      />
+      <img src="/whatsapp.svg" alt="WhatsApp Chat" width={56} height={56} decoding="async" fetchPriority="high" />
     </a>
   )
 }

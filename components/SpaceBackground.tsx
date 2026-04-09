@@ -1,13 +1,14 @@
 'use client'
 
 import { useRef, useMemo } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
-import ShootingStars from './ShootingStars'
+
+/** Cap delta so tab resume / lag spikes do not break positions or skip resets. */
+const MAX_DELTA = 0.05
 
 export default function SpaceBackground({ isMobile }: { isMobile: boolean }) {
   const pointsRef = useRef<THREE.Points>(null)
-  const { camera } = useThree()
 
   const STAR_COUNT = isMobile ? 1800 : 4000
   const DEPTH = 600
@@ -18,38 +19,39 @@ export default function SpaceBackground({ isMobile }: { isMobile: boolean }) {
     const speeds = new Float32Array(STAR_COUNT)
 
     for (let i = 0; i < STAR_COUNT; i++) {
-      resetStar(i, positions, speeds, true)
+      resetStar(i, positions, speeds)
     }
 
     return { positions, speeds }
   }, [STAR_COUNT])
 
-  function resetStar(
-    i: number,
-    positions: Float32Array,
-    speeds: Float32Array,
-    initial = false
-  ) {
+  function resetStar(i: number, positions: Float32Array, speeds: Float32Array) {
     const spread = 140
 
     positions[i * 3 + 0] = (Math.random() - 0.5) * spread
     positions[i * 3 + 1] = (Math.random() - 0.5) * spread
-    positions[i * 3 + 2] = initial
-      ? -Math.random() * DEPTH
-      : -DEPTH
+    // Random depth every time so stars never sync into one faint band at -DEPTH
+    positions[i * 3 + 2] = -Math.random() * DEPTH
 
     speeds[i] = 0.4 + Math.random() * 1.6
   }
 
-  useFrame((_, delta) => {
-    const pos = pointsRef.current!.geometry.attributes.position as THREE.BufferAttribute
+  useFrame((state, delta) => {
+    const pts = pointsRef.current
+    if (!pts) return
+
+    const dt = Math.min(delta, MAX_DELTA)
+    const resetZ = state.camera.position.z + 5
+
+    const pos = pts.geometry.attributes.position as THREE.BufferAttribute
+    const arr = pos.array as Float32Array
 
     for (let i = 0; i < STAR_COUNT; i++) {
       const zIndex = i * 3 + 2
-      pos.array[zIndex] += SPEED * data.speeds[i] * delta
+      arr[zIndex] += SPEED * data.speeds[i] * dt
 
-      if (pos.array[zIndex] > camera.position.z + 5) {
-        resetStar(i, pos.array as Float32Array, data.speeds)
+      if (arr[zIndex] > resetZ) {
+        resetStar(i, arr, data.speeds)
       }
     }
 
@@ -72,16 +74,15 @@ export default function SpaceBackground({ isMobile }: { isMobile: boolean }) {
       </bufferGeometry>
 
       <pointsMaterial
-        color="#cfe9ff"
+        color="#e8c872"
         size={0.2}
         transparent
-        opacity={0.85}
+        opacity={0.9}
         depthWrite={false}
         depthTest={true}
         blending={THREE.AdditiveBlending}
         sizeAttenuation
       />
-      {/* <ShootingStars /> */}
     </points>
   )
 }

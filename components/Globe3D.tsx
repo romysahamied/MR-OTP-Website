@@ -30,7 +30,7 @@ export default function Globe3D({
   const groupRef = useRef<THREE.Group>(null)
   const scale = isSmallMobile ? 1.5 : isMobile ? 1.85 : 2.6
 
-  const earthMask = useLoader(TextureLoader, '/goldenglobe.png')
+  const earthMask = useLoader(TextureLoader, '/golden-mesh.png')
 
   /* ---------- LAND DOTS ---------- */
 
@@ -48,7 +48,7 @@ export default function Globe3D({
     const positions: number[] = []
 
     for (let i = 0; i < img.length; i += 4) {
-      if (img[i] > 180 && Math.random() < 0.08) {
+      if (img[i] > 180 && Math.random() < 0.035) {
         const px = (i / 4) % canvas.width
         const py = Math.floor(i / 4 / canvas.width)
 
@@ -113,10 +113,10 @@ export default function Globe3D({
       {/* 3️⃣ LAND DOTS */}
       <points geometry={landDotsGeometry} renderOrder={3}>
         <pointsMaterial
-          size={0.012}
+          size={0.01}
           color="#cfefff"
           transparent
-          opacity={0.7}
+          opacity={0.65}
           depthWrite={false}
           blending={AdditiveBlending}
           sizeAttenuation

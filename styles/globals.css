@@ -5,9 +5,43 @@
 }
 
 :root {
-  --bg-black: #000000;
+  --bg-black: #050810;
+  --bg-deep-blue: #0a1528;
+  --bg-golden-black: #0d0b08;
   --text-white: #FFFFFF;
   --accent-red: #FF0000;
+  /* Clearance for fixed header + notch (all breakpoints) */
+  --site-header-offset: calc(4.75rem + env(safe-area-inset-top, 0px));
+
+  /*
+   * Zambia / “Complete African Coverage” mesh — single source for all dark full-bleed bands
+   * Midnight blue → black with gold glow top-left & softer gold bottom-right
+   */
+  --zambia-band-bg:
+    linear-gradient(
+      165deg,
+      rgba(212, 175, 55, 0.22) 0%,
+      rgba(120, 92, 36, 0.18) 8%,
+      #0d0b08 22%,
+      #0a1528 48%,
+      #070f1c 72%,
+      rgba(35, 42, 58, 0.95) 88%,
+      rgba(212, 175, 55, 0.14) 100%
+    ),
+    linear-gradient(180deg, #1a1510 0%, #050810 100%);
+  --zambia-band-overlay:
+    linear-gradient(
+      120deg,
+      rgba(253, 230, 138, 0.14) 0%,
+      transparent 32%,
+      transparent 55%,
+      rgba(212, 175, 55, 0.1) 80%,
+      rgba(253, 224, 140, 0.08) 100%
+    ),
+    radial-gradient(ellipse 85% 65% at 12% 8%, rgba(212, 175, 55, 0.42), transparent 52%),
+    radial-gradient(ellipse 70% 55% at 88% 92%, rgba(184, 148, 60, 0.28), transparent 48%);
+  --zambia-band-border-top: 1px solid rgba(212, 175, 55, 0.28);
+  --zambia-band-border-bottom: 1px solid rgba(30, 58, 95, 0.45);
 }
 
 html {
@@ -24,6 +58,7 @@ body {
   background-color: var(--bg-black);
   color: var(--text-white);
   overflow-x: hidden;
+  padding-top: env(safe-area-inset-top, 0);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -122,10 +157,10 @@ img {
   inset: 0;
   border-radius: 999px;
 
-  border: 1px solid rgba(160, 220, 255, 0.75);
+  border: 1px solid rgba(245, 196, 107, 0.5);
   box-shadow:
-    0 0 12px rgba(120, 200, 255, 0.6),
-    inset 0 0 6px rgba(120, 200, 255, 0.4);
+    0 0 12px rgba(212, 175, 55, 0.4),
+    inset 0 0 6px rgba(245, 196, 107, 0.2);
 
   pointer-events: none;
 }
@@ -193,8 +228,12 @@ img {
 }
 
 
-/* Sections after BrandScroll - Hidden by default, visible on hover */
-main > section:nth-of-type(n+4) {
+/*
+ * Home/blog/sms pages: <Header> is the first child inside <main>.
+ * Zambia microsite: <Header> sits beside <main> inside .lightSiteRoot — do not target that <main>
+ * or sections can get wrong nth-of-type / visibility and appear “blank”.
+ */
+main:has(> header) > section:nth-of-type(n+4) {
   opacity: 1;
   transition: opacity 0.6s ease, transform 0.6s ease;
   transform: translateY(0);
@@ -207,25 +246,26 @@ body {
   min-height: 100%;
 }
 
-/* 🔒 GLOBAL FIXED BACKGROUND */
+/* Global fixed background (Mr-OTP marketing site) */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url('/goldnightbg.png'); /* <-- confirm filename */
+  z-index: -1;
+  background-image: url('/eveningbg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1;
+  pointer-events: none;
 }
 
-/* Optional dark overlay for readability */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(6, 10, 40, 0.45);
   z-index: -1;
+  pointer-events: none;
+  background: rgba(6, 10, 40, 0.45);
 }
 
 

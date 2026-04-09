@@ -188,6 +188,20 @@
     text-shadow: 0 0 6px rgba(212, 175, 55, 0.25);
   }
 }
+
+/* Typing effect uses width: 0 → animate; if motion is reduced, headings stay invisible without this */
+@media (prefers-reduced-motion: reduce) {
+  .typingLineOne,
+  .typingLineTwo {
+    width: auto;
+    max-width: min(100%, 20ch);
+    border-right: none;
+    animation: none;
+    white-space: normal;
+    overflow: visible;
+  }
+}
+
 @media (max-width: 768px) {
   .heroContentLeft {
     position: relative;
