@@ -10,16 +10,25 @@ export const metadata: Metadata = {
   description: 'Let\'s make your communications happen. Connect with the Mr-OTP team for OTP SMS, Bulk SMS, RCS, and enterprise messaging solutions.',
 }
 
-type Props = { searchParams: Promise<{ from?: string }> }
+type Props = {
+  searchParams: Promise<{ from?: string | string[]; nav?: string | string[] }> | { from?: string | string[]; nav?: string | string[] }
+}
+
+function firstQueryValue(v: string | string[] | undefined): string | undefined {
+  if (v === undefined) return undefined
+  return Array.isArray(v) ? v[0] : v
+}
 
 export default async function GetStartedPage({ searchParams }: Props) {
-  const params = await searchParams
-  const from = params?.from ?? 'rcs'
+  const params = await Promise.resolve(searchParams)
+  const zambiaChrome = firstQueryValue(params?.nav) === 'zambia'
+  const from =
+    firstQueryValue(params?.from) ?? (zambiaChrome ? 'zambia' : 'rcs')
 
   return (
     <>
       <Header />
-      <GetStartedPageForm backTo={from} />
+      <GetStartedPageForm backTo={from} zambiaChrome={zambiaChrome} />
       <Footer />
     </>
   )

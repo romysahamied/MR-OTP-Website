@@ -47,6 +47,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /* Fixed header: anchor / hash jumps land below the nav (all routes) */
+  scroll-padding-top: var(--site-header-offset);
 }
 
 body {

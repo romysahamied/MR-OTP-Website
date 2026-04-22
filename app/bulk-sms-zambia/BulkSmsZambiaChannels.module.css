@@ -1,0 +1,314 @@
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem 4.5rem;
+  }
+}
+
+.header {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+}
+
+.title {
+  font-size: clamp(1.5rem, 4vw, 2.15rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* Tab bar — pill (SMS only) */
+.tabBarWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.tabBar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  width: fit-content;
+  max-width: 100%;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.tab {
+  flex: 0 0 auto;
+  min-width: 5.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tab:hover {
+  color: #334155;
+}
+
+.tabActive {
+  background: #fff;
+  color: #92400e;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+.tabIcon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Glass panel wrapping columns */
+.glassPanel {
+  position: relative;
+  border-radius: 22px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(215, 180, 120, 0.38);
+  box-shadow:
+    0 16px 48px rgba(15, 23, 42, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glassPanel:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 196, 107, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(245, 196, 107, 0.22),
+    0 22px 56px rgba(15, 23, 42, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glassPanel:hover {
+    transform: none;
+  }
+}
+
+.glassPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.55), transparent 50%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.columns {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.copyCol {
+  text-align: left;
+}
+
+.copyHeading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.copyLead {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.featureItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  align-items: start;
+}
+
+.featureCheck {
+  color: #b45309;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.featureTitle {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+
+.featureDesc {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Code window — Mr-OTP Integrations style */
+.codeWrap {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+}
+
+.codeTitleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1rem;
+  background: #0a0a0c;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.codeDots {
+  display: flex;
+  gap: 6px;
+}
+
+.codeDots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dotRed {
+  background: #ff5f57;
+}
+.dotYellow {
+  background: #febc2e;
+}
+.dotGreen {
+  background: #28c840;
+}
+
+.codeLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.codePre {
+  position: relative;
+  margin: 0;
+  padding: 1.15rem 1.15rem 1.35rem;
+  min-height: min(52vh, 420px);
+  background: #050505;
+  color: #efdebe;
+  font-family:
+    'JetBrains Mono',
+    ui-monospace,
+    SFMono-Regular,
+    'SF Mono',
+    Menlo,
+    Consolas,
+    monospace;
+  font-size: clamp(0.68rem, 1.5vw, 0.85rem);
+  line-height: 1.55;
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
+
+.codeCursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #f5c46b;
+  animation: codeCursorBlink 1s infinite;
+}
+
+@keyframes codeCursorBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Syntax — spans injected via highlight() */
+.codePre :global(.string) {
+  color: #86efac;
+}
+
+.codePre :global(.number) {
+  color: #fcd34d;
+}
+
+.codePre :global(.keyword) {
+  color: #f9a8d4;
+}
+
+.codePre :global(.flag) {
+  color: #7dd3fc;
+}
+
+@media (max-width: 480px) {
+  .codePre {
+    font-size: 0.68rem;
+    padding: 0.9rem 0.85rem 1.1rem;
+  }
+}

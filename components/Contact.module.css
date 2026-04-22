@@ -1,294 +1,301 @@
-/* ===============================
-   CONTACT – FROSTED GLASS CARD
-   =============================== */
+/* Contact sales — dark glass “Let’s talk” layout */
 
+/* No section background — glass card sits on the page global bg (body / scrolled content) */
 .section {
+  position: relative;
+  isolation: isolate;
+  /* At least one full viewport so the “Let’s talk” block can be vertically centred */
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 4rem;
-  font-family: 'Inter', sans-serif;
-
-  /* page background stays outside the card */
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: calc(var(--site-header-offset, 72px) + 1rem) 1.15rem 1.5rem;
+  scroll-margin-top: var(--site-header-offset, 72px);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background: transparent;
 }
 
-/* ===============================
-   MAIN GLASS CARD
-   =============================== */
+/* Desktop / laptop: centre the card in the window so space isn’t a single big gap below */
+@media (min-width: 1024px) {
+  .section {
+    justify-content: center;
+    padding: calc(var(--site-header-offset, 72px) + 0.5rem) 1.5rem 1.5rem;
+  }
+}
+
+.shell {
+  position: relative;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
 
 .glassCard {
   position: relative;
+  border-radius: 1.5rem;
   width: 100%;
-  max-width: 1200px;
-  min-height: 650px;
-
-  background: rgba(255, 255, 255, 0.001);
-  backdrop-filter: blur(26px);
-  -webkit-backdrop-filter: blur(26px);
-
-  border-radius: 28px;
-  border: 1px solid rgba(215, 180, 120, 0.35);
-
+  max-width: 100%;
+  padding: 1.75rem 1.5rem 2rem;
+  /* Lighter glass so the star field reads through (was 0.42 — felt too heavy) */
+  background: linear-gradient(
+    150deg,
+    rgba(30, 27, 75, 0.22) 0%,
+    rgba(15, 23, 42, 0.26) 45%,
+    rgba(8, 12, 28, 0.3) 100%
+  );
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.25),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
-
-  padding: 4.5rem 5rem;
-  overflow: hidden;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    0 16px 48px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.glassCard:hover {
-  border-color: rgba(245, 196, 107, 0.5);
-  box-shadow:
-    0 0 0 1px rgba(245, 196, 107, 0.4),
-    0 30px 80px rgba(0, 0, 0, 0.25),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+@media (min-width: 768px) {
+  .glassCard {
+    padding: 2.1rem 2rem 2.25rem;
+  }
 }
 
-/* soft frozen light */
 .glassCard::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at top right,
-    rgba(255, 255, 255, 0.45),
-    transparent 60%
-  );
-  opacity: 0.45;
+  border-radius: inherit;
   pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 55% at 8% 0%, rgba(253, 230, 138, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.1), transparent 55%);
 }
 
-.iconWrapper {
-  position: absolute;
-  top: 2.5rem;
-  right: 3rem;
-  z-index: 3;
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
 
-  width: 400px;
-  height: 400px;
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2.25rem;
+    align-items: center;
+  }
+}
 
+/* —— Form —— */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+  width: 100%;
+}
+
+.title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.85rem, 4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #e8c56c;
+  text-shadow:
+    0 0 24px rgba(232, 197, 108, 0.25),
+    0 0 48px rgba(212, 175, 55, 0.12);
+}
+
+.lede {
+  margin: 0 0 1.4rem;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: rgba(226, 232, 240, 0.88);
+  max-width: 34rem;
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 0.95rem;
+  padding: 0.85rem 1.05rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(8, 12, 28, 0.28);
+  color: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+.field::placeholder {
+  color: rgba(203, 183, 140, 0.65);
+}
+
+.field:hover,
+.field:focus {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  background: rgba(8, 12, 28, 0.42);
+}
+
+.textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+}
+
+.submit {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  pointer-events: none;
+  align-self: center;
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.85rem 1.85rem;
+  width: min(100%, 20rem);
+  max-width: 100%;
+  box-sizing: border-box;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #e8c56c, #ca8a04);
+  color: #1c1917;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.25);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
-.iconWrapper img {
+.submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(212, 175, 55, 0.35);
+}
+
+.submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.submit:focus-visible {
+  outline: 2px solid #fde68a;
+  outline-offset: 3px;
+}
+
+.status {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fde68a;
+}
+
+/* —— Aside: illustration + contact —— */
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .aside {
+    align-items: stretch;
+    text-align: left;
+  }
+}
+
+/* Gold artwork: laptop / large screens only — hidden on phones & tablets to save space */
+.illustration {
+  display: none;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 12px 36px rgba(212, 175, 55, 0.22));
+}
+
+.contactArt {
   width: 100%;
   height: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
-/* ===============================
-   INNER LAYOUT
-   =============================== */
+@media (min-width: 1024px) {
+  .illustration {
+    display: flex;
+    max-width: 100%;
+    margin: 0;
+    max-height: min(48vh, 400px);
+  }
 
-.container {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  height: 100%;
+  .contactArt {
+    max-height: min(48vh, 400px);
+    width: auto;
+    max-width: 100%;
+  }
 }
 
-/* ===============================
-   LEFT – FORM
-   =============================== */
-
-.formArea {
-  max-width: 520px;
-  z-index: 1;
-}
-
-.formArea h2 {
-  font-size: 2.6rem;
-  font-weight: 600;
-  color: #d6a85a;
-  margin-bottom: 0.8rem;
-}
-
-.formArea h2:hover {
-  transform: translateY(-2px);
-  color: #ffd992;
-
-  text-shadow:
-    0 0 8px rgba(245, 201, 122, 0.35),
-    0 0 18px rgba(245, 201, 122, 0.2);
-}
-
-
-.formArea p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #bfa77a;
-  margin-bottom: 2.5rem;
-}
-
-/* Glass inputs */
-.formArea input,
-.formArea textarea {
+.contactList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
   width: 100%;
-  margin-bottom: 1.4rem;
-  padding: 14px 18px;
-
-  background: rgba(255, 255, 255, 0.00);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  border-radius: 14px;
-  border: 1px solid rgba(215, 180, 120, 0.35);
-
-  color: #e9860e;
-  font-size: 0.95rem;
-
-  outline: none;
-  transition: all 0.3s ease;
 }
 
-.formArea textarea {
-  min-height: 120px;
-  resize: none;
+.contactRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(203, 182, 189, 0.95);
 }
 
-/* Hover / focus – gold outline */
-.formArea input:hover,
-.formArea textarea:hover,
-.formArea input:focus,
-.formArea textarea:focus {
-  border-color: #e7bf6a;
-  box-shadow: 0 0 14px rgba(231, 191, 106, 0.45);
-  /* background: rgba(255, 255, 255, 0.55); */
-}
-
-/* Placeholder */
-/* .formArea input::placeholder,
-.formArea textarea::placeholder {
-  color: rgba(240, 144, 25, 0.6);
-} */
-
-/* ===============================
-   SUBMIT BUTTON
-   =============================== */
-
-/* .formArea button {
-  display: block;        
-  width: fit-content;     
-  margin: 1rem auto 0 auto; 
-  
-  padding: 14px 38px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #f2c46f, #d9a441);
-  border: 1px solid transparent;
-
-  color: #5b3b13;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-
-  transition: all 0.35s ease;
-} */
-
-.formArea label {
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 0.3rem;
-  color: #f5c46b; /* golden label */
-  font-weight: 600;
-}
-
-.formArea input,
-.formArea textarea {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  font-size: 0.95rem;
-  resize: none;
-}
-
-/* Placeholder */
-.formArea input::placeholder,
-.formArea textarea::placeholder {
-  color: rgba(240, 144, 25, 0.6);
-}
-.formArea button {
-  margin: 1.5rem auto 0;
-  display: block; /* centers button */
-  padding: 14px 38px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #f2c46f, #d9a441);
-  border: 1px solid transparent;
-  color: #5b3b13;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.35s ease;
-}
-
-.formArea button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 196, 107, 0.3);
-}
-
-.statusMessage {
-  margin-top: 1rem;
-  color: #f5c46b;
-  font-weight: 600;
-}
-
-/* ===============================
-   ADDRESS – BOTTOM RIGHT (INSIDE CARD)
-   =============================== */
-
-.address {
-  position: absolute;
-  right: 3.5rem;
-  bottom: 3rem;
-
-  font-size: 0.9rem;
-  color: #bfa77a;
-  z-index: 2;
-}
-
-.address p {
-  margin: 0.35rem 0;
+.contactIcon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 0.75rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.22);
+  color: #fda4af;
 }
 
-/* ===============================
-   RESPONSIVE
-   =============================== */
-
-@media (max-width: 1024px) {
-  .glassCard {
-    padding: 3rem 2.5rem;
-  }
-
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  .address {
-    position: static;
-    margin-top: 2.5rem;
-  }
-}
-@media (max-width: 1024px) {
-  .iconWrapper {
-    width: 90px;
-    top: 2rem;
-    right: 2rem;
-  }
+.contactIcon svg {
+  width: 18px;
+  height: 18px;
 }
 
-@media (max-width: 1024px) {
-  .iconWrapper {
-    display: none;
-  }
+.contactText {
+  margin: 0;
+  padding-top: 0.15rem;
+}
+
+.contactLink {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(253, 164, 175, 0.35);
+  transition: border-color 0.15s;
+}
+
+.contactLink:hover {
+  border-bottom-color: #fda4af;
 }

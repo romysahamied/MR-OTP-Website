@@ -1,0 +1,172 @@
+/* Full-width CTA — single smooth deep-blue → gold blend, golden CTAs with hover lift */
+.section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(2.75rem, 6.5vw, 4rem) max(1.15rem, env(safe-area-inset-right)) clamp(3rem, 7vw, 4.5rem)
+    max(1.15rem, env(safe-area-inset-left));
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  /* Even stops: one continuous mix from deep navy (#050f1f) to soft gold (#e8d9b4) */
+  background: linear-gradient(
+    152deg,
+    #050f1f 0%,
+    #0a1f36 11%,
+    #0f2c47 22%,
+    #163854 33%,
+    #1f4256 42%,
+    #2a4a56 50%,
+    #3a504c 57%,
+    #4d523e 64%,
+    #655632 71%,
+    #806234 78%,
+    #9f763e 84%,
+    #b9904e 89%,
+    #cdab68 93%,
+    #dec48a 96%,
+    #e8d9b4 100%
+  );
+  border-top: 1px solid rgba(200, 175, 120, 0.45);
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Light film so type stays crisp without breaking the blend */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 45%, rgba(5, 12, 24, 0.12) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(1.35rem, 3.4vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
+}
+
+.lead {
+  margin: 0 0 1.5rem;
+  font-size: clamp(0.92rem, 1.9vw, 1.02rem);
+  line-height: 1.65;
+  color: rgba(226, 232, 240, 0.88);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.88rem 1.45rem;
+  border-radius: 11px;
+  background: linear-gradient(168deg, #fffbeb 0%, #fde68a 38%, #e8c547 72%, #c9a227 100%);
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.94rem;
+  text-decoration: none;
+  border: 1px solid rgba(146, 110, 30, 0.45);
+  box-shadow:
+    0 8px 28px rgba(212, 175, 55, 0.38),
+    0 2px 8px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    filter 0.22s ease;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  border-color: rgba(180, 140, 50, 0.65);
+  filter: brightness(1.03);
+  box-shadow:
+    0 16px 44px rgba(212, 175, 55, 0.48),
+    0 6px 16px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.88rem 1.35rem;
+  border-radius: 11px;
+  background: linear-gradient(
+    168deg,
+    rgba(253, 230, 138, 0.28) 0%,
+    rgba(212, 175, 55, 0.16) 55%,
+    rgba(180, 140, 60, 0.12) 100%
+  );
+  color: #fffbeb;
+  font-weight: 700;
+  font-size: 0.94rem;
+  text-decoration: none;
+  border: 1px solid rgba(253, 224, 138, 0.78);
+  box-shadow:
+    0 6px 22px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 250, 235, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.btnGhost:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(
+    168deg,
+    rgba(254, 243, 199, 0.38) 0%,
+    rgba(245, 213, 122, 0.28) 50%,
+    rgba(212, 175, 55, 0.18) 100%
+  );
+  border-color: rgba(255, 251, 235, 0.92);
+  box-shadow:
+    0 14px 40px rgba(212, 175, 55, 0.32),
+    0 4px 14px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btnPrimary:hover,
+  .btnGhost:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btnPrimary,
+  .btnGhost {
+    width: 100%;
+  }
+}

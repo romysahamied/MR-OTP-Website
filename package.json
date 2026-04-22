@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true}); console.log('Removed .next');\"",
+    "dev": "next dev --hostname 127.0.0.1 -p 3000",
+    "dev:webpack": "next dev --hostname 127.0.0.1 -p 3000",
+    "dev:quick": "next dev --hostname 127.0.0.1 -p 3000",
+    "dev:turbo": "next dev --hostname 127.0.0.1 -p 3000 --turbo",
+    "dev:fresh": "npm run clean && next dev --hostname 127.0.0.1 -p 3000",
     "build": "next build",
     "start": "next start",
     "export": "next build"

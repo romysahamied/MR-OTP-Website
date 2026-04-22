@@ -189,6 +189,80 @@
   }
 }
 
+.heroCtaWrap {
+  margin-top: clamp(1rem, 3vw, 1.75rem);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.heroCtaWrapVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/*
+ * Plain gold text by default; pill on hover. Same padding in both states so the
+ * headline above does not jump when the “button” chrome appears.
+ */
+.heroCtaBtn {
+  appearance: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.75vw, 0.92rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  /* Tight pill — matched on hover so layout height/width stay fixed */
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #fde68a;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+  box-shadow: none;
+  transition:
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    filter 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.heroCtaBtn:hover,
+.heroCtaBtn:focus-visible {
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  background: linear-gradient(145deg, #f6e27a 0%, #d4af37 48%, #a67c00 100%);
+  color: #1a1205;
+  text-shadow: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 248, 220, 0.22),
+    0 6px 18px rgba(0, 0, 0, 0.28);
+  filter: brightness(1.04);
+  outline: none;
+}
+
+.heroCtaBtn:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 248, 220, 0.32),
+    0 8px 22px rgba(0, 0, 0, 0.32);
+}
+
+.heroCtaBtn:focus-visible {
+  box-shadow:
+    0 0 0 2px rgba(253, 230, 138, 0.45),
+    0 0 0 1px rgba(255, 248, 220, 0.2),
+    0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.heroCtaBtn:active {
+  filter: brightness(0.98);
+}
+
 /* Typing effect uses width: 0 → animate; if motion is reduced, headings stay invisible without this */
 @media (prefers-reduced-motion: reduce) {
   .typingLineOne,
@@ -199,6 +273,21 @@
     animation: none;
     white-space: normal;
     overflow: visible;
+  }
+
+  .heroCtaWrap {
+    transform: none !important;
+    transition: opacity 0.35s ease;
+  }
+
+  .heroCtaWrapVisible {
+    transform: none !important;
+  }
+
+  .heroCtaBtn:hover,
+  .heroCtaBtn:focus-visible,
+  .heroCtaBtn:active {
+    transform: none;
   }
 }
 
@@ -217,6 +306,12 @@
     width: auto;
     border-right: none;
     animation: none;
+  }
+
+  .heroCtaWrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
 

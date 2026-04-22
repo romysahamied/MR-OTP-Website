@@ -1,0 +1,135 @@
+/* FAQ — glass rows, gold accents, soft gradient band */
+.section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(2.5rem, 6vw, 4rem) max(1.15rem, env(safe-area-inset-right)) clamp(2.5rem, 6vw, 3.5rem)
+    max(1.15rem, env(safe-area-inset-left));
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  background:
+    radial-gradient(ellipse 75% 45% at 50% 0%, rgba(212, 175, 55, 0.09), transparent 52%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: clamp(1.35rem, 3.5vw, 2rem);
+}
+
+.title {
+  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin: 0 0 0.55rem;
+  line-height: 1.2;
+}
+
+.lead {
+  margin: 0;
+  font-size: clamp(0.9rem, 1.85vw, 1rem);
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.item {
+  border-radius: 14px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  box-shadow:
+    0 4px 22px rgba(15, 23, 42, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.itemOpen {
+  border-color: rgba(245, 196, 107, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.1),
+    0 8px 28px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: #0f172a;
+}
+
+.question {
+  font-size: 0.93rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.chevron {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: #92400e;
+  background: rgba(254, 243, 199, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  transition: transform 0.25s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
+
+.panel {
+  padding: 0 1.1rem 1rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.answer {
+  margin: 0;
+  padding-top: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #475569;
+}

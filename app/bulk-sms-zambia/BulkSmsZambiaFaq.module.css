@@ -1,0 +1,198 @@
+/* Light band — matches Zambia shell; differentiated with gold rail + plus/minus (not chevron) */
+.section {
+  width: 100%;
+  padding: 2.5rem 1rem 3.25rem;
+  background: linear-gradient(180deg, #eef2f7 0%, #e8ecf2 50%, #e2e8f0 100%);
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding: 3rem 1.25rem 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 3.5rem 1.5rem 4rem;
+  }
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  text-align: center;
+  margin: 0 0 1.75rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .title {
+    margin-bottom: 2rem;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+@media (min-width: 640px) {
+  .list {
+    gap: 0.75rem;
+  }
+}
+
+.item {
+  margin: 0;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-left: 4px solid rgba(212, 175, 55, 0.65);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition:
+    box-shadow 0.25s ease,
+    border-left-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.09);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item:hover {
+    transform: none;
+  }
+}
+
+.itemOpen {
+  border-left-color: #b8860b;
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(212, 175, 55, 0.12);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1rem 1rem 1.1rem;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: #0f172a;
+  border-radius: 14px;
+  min-height: 3.25rem;
+}
+
+@media (min-width: 640px) {
+  .trigger {
+    padding: 1.1rem 1.15rem 1.1rem 1.2rem;
+    min-height: 3.5rem;
+  }
+}
+
+.trigger:focus-visible {
+  outline: 2px solid #ca8a04;
+  outline-offset: 2px;
+}
+
+.question {
+  font-size: clamp(0.9375rem, 2.2vw, 1.0625rem);
+  font-weight: 700;
+  line-height: 1.35;
+  flex: 1;
+  padding-right: 0.25rem;
+}
+
+/* Plus → minus: gold bars */
+.icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(212, 175, 55, 0.18), rgba(184, 134, 11, 0.12));
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.iconBarH,
+.iconBarV {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #b45309;
+  border-radius: 1px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.iconBarH {
+  width: 10px;
+  height: 2px;
+}
+
+.iconBarV {
+  width: 2px;
+  height: 10px;
+}
+
+.iconBarHHidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) scaleX(0);
+}
+
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panelOpen {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  overflow: hidden;
+}
+
+.answer {
+  margin: 0;
+  padding: 0 1.1rem 1.15rem 1.2rem;
+  font-size: clamp(0.875rem, 2vw, 0.975rem);
+  line-height: 1.65;
+  color: #64748b;
+  border-top: 1px dashed rgba(148, 163, 184, 0.45);
+  padding-top: 0.85rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (min-width: 640px) {
+  .answer {
+    padding: 0 1.25rem 1.25rem 1.35rem;
+    padding-top: 0.95rem;
+  }
+}

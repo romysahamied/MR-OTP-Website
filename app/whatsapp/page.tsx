@@ -1,16 +1,29 @@
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import styles from './WhatsApp.module.css'
-
-const Header = dynamic(() => import('@/components/Header'), { ssr: true })
-const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 
 export const metadata: Metadata = {
   title: 'WhatsApp Business | Mr-OTP',
   description: 'Transform your customer engagement with WhatsApp Business API. Automate and personalize interactions on the world\'s most popular messaging platform.',
 }
+
+/* Phone mockups in /public — swap filenames here if your asset order differs */
+const WA = {
+  /** Instagram + WhatsApp (rich media + chat) */
+  messagingLeft: '/whatsapp1.png',
+  messagingRight: '/whatsapp2.png',
+  /** “Stand out” — single chat (e.g. Fitness Point) */
+  standOut: '/whatsapp3.png',
+  /** Support: automation, 24/7, business tools */
+  supportAutomation: '/whatsapp4.png',
+  support247: '/whatsapp5.png',
+  supportTools: '/whatsapp6.png',
+  /** Privacy — business profile (e.g. bakery / verified) */
+  privacy: '/whatsapp7.png',
+} as const
 
 export default function WhatsAppPage() {
   return (
@@ -22,7 +35,9 @@ export default function WhatsAppPage() {
             End-to-end customer communication built on Security, Stability, and Trust
           </h1>
           <p className={styles.heroSubtitle}>
-          Redefine the way you connect with customers using the WhatsApp Business API — streamline communication through intelligent automation while delivering tailored experiences on the world’s leading chat platform.
+            Redefine the way you connect with customers using the WhatsApp Business API — streamline
+            communication through intelligent automation while delivering tailored experiences on the
+            world&apos;s leading chat platform.
           </p>
           <p className={styles.heroSubtext}>
           Expand your presence and interact meaningfully with more than two billion users worldwide.
@@ -47,22 +62,22 @@ export default function WhatsAppPage() {
             <div className={styles.messagingImages}>
               <div className={styles.messagingImageWrap}>
                 <Image
-                  src="/whatsapp1.png"
-                  alt="WhatsApp Business example 1"
+                  src={WA.messagingLeft}
+                  alt="Social and WhatsApp: sponsored post and Send message entry point to WhatsApp"
                   width={280}
                   height={350}
                   className={styles.messagingImage}
-                  sizes="280px"
+                  sizes="(max-width: 900px) 90vw, 280px"
                 />
               </div>
               <div className={styles.messagingImageWrap}>
                 <Image
-                  src="/whatsapp2.png"
-                  alt="WhatsApp Business example 2"
+                  src={WA.messagingRight}
+                  alt="WhatsApp Business chat with rich product media and call-to-action"
                   width={280}
                   height={350}
                   className={styles.messagingImage}
-                  sizes="280px"
+                  sizes="(max-width: 900px) 90vw, 280px"
                 />
               </div>
             </div>
@@ -103,8 +118,8 @@ export default function WhatsAppPage() {
           </div>
           <div className={styles.specialVisual}>
             <Image
-              src="/whatsapp3.png"
-              alt="WhatsApp Business chat example"
+              src={WA.standOut}
+              alt="WhatsApp Business verified chat with welcome message and action button"
               width={280}
               height={350}
               className={styles.specialImage}
@@ -121,8 +136,8 @@ export default function WhatsAppPage() {
         <div className={styles.supportGrid}>
           <div className={styles.supportCard}>
             <Image
-              src="/whatsapp4.png"
-              alt="WhatsApp Business automated conversation example"
+              src={WA.supportAutomation}
+              alt="WhatsApp Business chat with automated quick-reply menu buttons"
               width={220}
               height={275}
               className={styles.supportCardImage}
@@ -135,22 +150,22 @@ export default function WhatsAppPage() {
           </div>
           <div className={styles.supportCard}>
             <Image
-              src="/whatsapp5.png"
-              alt="WhatsApp Business 24/7 support example"
+              src={WA.support247}
+              alt="WhatsApp Business conversation with order tracking and agent reply"
               width={220}
               height={275}
               className={styles.supportCardImage}
               sizes="(max-width: 768px) 200px, (max-width: 480px) 180px, 220px"
             />
-            <h3 className={styles.supportCardTitle}>24/7 Assisstance</h3>
+            <h3 className={styles.supportCardTitle}>24/7 Assistance</h3>
             <p className={styles.supportCardText}>
             Provide continuous assistance day and night to minimize wait times and elevate the overall customer experience with faster, more responsive service.
             </p>
           </div>
           <div className={styles.supportCard}>
             <Image
-              src="/whatsapp6.png"
-              alt="WhatsApp Business tools example"
+              src={WA.supportTools}
+              alt="WhatsApp Business app tools: profile, catalog, quick replies, and labels"
               width={220}
               height={275}
               className={styles.supportCardImage}
@@ -196,8 +211,8 @@ export default function WhatsAppPage() {
           </div>
           <div className={styles.securityVisual}>
             <Image
-              src="/whatsapp7.png"
-              alt="WhatsApp Business Security and Trust"
+              src={WA.privacy}
+              alt="WhatsApp Business profile with verified business details, hours, and secure contact options"
               width={400}
               height={500}
               className={styles.securityImage}

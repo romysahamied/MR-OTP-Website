@@ -1,12 +1,19 @@
 .wrapper {
   min-height: 100vh;
-  background: radial-gradient(ellipse at top, #0a0e17 0%, #020409 50%, #000 100%);
+  background: transparent;
 }
 
 .content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 4rem 2rem 5rem;
+  padding: var(--site-header-offset, calc(4.75rem + env(safe-area-inset-top, 0px))) 2rem 5rem;
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 .title {

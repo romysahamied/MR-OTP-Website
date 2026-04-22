@@ -16,6 +16,20 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
+/* Opaque dark bar only on /bulk-sms-zambia routes (light page); main marketing site unchanged */
+.header.headerZambiaSolid {
+  background-color: var(--bg-deep-blue);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.header.headerZambiaSolid.scrolled {
+  background-color: #070f1c;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
 .nav {
   padding-top: 1rem;
 }
@@ -291,5 +305,88 @@
   .logoImage {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* ——— Bulk SMS Zambia: golden nav, brown on hover (all viewports) ——— */
+.headerZambia .navList > li > a,
+.headerZambia .navList > li.dropdown > a {
+  color: #d4af37;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+}
+
+.headerZambia .navList > li > a:hover,
+.headerZambia .navList > li.dropdown > a:hover {
+  color: #78350f;
+}
+
+.headerZambia .dropdownArrow {
+  color: inherit;
+}
+
+.headerZambia .dropdownMenu a {
+  color: #e8c256;
+}
+
+.headerZambia .dropdownMenu a:hover {
+  color: #78350f !important;
+  background-color: rgba(120, 53, 15, 0.12) !important;
+}
+
+.headerZambia .dropdownMenu li a:hover {
+  background: rgba(120, 53, 15, 0.12) !important;
+  color: #78350f !important;
+}
+
+.headerZambia .loginLink {
+  color: #d4af37;
+  border-color: rgba(212, 175, 55, 0.75);
+  background-color: transparent;
+}
+
+.headerZambia .loginLink:hover {
+  color: #78350f !important;
+  border-color: #92400e;
+  background-color: rgba(120, 53, 15, 0.1);
+}
+
+.headerZambia .hamburger span {
+  background-color: #d4af37;
+}
+
+.headerZambia .mobileMenuButton:hover .hamburger span,
+.headerZambia .mobileMenuButton:focus-visible .hamburger span {
+  background-color: #78350f;
+}
+
+@media (max-width: 768px) {
+  .headerZambia .navList > li > a,
+  .headerZambia .navList > li.dropdown > a {
+    color: #d4af37;
+  }
+
+  .headerZambia .navList > li > a:hover,
+  .headerZambia .navList > li.dropdown > a:hover {
+    color: #78350f;
+  }
+
+  .headerZambia .dropdownMenu a {
+    color: #e8c256;
+  }
+
+  .headerZambia .dropdownMenu a:hover {
+    color: #78350f !important;
+  }
+
+  .headerZambia .loginLink {
+    color: #d4af37;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 4px;
+    margin-top: 0.25rem;
+  }
+
+  .headerZambia .loginLink:hover {
+    color: #78350f !important;
+    border-color: #92400e;
   }
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState, Suspense } from 'react'
+import React, { useCallback, useEffect, useState, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import * as THREE from 'three'
 
@@ -29,11 +29,14 @@ class WebGLErrorBoundary extends React.Component<
   }
 }
 
+/** After both hero typewriter lines finish (~3.6s), show CTA; faster when motion is reduced or on small viewports. */
+const HERO_CTA_DELAY_AFTER_TYPING_MS = 3850
+const HERO_CTA_DELAY_SHORT_MS = 700
+
 export default function Hero3D() {
   const [isMobile, setIsMobile] = useState(false)
   const [isSmallMobile, setIsSmallMobile] = useState(false)
-  const [isSceneReady, setIsSceneReady] = useState(false)
-  const [hasWebGLError, setHasWebGLError] = useState(false)
+  const [showHeroCta, setShowHeroCta] = useState(false)
 
   useEffect(() => {
     const check = () => {
@@ -45,18 +48,38 @@ export default function Hero3D() {
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
   }, [])
+
   useEffect(() => {
-  window.scrollTo({ top: 0, behavior: 'instant' })
-}, [])
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [])
+
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const narrow = window.matchMedia('(max-width: 768px)').matches
+    const delay = reduced || narrow ? HERO_CTA_DELAY_SHORT_MS : HERO_CTA_DELAY_AFTER_TYPING_MS
+    const id = window.setTimeout(() => setShowHeroCta(true), delay)
+    return () => window.clearTimeout(id)
+  }, [])
+
+  const openLetsTalk = useCallback(() => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+    if (typeof window !== 'undefined') {
+      window.history.replaceState(null, '', '#contact')
+    }
+    window.setTimeout(() => {
+      document.getElementById('contact-name')?.focus()
+    }, 500)
+  }, [])
 
 
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.globeWrapper}>
         {/* 🛟 Suspense protects async Three.js rendering */}
-        <WebGLErrorBoundary onError={() => setHasWebGLError(true)}>
+        <WebGLErrorBoundary onError={() => {}}>
           <Suspense fallback={null}>
             <Canvas
+              style={{ width: '100%', height: '100%', display: 'block' }}
               camera={{
                 position: [0, 0, isSmallMobile ? 8 : isMobile ? 7.5 : 6],
                 fov: isMobile ? 50 : 55,
@@ -69,7 +92,6 @@ export default function Hero3D() {
                 gl.toneMapping = THREE.ACESFilmicToneMapping
                 gl.toneMappingExposure = 1
                 gl.setClearColor(new THREE.Color('#020409'), 0)
-                setIsSceneReady(true)
               }}
             >
               {/* 🌌 BACKGROUND STARS */}
@@ -90,17 +112,25 @@ export default function Hero3D() {
         </WebGLErrorBoundary>
       </div>
 
-      {/* 📝 HERO TEXT – only show after globe/space are ready */}
-      {(isSceneReady || hasWebGLError) && (
-        <div className={styles.heroContentLeft}>
-          <h1 className={styles.typingLineOne}>
-            Instant OTPs,
-          </h1>
-          <h2 className={styles.typingLineTwo}>
-            Global Reach
-          </h2>
+      {/* 📝 HERO TEXT — not gated on WebGL (avoids blank hero if Canvas is slow or fails) */}
+      <div className={styles.heroContentLeft}>
+        <h1 className={styles.typingLineOne}>Instant OTPs,</h1>
+        <h2 className={styles.typingLineTwo}>Global Reach</h2>
+        <div
+          className={`${styles.heroCtaWrap} ${showHeroCta ? styles.heroCtaWrapVisible : ''}`}
+          aria-hidden={!showHeroCta}
+        >
+          <button
+            type="button"
+            className={styles.heroCtaBtn}
+            onClick={openLetsTalk}
+            tabIndex={showHeroCta ? 0 : -1}
+            aria-label="Open the Let's talk contact form"
+          >
+            Click here
+          </button>
         </div>
-      )}
+      </div>
 
       <ScrollDownButton />
     </section>

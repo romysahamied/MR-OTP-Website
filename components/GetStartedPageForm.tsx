@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { COUNTRY_CODES } from '@/lib/countryCodes'
+import { withZambiaNavHref } from '@/components/zambiaNav'
 import styles from './GetStartedPageForm.module.css'
 
 const COUNTRIES = [
@@ -23,22 +24,51 @@ const SERVICES = [
   { id: 'other', label: 'Other' },
 ]
 
-type Props = { backTo?: string }
+type Props = { backTo?: string; zambiaChrome?: boolean }
 
-export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
-  const backConfig = backTo === 'sms'
-    ? { href: '/sms', label: 'Back to SMS' }
-    : backTo === 'viber'
-      ? { href: '/viber', label: 'Back to Viber' }
-      : backTo === 'voice'
-        ? { href: '/voice', label: 'Back to Voice' }
-        : backTo === 'whatsapp'
-          ? { href: '/whatsapp', label: 'Back to WhatsApp Business' }
-          : backTo === 'otp'
-            ? { href: '/sms/otp', label: 'Back to OTP SMS' }
-            : { href: '/rcs', label: 'Back to RCS' }
+/** Pre-select service when user arrives from a product page (e.g. /get-started?from=otp). */
+function initialServiceForBackTo(backTo: string): string {
+  switch (backTo) {
+    case 'otp':
+      return 'otp'
+    case 'rcs':
+      return 'rcs'
+    case 'whatsapp':
+      return 'whatsapp'
+    case 'zambia':
+    case 'zambia-pricing':
+    case 'bulk-sms-zambia':
+    case 'zambia-sms-solutions':
+      return 'bulk'
+    default:
+      return ''
+  }
+}
+
+export default function GetStartedPageForm({ backTo = 'rcs', zambiaChrome = false }: Props) {
+  const backConfig =
+    backTo === 'zambia-pricing'
+      ? { href: '/bulk-sms-zambia/pricing', label: 'Back to Pricing' }
+      : backTo === 'zambia-sms-solutions'
+        ? { href: '/bulk-sms-zambia/sms-solutions', label: 'Back to SMS solutions' }
+        : backTo === 'about'
+          ? { href: '/about', label: 'Back to About us' }
+          : backTo === 'zambia' || backTo === 'bulk-sms-zambia'
+            ? { href: '/bulk-sms-zambia', label: 'Back to Bulk SMS Zambia' }
+            : backTo === 'sms'
+              ? { href: '/sms', label: 'Back to SMS' }
+              : backTo === 'viber'
+                ? { href: '/viber', label: 'Back to Viber' }
+                : backTo === 'voice'
+                  ? { href: '/voice', label: 'Back to Voice' }
+                  : backTo === 'whatsapp'
+                    ? { href: '/whatsapp', label: 'Back to WhatsApp Business' }
+                    : backTo === 'otp'
+                      ? { href: '/sms/otp', label: 'Back to OTP SMS' }
+                      : { href: '/rcs', label: 'Back to RCS' }
+  const backHref = zambiaChrome ? withZambiaNavHref(backConfig.href, true) : backConfig.href
   const [step, setStep] = useState(1)
-  const [form, setForm] = useState({
+  const [form, setForm] = useState(() => ({
     firstName: '',
     lastName: '',
     countryCode: '+971',
@@ -48,8 +78,8 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
     company: '',
     website: '',
     country: '',
-    service: '',
-  })
+    service: initialServiceForBackTo(backTo),
+  }))
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [status, setStatus] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -95,7 +125,17 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
     return Object.keys(next).length === 0
   }
 
+  const validateStep1 = () => {
+    if (!form.service.trim()) {
+      setErrors((prev) => ({ ...prev, service: 'Please select a service' }))
+      return false
+    }
+    setErrors((prev) => ({ ...prev, service: '' }))
+    return true
+  }
+
   const handleNext = () => {
+    if (step === 1 && !validateStep1()) return
     if (step === 2 && !validateStep2()) return
     setStep((s) => Math.min(s + 1, 3))
   }
@@ -142,8 +182,16 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
       if (res.ok) {
         setStatus('Thank you! Our team will contact you shortly.')
         setForm({
-          firstName: '', lastName: '', countryCode: '+971', phone: '', email: '',
-          jobTitle: '', company: '', website: '', country: '', service: '',
+          firstName: '',
+          lastName: '',
+          countryCode: '+971',
+          phone: '',
+          email: '',
+          jobTitle: '',
+          company: '',
+          website: '',
+          country: '',
+          service: initialServiceForBackTo(backTo),
         })
         setStep(1)
       } else {
@@ -167,7 +215,7 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
 
       <section className={styles.content}>
         <div className={styles.formColumn}>
-          <Link href={backConfig.href} className={styles.backToRcs} aria-label={backConfig.label}>
+          <Link href={backHref} className={styles.backToRcs} aria-label={backConfig.label}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -194,6 +242,11 @@ export default function GetStartedPageForm({ backTo = 'rcs' }: Props) {
                     </button>
                   ))}
                 </div>
+                {errors.service ? (
+                  <span className={styles.error} role="alert">
+                    {errors.service}
+                  </span>
+                ) : null}
               </div>
             )}
 
