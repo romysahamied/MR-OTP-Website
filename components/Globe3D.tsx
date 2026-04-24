@@ -35,10 +35,11 @@ export default function Globe3D({
           transparent
           opacity={0.22}
           depthWrite={false}
+          side={THREE.DoubleSide}
         />
       </mesh>
 
-      {/* Glowing world map */}
+      {/* Glowing world map — DoubleSide so the far hemisphere stays visible through the front while rotating */}
       <mesh renderOrder={2}>
         <sphereGeometry args={[1.01, 64, 64]} />
         <meshBasicMaterial
@@ -49,6 +50,7 @@ export default function Globe3D({
           blending={AdditiveBlending}
           depthWrite={false}
           depthTest={true}
+          side={THREE.DoubleSide}
         />
       </mesh>
     </group>
