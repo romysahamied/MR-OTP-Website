@@ -47,7 +47,7 @@ export default function BulkSmsZambiaCompareSection() {
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="zambia-compare-heading" className={styles.title}>
-            Why choose Mr-OTP?
+            Why choose Mr OTP?
           </h2>
           <p className={styles.subtitle}>
             The difference between local expertise and global platforms
@@ -63,7 +63,7 @@ export default function BulkSmsZambiaCompareSection() {
                   <th className={`${styles.th} ${styles.thCenter}`}>
                     <div className={styles.thStack}>
                       <span className={styles.thBrand}>
-                        Mr-OTP
+                        Mr OTP
                         <span className={styles.badge}>Top pick</span>
                       </span>
                       <span className={styles.thSub}>Built for Africa</span>
@@ -98,7 +98,7 @@ export default function BulkSmsZambiaCompareSection() {
               <article key={row.feature} className={styles.mCard} role="listitem">
                 <h3 className={styles.mFeature}>{row.feature}</h3>
                 <div className={styles.mRow}>
-                  <span className={styles.mLabel}>Mr-OTP</span>
+                  <span className={styles.mLabel}>Mr OTP</span>
                   <div className={`${styles.mVal} ${row.kind === 'text' ? styles.valOtp : ''}`}>
                     {row.kind === 'bool' ? (
                       <span className={styles.check} aria-hidden>

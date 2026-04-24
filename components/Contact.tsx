@@ -92,7 +92,14 @@ export default function Contact() {
               <button type="submit" className={styles.submit} disabled={isSubmitting}>
                 {isSubmitting ? 'Sending…' : 'Send Message'}
               </button>
-              {status ? <p className={styles.status}>{status}</p> : null}
+              {status ? (
+                <p
+                  className={`${styles.status}${status === 'Message sent successfully!' ? ` ${styles.statusSuccess}` : ''}`}
+                  role="status"
+                >
+                  {status}
+                </p>
+              ) : null}
             </form>
 
             <aside className={styles.aside}>

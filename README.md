@@ -1,6 +1,6 @@
-# Mr-OTP Website
+# Mr OTP Website
 
-Static, SEO-friendly business website for Mr-OTP - OTP SMS and omnichannel communication platform.
+Static, SEO-friendly business website for Mr OTP - OTP SMS and omnichannel communication platform.
 
 ## Getting Started
 

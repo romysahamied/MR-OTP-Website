@@ -14,7 +14,7 @@ export const ZAMBIA_API_CURL = `curl -X 'POST' \\
       "messageType": 1,
       "messageEncoding": 1,
       "destinationAddress": "91889900998",
-      "sourceAddress": "MR-OTP",
+      "sourceAddress": "Mr OTP",
       "messageText": "Hello World"
     }
   ]'`

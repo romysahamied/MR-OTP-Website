@@ -12,7 +12,7 @@ const port = Number(process.env.SMTP_PORT || 465)
 const recipient = process.env.CONTACT_RECIPIENT_EMAIL || 'info@mr-otp.com'
 const mailFrom =
   process.env.MAIL_FROM?.replace(/^["']|["']$/g, '').trim() ||
-  `"MR-OTP Website" <${user}>`
+  `"Mr OTP Website" <${user}>`
 const rejectUnauthorized = process.env.SMTP_TLS_REJECT_UNAUTHORIZED !== 'false'
 const family = process.env.SMTP_FAMILY ? Number(process.env.SMTP_FAMILY) : 4
 
@@ -37,7 +37,7 @@ async function trySend(label, opts) {
   await t.sendMail({
     from: mailFrom,
     to: recipient,
-    subject: '[SMTP test] Mr-OTP contact check',
+    subject: '[SMTP test] Mr OTP contact check',
     text: 'Ignore this message — SMTP connectivity test from scripts/test-smtp.mjs',
   })
   console.log('OK:', label)

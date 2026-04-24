@@ -6,8 +6,8 @@ const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 const GetStartedPageForm = dynamic(() => import('@/components/GetStartedPageForm'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Get Started | Mr-OTP',
-  description: 'Let\'s make your communications happen. Connect with the Mr-OTP team for OTP SMS, Bulk SMS, RCS, and enterprise messaging solutions.',
+  title: 'Get Started | Mr OTP',
+  description: 'Let\'s make your communications happen. Connect with the Mr OTP team for OTP SMS, Bulk SMS, RCS, and enterprise messaging solutions.',
 }
 
 type Props = {

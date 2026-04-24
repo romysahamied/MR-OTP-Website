@@ -59,7 +59,7 @@ export default function BulkSmsZambiaEveryIndustrySection() {
             Trusted across every industry
           </h2>
           <p className={styles.subtitle}>
-            From fintech to healthcare, businesses rely on Mr-OTP for mission-critical
+            From fintech to healthcare, businesses rely on Mr OTP for mission-critical
             communications.
           </p>
         </header>

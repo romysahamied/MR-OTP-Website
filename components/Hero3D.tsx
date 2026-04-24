@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useCallback, useEffect, useState, Suspense } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
+import { useRouter } from 'next/navigation'
 import { Canvas } from '@react-three/fiber'
 import * as THREE from 'three'
 
@@ -34,6 +35,7 @@ const HERO_CTA_DELAY_AFTER_TYPING_MS = 3850
 const HERO_CTA_DELAY_SHORT_MS = 700
 
 export default function Hero3D() {
+  const router = useRouter()
   const [isMobile, setIsMobile] = useState(false)
   const [isSmallMobile, setIsSmallMobile] = useState(false)
   const [showHeroCta, setShowHeroCta] = useState(false)
@@ -60,17 +62,6 @@ export default function Hero3D() {
     const id = window.setTimeout(() => setShowHeroCta(true), delay)
     return () => window.clearTimeout(id)
   }, [])
-
-  const openLetsTalk = useCallback(() => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-    if (typeof window !== 'undefined') {
-      window.history.replaceState(null, '', '#contact')
-    }
-    window.setTimeout(() => {
-      document.getElementById('contact-name')?.focus()
-    }, 500)
-  }, [])
-
 
   return (
     <section id="hero" className={styles.hero}>
@@ -123,11 +114,11 @@ export default function Hero3D() {
           <button
             type="button"
             className={styles.heroCtaBtn}
-            onClick={openLetsTalk}
+            onClick={() => router.push('/lets-talk')}
             tabIndex={showHeroCta ? 0 : -1}
-            aria-label="Open the Let's talk contact form"
+            aria-label="Connect now — open the Let’s talk form"
           >
-            Click here
+            Connect Now
           </button>
         </div>
       </div>

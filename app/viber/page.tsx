@@ -8,7 +8,7 @@ const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Viber Business | Messaging for Your Brand | Mr-OTP',
+  title: 'Viber Business | Messaging for Your Brand | Mr OTP',
   description: 'The ultimate tool for business communication. Establish direct brand-to-consumer connections with Viber Business. Engage, support, and transact on one platform.',
 }
 
@@ -179,7 +179,7 @@ export default function ViberPage() {
 
       <section className={styles.seamlessSection}>
         <h2 className={styles.seamlessHeading}>
-          Next-Generation Communication Starts with Mr-OTP & Viber
+          Next-Generation Communication Starts with Mr OTP & Viber
         </h2>
         <div className={styles.seamlessCards}>
           <div className={styles.seamlessCard}>

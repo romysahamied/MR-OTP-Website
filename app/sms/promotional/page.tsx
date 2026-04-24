@@ -7,7 +7,7 @@ const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 const PromotionalForm = dynamic(() => import('@/components/PromotionalForm'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Promotional SMS | Marketing Campaigns | Mr-OTP',
+  title: 'Promotional SMS | Marketing Campaigns | Mr OTP',
   description: 'Promotional SMS that reaches customers instantly. Send targeted bulk SMS campaigns with real-time delivery reports and local sender IDs.',
 }
 
@@ -246,7 +246,7 @@ export default function PromotionalSmsPage() {
           </div>
         </div>
         <div className={styles.complianceNotice}>
-          <strong>Compliance Notice:</strong> Promotional SMS must follow opt-out and DND regulations. MR-OTP includes integrated tools for consent management and unsubscribe handling.
+          <strong>Compliance Notice:</strong> Promotional SMS must follow opt-out and DND regulations. Mr OTP includes integrated tools for consent management and unsubscribe handling.
         </div>
       </section>
 

@@ -7,8 +7,8 @@ const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'OTP SMS | One-Time Password Verification | Mr-OTP',
-  description: 'Mr-OTP delivers secure, reliable OTP SMS for two-factor authentication, login verification, and account security. Fast delivery, global reach, enterprise-grade API.',
+  title: 'OTP SMS | One-Time Password Verification | Mr OTP',
+  description: 'Mr OTP delivers secure, reliable OTP SMS for two-factor authentication, login verification, and account security. Fast delivery, global reach, enterprise-grade API.',
 }
 
 export default function OtpSmsPage() {

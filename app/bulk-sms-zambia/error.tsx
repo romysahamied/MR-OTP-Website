@@ -78,7 +78,7 @@ export default function BulkSmsZambiaError({
           Zambia home
         </a>
         <a href="/?nav=zambia" style={{ padding: '0.5rem 1rem', color: '#0f172a', fontWeight: 600 }}>
-          Mr-OTP home
+          Mr OTP home
         </a>
       </div>
     </div>

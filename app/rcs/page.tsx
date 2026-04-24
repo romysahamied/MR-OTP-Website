@@ -9,7 +9,7 @@ const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 const RCSCarousel = dynamic(() => import('@/components/RCSCarousel'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'RCS Business Messaging | Rich Communication Services | Mr-OTP',
+  title: 'RCS Business Messaging | Rich Communication Services | Mr OTP',
   description: 'Rich, secure, and branded conversational experience with RCS. Drive engagement with rich media, carousels, and interactive messages. Next-generation business messaging.',
 }
 
@@ -36,7 +36,7 @@ export default function RcsPage() {
           <div className={styles.businessContent}>
             <h2 className={styles.businessHeading}>RCS Business Messaging Infrastructure</h2>
             <p className={styles.businessText}>
-              RCS blends the strengths of traditional messaging with modern interactive features to create a powerful brand experience. It combines the speed and direct reach of SMS with the visual richness and personalization typically found in email and messaging platforms. Conversations appear seamlessly within your customer’s default messaging app on both Android and iOS devices. With Mr-OTP, you can drive stronger engagement, higher response rates, and improved conversion performance.
+              RCS blends the strengths of traditional messaging with modern interactive features to create a powerful brand experience. It combines the speed and direct reach of SMS with the visual richness and personalization typically found in email and messaging platforms. Conversations appear seamlessly within your customer’s default messaging app on both Android and iOS devices. With Mr OTP, you can drive stronger engagement, higher response rates, and improved conversion performance.
             </p>
             <ul className={styles.businessList}>
               <li>Multimedia payload support including high-resolution images, video, and carousel modules</li>

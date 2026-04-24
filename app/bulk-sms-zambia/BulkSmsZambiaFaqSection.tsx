@@ -5,19 +5,19 @@ import styles from './BulkSmsZambiaFaq.module.css'
 
 const FAQ_ITEMS = [
   {
-    q: 'What countries does Mr-OTP cover?',
-    a: 'Mr-OTP routes traffic across 50+ countries with a strong focus on African operators—including Zambia, neighbouring markets, and global destinations for enterprises that need one API and consistent reporting.',
+    q: 'What countries does Mr OTP cover?',
+    a: 'Mr OTP routes traffic across 50+ countries with a strong focus on African operators—including Zambia, neighbouring markets, and global destinations for enterprises that need one API and consistent reporting.',
   },
   {
     q: 'How reliable is message delivery?',
     a: 'We use direct and preferred operator routes where available, active failover, and live delivery receipts (DLRs) so you can reconcile sends with finance and support. Typical transactional paths are engineered for high success rates and fast median latency.',
   },
   {
-    q: 'What makes Mr-OTP different from global providers?',
+    q: 'What makes Mr OTP different from global providers?',
     a: 'You get operator-aware routing in emerging markets, practical onboarding with humans (not only docs), and pricing that scales with volume—plus REST APIs that mirror how African teams already build.',
   },
   {
-    q: 'How quickly can I integrate Mr-OTP APIs?',
+    q: 'How quickly can I integrate Mr OTP APIs?',
     a: 'Most teams send a first sandbox message within a day using our REST endpoints and sample payloads. Production sender IDs and compliance steps vary by country; we guide you through each market.',
   },
   {

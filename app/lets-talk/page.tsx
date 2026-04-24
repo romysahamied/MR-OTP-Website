@@ -3,18 +3,19 @@ import type { Metadata } from 'next'
 
 const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
-const Blog = dynamic(() => import('@/components/Blog'), { ssr: true })
+const Contact = dynamic(() => import('@/components/Contact'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Blog | Mr OTP',
-  description: 'Latest insights on OTP SMS, WhatsApp Business, messaging APIs, and enterprise communication best practices.',
+  title: "Let's talk | Mr OTP",
+  description:
+    'Request a quote or get in touch with Mr OTP. Same contact form as our homepage — we will get back to you promptly.',
 }
 
-export default function BlogPage() {
+export default function LetsTalkPage() {
   return (
     <main>
       <Header />
-      <Blog />
+      <Contact />
       <Footer />
     </main>
   )

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import styles from '../BulkSmsZambia.module.css'
 
 export const metadata: Metadata = {
-  title: 'Features | Bulk SMS Zambia | Mr-OTP',
+  title: 'Features | Bulk SMS Zambia | Mr OTP',
   description: 'Bulk SMS features for Zambia — APIs, scheduling, analytics, and compliance-ready messaging.',
 }
 

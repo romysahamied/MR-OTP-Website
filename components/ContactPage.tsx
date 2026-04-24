@@ -269,7 +269,7 @@ export default function ContactPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Mr-OTP Office - Shams Business Center, Sharjah Media City, UAE"
+                title="Mr OTP Office - Shams Business Center, Sharjah Media City, UAE"
               />
             </div>
           </div>

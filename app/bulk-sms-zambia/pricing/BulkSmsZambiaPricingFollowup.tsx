@@ -76,7 +76,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'Bulk alerts to rural agents used to bounce or arrive late. Mr-OTP’s Zambia routing cut complaint tickets roughly in half within the first billing cycle.',
+      'Bulk alerts to rural agents used to bounce or arrive late. Mr OTP’s Zambia routing cut complaint tickets roughly in half within the first billing cycle.',
     name: 'Namwinga Chanda',
     role: 'Operations Director · AgriLink Co-op',
     tag: 'Agribusiness',
@@ -176,7 +176,7 @@ export default function BulkSmsZambiaPricingFollowup() {
       <section aria-labelledby="zambia-pricing-why">
         <header className={styles.sectionHead}>
           <h2 id="zambia-pricing-why" className={styles.sectionTitle}>
-            Why teams standardise on Mr-OTP in Zambia
+            Why teams standardise on Mr OTP in Zambia
           </h2>
           <p className={styles.sectionSub}>
             Beyond unit rates, you get transparent maths, route quality, and a partner that documents what

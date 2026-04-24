@@ -8,7 +8,7 @@ const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Voice | Carrier-Grade Calling Platform | Mr-OTP',
+  title: 'Voice | Carrier-Grade Calling Platform | Mr OTP',
   description: 'Enhance global connections with customized voice calling experiences. Converse and convert through a carrier-grade platform.',
 }
 
@@ -40,7 +40,7 @@ export default function VoicePage() {
               Reach any phone worldwide—mobile or landline—using just a number, and deliver your message with clarity and impact wherever your customers are located.
             </p>
             <p className={styles.useCasesText}>
-              Mr-OTP Voice services enable customized calling experiences with localized language options and dynamic personalization, including names and relevant customer data pulled directly from your CRM platform.
+              Mr OTP Voice services enable customized calling experiences with localized language options and dynamic personalization, including names and relevant customer data pulled directly from your CRM platform.
             </p>
             <p className={styles.useCasesText}>
               Strengthen customer support operations, initiate outbound calls, deliver one-time passwords, share critical alerts, or run voice-based marketing campaigns—all through a scalable and intelligent voice infrastructure.

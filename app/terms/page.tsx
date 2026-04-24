@@ -6,8 +6,8 @@ import styles from './Terms.module.css'
 const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Terms and Conditions | Mr-OTP',
-  description: 'Terms and Conditions for using Mr-OTP website and services.',
+  title: 'Terms and Conditions | Mr OTP',
+  description: 'Terms and Conditions for using Mr OTP website and services.',
 }
 
 export default function TermsPage() {

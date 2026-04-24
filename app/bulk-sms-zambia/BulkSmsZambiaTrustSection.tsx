@@ -31,7 +31,7 @@ export default function BulkSmsZambiaTrustSection() {
         </h2>
         <p className={trustStyles.trustSub}>
           From growth-stage startups to established institutions, teams across the continent rely on
-          Mr-OTP for mission-critical SMS—OTP, alerts, campaigns, and API-driven messaging with
+          Mr OTP for mission-critical SMS—OTP, alerts, campaigns, and API-driven messaging with
           operator-aware routing.
         </p>
       </div>

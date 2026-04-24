@@ -215,7 +215,7 @@ export default function GetStartedForm() {
                 className={styles.checkbox}
               />
               <span>
-                I consent to receive communications from MR-OTP related to my inquiry. By submitting this form, I confirm that my information will be handled in accordance with Mr-OTP&apos;s{' '}
+                I consent to receive communications from Mr OTP related to my inquiry. By submitting this form, I confirm that my information will be handled in accordance with Mr OTP&apos;s{' '}
                 <Link href="/privacy">Privacy Policy</Link>.
               </span>
             </label>

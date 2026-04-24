@@ -24,7 +24,7 @@ const SNIPPETS: Record<Tab, string> = {
     "messageType": 1,
     "messageEncoding": 1,
     "destinationAddress": "91889900998",
-    "sourceAddress": "MR-OTP",
+    "sourceAddress": "Mr OTP",
     "messageText": "Hello World"
   }
 ]'`,
@@ -40,7 +40,7 @@ const SNIPPETS: Record<Tab, string> = {
       messageType: 1,
       messageEncoding: 1,
       destinationAddress: '91889900998',
-      sourceAddress: 'MR-OTP',
+      sourceAddress: 'Mr OTP',
       messageText: 'Hello World',
     },
   ]),
@@ -59,7 +59,7 @@ payload = [
         "messageType": 1,
         "messageEncoding": 1,
         "destinationAddress": "91889900998",
-        "sourceAddress": "MR-OTP",
+        "sourceAddress": "Mr OTP",
         "messageText": "Hello World",
     }
 ]

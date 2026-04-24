@@ -209,7 +209,7 @@ export default function GetStartedPageForm({ backTo = 'rcs', zambiaChrome = fals
       <section className={styles.hero}>
         <h1 className={styles.headline}>Let&apos;s Make Your Communications Happen</h1>
         <p className={styles.subtitle}>
-          Need help or have a question? Let us connect you with the right team at Mr-OTP.
+          Need help or have a question? Let us connect you with the right team at Mr OTP.
         </p>
       </section>
 

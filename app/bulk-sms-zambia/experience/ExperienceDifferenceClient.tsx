@@ -310,7 +310,7 @@ export default function ExperienceDifferenceClient() {
       `Country: ${country}`,
       ...(extra ? ['', 'Additional details:', extra] : []),
       '',
-      'Consent: agreed to receive follow-up from Mr-OTP regarding this inquiry.',
+      'Consent: agreed to receive follow-up from Mr OTP regarding this inquiry.',
     ].join('\n')
 
     setSubmitting(true)
@@ -475,7 +475,7 @@ export default function ExperienceDifferenceClient() {
                 }}
               />
               <label htmlFor="exp-consent" className={styles.consentText}>
-                I agree that Mr-OTP may contact me about this request. Submitting this form confirms
+                I agree that Mr OTP may contact me about this request. Submitting this form confirms
                 you have read our{' '}
                 <Link href="/privacy" className={styles.privacyLink}>
                   Privacy Policy

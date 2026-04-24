@@ -248,7 +248,7 @@ body {
   min-height: 100%;
 }
 
-/* Global fixed background (Mr-OTP marketing site) */
+/* Global fixed background (Mr OTP marketing site) */
 body::before {
   content: '';
   position: fixed;

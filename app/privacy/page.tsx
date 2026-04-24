@@ -6,8 +6,8 @@ import styles from './Privacy.module.css'
 const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Mr-OTP',
-  description: 'Privacy Policy for Mr-OTP website and services.',
+  title: 'Privacy Policy | Mr OTP',
+  description: 'Privacy Policy for Mr OTP website and services.',
 }
 
 export default function PrivacyPage() {

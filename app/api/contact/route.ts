@@ -40,7 +40,7 @@ function getFromAddress(): string {
   if (r) return r
   const m = stripEnvQuotes(MAIL_FROM)
   if (m) return m
-  return 'MR OTP Website <onboarding@resend.dev>'
+  return 'Mr OTP Website <onboarding@resend.dev>'
 }
 
 type MailPayload = { text: string; name: string; email: string }
@@ -93,7 +93,7 @@ async function sendViaSmtp(payload: MailPayload, logDebug: boolean): Promise<voi
           console.log('[contact] SMTP', { connectHost, port, secure, user: smtpUser, recipient })
         }
         const fromAddress =
-          stripEnvQuotes(MAIL_FROM) || `"MR-OTP Website" <${smtpUser}>`
+          stripEnvQuotes(MAIL_FROM) || `"Mr OTP Website" <${smtpUser}>`
         await transporter.sendMail({
           from: fromAddress,
           to: recipient,

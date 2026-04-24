@@ -13,7 +13,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'Fraud SMS used to take twelve minutes to reach customers. With Mr-OTP routing the median is under six seconds—our analysts watch it in Grafana.',
+      'Fraud SMS used to take twelve minutes to reach customers. With Mr OTP routing the median is under six seconds—our analysts watch it in Grafana.',
     name: 'Samuel Adeyemi',
     role: 'VP Engineering',
     industry: 'Banking',

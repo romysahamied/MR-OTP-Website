@@ -198,6 +198,11 @@
   color: #fde68a;
 }
 
+.statusSuccess {
+  color: #4ade80;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.25);
+}
+
 /* —— Aside: illustration + contact —— */
 .aside {
   display: flex;

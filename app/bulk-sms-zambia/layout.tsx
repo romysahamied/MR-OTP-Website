@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import shellStyles from './BulkSmsZambiaShell.module.css'
 
 export const metadata: Metadata = {
-  title: 'Bulk SMS Zambia | Mr-OTP',
+  title: 'Bulk SMS Zambia | Mr OTP',
   description:
     'Enterprise bulk SMS for Zambia — high delivery rates, operator-aware routing, and developer-friendly APIs.',
 }

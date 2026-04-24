@@ -7,7 +7,7 @@ const smsContent = {
     'Send transactional alerts, OTP codes, marketing campaigns, and notifications with operator-aware routing across Africa. Direct routes help keep delivery fast and measurable.',
   features: [
     { title: 'Bulk SMS', desc: 'Send large volumes with throttling and scheduling.' },
-    { title: 'SMS API', desc: 'REST API using the same JSON body as the Mr-OTP platform.' },
+    { title: 'SMS API', desc: 'REST API using the same JSON body as the Mr OTP platform.' },
     { title: 'OTP SMS', desc: 'Time-bound verification codes and templated payloads.' },
     { title: 'Two-way SMS', desc: 'Inbound handling where your use case supports it.' },
   ],
@@ -24,7 +24,7 @@ export default function BulkSmsZambiaChannelsSection() {
           Communication channels your customers prefer
         </h2>
         <p className={styles.subtitle}>
-          Reach customers on SMS with the same Mr-OTP REST API used across your stack—reliable
+          Reach customers on SMS with the same Mr OTP REST API used across your stack—reliable
           delivery and clear reporting.
         </p>
       </div>

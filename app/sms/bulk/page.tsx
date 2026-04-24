@@ -11,8 +11,8 @@ const GetStartedForm = dynamic(() => import('@/components/GetStartedForm'), { ss
 const WHATSAPP_URL = 'https://wa.me/447360539406?text=Hi%20I%20am%20interested%20in%20your%20Bulk%20SMS%20services'
 
 export const metadata: Metadata = {
-  title: 'Bulk SMS | Marketing Automation | Mr-OTP',
-  description: 'Mr-OTP is the expert in Bulk SMS. User-friendly platform with rich features for bulk alert SMS campaigns. Mobile alerts, institutional, corporate, and auto-reply services.',
+  title: 'Bulk SMS | Marketing Automation | Mr OTP',
+  description: 'Mr OTP is the expert in Bulk SMS. User-friendly platform with rich features for bulk alert SMS campaigns. Mobile alerts, institutional, corporate, and auto-reply services.',
 }
 
 export default function BulkSmsPage() {

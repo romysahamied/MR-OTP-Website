@@ -20,7 +20,7 @@ function FooterContent({ z }: { z: boolean }) {
       <div className={styles.container}>
         <div className={styles.topSection}>
           <Link href={z ? ZAMBIA_BASE_PATH : '/'} className={styles.logo}>
-            <Image src="/logo_mrotp.png" alt="Mr-OTP" width={52} height={52} className={styles.logoMark} />
+            <Image src="/logo_mrotp.png" alt="Mr OTP" width={52} height={52} className={styles.logoMark} />
           </Link>
           <div className={styles.contactColumns}>
             <div className={styles.contactBlock}>
@@ -68,7 +68,7 @@ function FooterContent({ z }: { z: boolean }) {
                 {z ? (
                   /* Plain `/` — do not append ?nav=zambia or the main site footer/header never “exits” Zambia mode */
                   <Link href="/" className={styles.micrositeLink}>
-                    Main Mr-OTP website
+                    Main Mr OTP website
                   </Link>
                 ) : (
                   <Link
@@ -114,7 +114,7 @@ function FooterContent({ z }: { z: boolean }) {
         <div className={styles.divider} />
 
         <div className={styles.bottomSection}>
-          <p className={styles.copyright}>© 2026 Mr-OTP All Rights Reserved | Incorporated in UK, UAE & Zambia</p>
+          <p className={styles.copyright}>© 2026 Mr OTP All Rights Reserved | Incorporated in UK, UAE & Zambia</p>
           <nav className={styles.legalLinks}>
             <Link href={h('/privacy')}>Privacy Policy</Link>
             <span className={styles.sep}>·</span>

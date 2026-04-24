@@ -12,7 +12,7 @@ import SmsSolutionsFaqSection from './SmsSolutionsFaqSection'
 import SmsSolutionsCtaBannerSection from './SmsSolutionsCtaBannerSection'
 
 export const metadata: Metadata = {
-  title: 'Bulk SMS Platform for African Enterprises | Mr-OTP Zambia',
+  title: 'Bulk SMS Platform for African Enterprises | Mr OTP Zambia',
   description:
     'Enterprise bulk SMS across Africa — high delivery rates, instant sends, multi-country coverage, analytics, and scheduled campaigns. Built on direct operator routes.',
 }
@@ -60,7 +60,7 @@ export default function BulkSmsZambiaSmsSolutionsPage() {
                 </Link>
               </div>
               <p className={styles.note}>
-                Same gateway and APIs as the main Mr-OTP stack — sandbox-friendly onboarding for your
+                Same gateway and APIs as the main Mr OTP stack — sandbox-friendly onboarding for your
                 team.
               </p>
             </div>

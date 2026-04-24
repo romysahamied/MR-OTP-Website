@@ -230,7 +230,7 @@ export default function AboutPage() {
                   Your users expect messages that show up on time, every time—that expectation starts with
                   connectivity you can run in production, not a demo.
                 </strong>{' '}
-                Mr-OTP offers A2P SMS and the adjacent channels you need to verify people, nudge customers, and
+                Mr OTP offers A2P SMS and the adjacent channels you need to verify people, nudge customers, and
                 power campaigns, from one well-documented surface that behaves predictably when traffic
                 grows.
               </p>
@@ -384,7 +384,7 @@ export default function AboutPage() {
         <section className={styles.why} aria-labelledby="why-heading">
           <div>
             <p className={styles.whyHeading} id="why-heading">
-              Why teams choose Mr-OTP
+              Why teams choose Mr OTP
             </p>
             <ul className={styles.whyList}>
               {WHY_POINTS.map((line) => (
@@ -400,7 +400,7 @@ export default function AboutPage() {
           <div className={styles.whyVisual}>
             <Image
               src="/aboutcompany.png"
-              alt="Mr-OTP platform: APIs, messaging integrations, and secure workflows"
+              alt="Mr OTP platform: APIs, messaging integrations, and secure workflows"
               width={1536}
               height={1024}
               sizes="(max-width: 899px) 100vw, min(42vw, 640px)"

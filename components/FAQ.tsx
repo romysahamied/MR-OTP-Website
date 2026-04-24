@@ -10,8 +10,8 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
     {
-        question: 'What is Mr-OTP?',
-        answer: 'Mr-OTP is an AI-powered omnichannel communication platform that provides SMS, WhatsApp Business, and other messaging services.',
+        question: 'What is Mr OTP?',
+        answer: 'Mr OTP is an AI-powered omnichannel communication platform that provides SMS, WhatsApp Business, and other messaging services.',
     },
     {
         question: 'How do I get started with SMS services?',

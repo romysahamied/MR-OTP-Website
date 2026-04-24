@@ -7,7 +7,7 @@ const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 const TransactionalForm = dynamic(() => import('@/components/TransactionalForm'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Transactional SMS | Real-Time Messaging | Mr-OTP',
+  title: 'Transactional SMS | Real-Time Messaging | Mr OTP',
   description: 'Transactional SMS that reaches customers instantly. Send order confirmations, delivery alerts, and notifications with real-time delivery reports and local sender IDs.',
 }
 
@@ -337,12 +337,12 @@ export default function TransactionalSmsPage() {
         </div>
       </section>
 
-      {/* Why Choose Mr-OTP */}
+      {/* Why Choose Mr OTP */}
       <section className={styles.infoSection}>
-        <h2 className={styles.infoHeading}>Upgrade to Smarter Transactional SMS with MR-OTP</h2>
+        <h2 className={styles.infoHeading}>Upgrade to Smarter Transactional SMS with Mr OTP</h2>
         <div className={styles.comparisonTable}>
           <div className={styles.comparisonColumn}>
-            <h3 className={styles.comparisonTitle}>Mr-OTP</h3>
+            <h3 className={styles.comparisonTitle}>Mr OTP</h3>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> 99.8% Delivery Success Rate</div>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Under 3-Second Message Delivery</div>
             <div className={styles.comparisonItem}><span className={styles.checkIcon}>✓</span> Global Coverage in 190+ Countries</div>

@@ -38,7 +38,7 @@ export default function Welcome() {
       <span className={styles.welcomeText}>Welcome to</span>
       <Image
         src="/goldenlogo.png"
-        alt="MrOTP Logo"
+        alt="Mr OTP Logo"
         width={52}
         height={52}
         className={styles.inlineLogo}

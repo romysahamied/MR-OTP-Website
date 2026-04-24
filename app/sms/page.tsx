@@ -9,7 +9,7 @@ const Header = dynamic(() => import('@/components/Header'), { ssr: true })
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'SMS for Every Business Need | Mr-OTP',
+  title: 'SMS for Every Business Need | Mr OTP',
   description: "SMS is the world's most popular business messaging tool. 98% open rate, 30% response rate. Reach 7.4B users with OTP, alerts, reminders, and more.",
 }
 
@@ -32,7 +32,7 @@ export default function SmsPage() {
         <section className={styles.introSection}>
           <h1 className={styles.mainHeading}>Power Every Customer Interaction with SMS</h1>
           <p className={styles.introText}>
-            SMS remains one of the most effective and widely used communication channels worldwide. With Mr-OTP’s advanced SMS API, you can streamline notifications, appointment reminders, OTP delivery, and more—driving stronger engagement and measurable results.
+            SMS remains one of the most effective and widely used communication channels worldwide. With Mr OTP’s advanced SMS API, you can streamline notifications, appointment reminders, OTP delivery, and more—driving stronger engagement and measurable results.
           </p>
         </section>
 

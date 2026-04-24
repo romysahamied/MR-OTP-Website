@@ -93,7 +93,7 @@ export default function BulkSmsZambiaUseCasesSection() {
           Real-world use cases
         </h2>
         <p className={styles.subtitle}>
-          See how businesses across Africa use Mr-OTP to power their communications.
+          See how businesses across Africa use Mr OTP to power their communications.
         </p>
       </header>
 

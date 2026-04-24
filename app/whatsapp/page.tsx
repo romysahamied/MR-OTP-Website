@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import styles from './WhatsApp.module.css'
 
 export const metadata: Metadata = {
-  title: 'WhatsApp Business | Mr-OTP',
+  title: 'WhatsApp Business | Mr OTP',
   description: 'Transform your customer engagement with WhatsApp Business API. Automate and personalize interactions on the world\'s most popular messaging platform.',
 }
 
@@ -225,13 +225,13 @@ export default function WhatsAppPage() {
       <section className={styles.powerfulSection}>
         <div className={styles.powerfulInner}>
           <h2 className={styles.powerfulMainHeading}>
-          Power Every Customer Interaction with Mr-OTP and WhatsApp
+          Power Every Customer Interaction with Mr OTP and WhatsApp
           </h2>
           <div className={styles.powerfulGrid}>
           <div className={styles.powerfulCard}>
             <h3 className={styles.powerfulCardTitle}>Automated Multi-Channel Failover</h3>
             <p className={styles.powerfulCardText}>
-            If WhatsApp transmission fails, Mr-OTP reroutes the message via SMS, maintaining delivery continuity and engagement reliability.
+            If WhatsApp transmission fails, Mr OTP reroutes the message via SMS, maintaining delivery continuity and engagement reliability.
             </p>
           </div>
           <div className={styles.powerfulCard}>

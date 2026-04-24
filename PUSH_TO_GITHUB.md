@@ -6,7 +6,7 @@ Follow these steps in **PowerShell** or **Git Bash** (from your project folder).
 
 1. Go to [github.com](https://github.com) and sign in.
 2. Click **New** (or **+** → **New repository**).
-3. Name it (e.g. `mr-otp-website`).
+3. Name it (e.g. `Mr OTP-website`).
 4. Choose **Public**.
 5. Do **not** add a README, .gitignore, or license (this project already has them).
 6. Click **Create repository**.
@@ -16,7 +16,7 @@ Follow these steps in **PowerShell** or **Git Bash** (from your project folder).
 Open PowerShell or Git Bash, then:
 
 ```powershell
-cd "d:\Backup\Pendrive\mr-otp-website"
+cd "d:\Backup\Pendrive\Mr OTP-website"
 ```
 
 **If this folder is not yet a git repo:**
@@ -24,7 +24,7 @@ cd "d:\Backup\Pendrive\mr-otp-website"
 ```powershell
 git init
 git add .
-git commit -m "Initial commit: Mr-OTP website"
+git commit -m "Initial commit: Mr OTP website"
 git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 git push -u origin main
@@ -35,13 +35,13 @@ git push -u origin main
 ```powershell
 git add .
 git status
-git commit -m "Update: Mr-OTP website"
+git commit -m "Update: Mr OTP website"
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 git branch -M main
 git push -u origin main
 ```
 
-Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your GitHub username and the repo name you created (e.g. `https://github.com/romysahamied/mr-otp-website.git`).
+Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your GitHub username and the repo name you created (e.g. `https://github.com/romysahamied/Mr OTP-website.git`).
 
 If `origin` already exists and you want to change it:
 
