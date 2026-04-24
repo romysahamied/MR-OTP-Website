@@ -48,9 +48,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      {/* Inline baseline so a rare failed CSS chunk in dev is not a white “unstyled” page */}
+      <body style={{ margin: 0, backgroundColor: '#050810', color: '#ffffff' }}>
         {children}
-          <WhatsAppFloating />
+        <WhatsAppFloating />
       </body>
     </html>
   )

@@ -94,10 +94,14 @@
 
 .heroContentLeft {
   position: absolute;
-  left: 6%;
+  left: clamp(1rem, 5vw, 6%);
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
+  box-sizing: border-box;
+  /* Keep copy in the left column so it never sits on the centered globe */
+  max-width: min(36vw, 22rem);
+  padding-right: clamp(1rem, 3vw, 2.5rem);
 
   animation: slideInLeft 0.9s ease-out forwards;
 }
@@ -135,34 +139,38 @@
 }
 
 .typingLineOne {
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-size: clamp(1.35rem, 1.85vw + 0.35rem, 2.2rem);
+  letter-spacing: 0.04em;
 
   animation:
-    typingOne 1.6s steps(12) 0.4s forwards,
+    typingOne 1.9s steps(18) 0.4s forwards,
     caretBlink 0.7s step-end infinite,
-    caretOff 0s linear 1.9s forwards;
+    caretOff 0s linear 2.35s forwards;
 }
 
 .typingLineTwo {
   margin-top: 0.4rem;
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.2rem, 1.55vw + 0.3rem, 1.95rem);
+  /* Match line 1: 1px tracking makes width: Nch too narrow and clips the last glyph */
+  letter-spacing: 0.04em;
 
   animation:
-    typingTwo 1.4s steps(11) 2.1s forwards,
+    /* "Global Reach" = 12 characters */
+    typingTwo 1.5s steps(12) 2.45s forwards,
     caretBlink 0.7s step-end infinite,
-    caretOff 0s linear 3.6s forwards,
-    goldPulse 3s ease-in-out 3.8s infinite;
+    caretOff 0s linear 4s forwards,
+    goldPulse 3s ease-in-out 4.05s infinite;
 }
 
 
 @keyframes typingOne {
   from { width: 0 }
-  to { width: 12ch }
+  to { width: 18ch }
 }
 
 @keyframes typingTwo {
   from { width: 0 }
-  to { width: 11ch }
+  to { width: 12ch }
 }
 
 @keyframes caretBlink {
@@ -203,10 +211,7 @@
   transform: translateY(0);
 }
 
-/*
- * Plain gold text by default; pill on hover. Same padding in both states so the
- * headline above does not jump when the “button” chrome appears.
- */
+/* Gold pill button — visible by default; hover slightly stronger */
 .heroCtaBtn {
   appearance: none;
   cursor: pointer;
@@ -216,25 +221,8 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0;
-  /* Tight pill — matched on hover so layout height/width stay fixed */
   padding: 0.38rem 0.85rem;
   border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: #fde68a;
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
-  box-shadow: none;
-  transition:
-    box-shadow 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    filter 0.25s ease,
-    text-shadow 0.25s ease;
-}
-
-.heroCtaBtn:hover,
-.heroCtaBtn:focus-visible {
   border: 1px solid rgba(212, 175, 55, 0.55);
   background: linear-gradient(145deg, #f6e27a 0%, #d4af37 48%, #a67c00 100%);
   color: #1a1205;
@@ -242,21 +230,24 @@
   box-shadow:
     0 0 0 1px rgba(255, 248, 220, 0.22),
     0 6px 18px rgba(0, 0, 0, 0.28);
-  filter: brightness(1.04);
-  outline: none;
+  transition:
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
 .heroCtaBtn:hover {
+  filter: brightness(1.06);
   box-shadow:
     0 0 0 1px rgba(255, 248, 220, 0.32),
     0 8px 22px rgba(0, 0, 0, 0.32);
 }
 
 .heroCtaBtn:focus-visible {
+  outline: none;
   box-shadow:
     0 0 0 2px rgba(253, 230, 138, 0.45),
     0 0 0 1px rgba(255, 248, 220, 0.2),
-    0 6px 18px rgba(0, 0, 0, 0.28);
+    0 8px 22px rgba(0, 0, 0, 0.32);
 }
 
 .heroCtaBtn:active {
@@ -268,11 +259,19 @@
   .typingLineOne,
   .typingLineTwo {
     width: auto;
-    max-width: min(100%, 20ch);
+    max-width: 100%;
     border-right: none;
     animation: none;
     white-space: normal;
     overflow: visible;
+  }
+
+  .typingLineOne {
+    max-width: min(100%, 19ch);
+  }
+
+  .typingLineTwo {
+    max-width: min(100%, 14ch);
   }
 
   .heroCtaWrap {
@@ -291,6 +290,26 @@
   }
 }
 
+@media (min-width: 769px) and (max-width: 1199px) {
+  .heroContentLeft {
+    max-width: min(38vw, 20rem);
+  }
+
+  .typingLineOne {
+    font-size: clamp(1.25rem, 2.2vw + 0.2rem, 1.95rem);
+  }
+
+  .typingLineTwo {
+    font-size: clamp(1.1rem, 1.85vw + 0.2rem, 1.75rem);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .typingLineOne {
+    font-size: clamp(1.35rem, 1.65vw + 0.4rem, 2.05rem);
+  }
+}
+
 @media (max-width: 768px) {
   .heroContentLeft {
     position: relative;
@@ -299,6 +318,9 @@
     transform: none;
     margin-top: 2rem;
     text-align: center;
+    max-width: 100%;
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    padding-right: clamp(1rem, 4vw, 1.5rem);
   }
 
   .typingLineOne,
@@ -312,18 +334,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .heroContentLeft {
-    position: relative;
-    left: 0;
-    top: auto;
-    transform: none;
-    margin-top: 2rem;
-    text-align: center;
   }
 }
 

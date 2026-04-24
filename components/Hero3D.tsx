@@ -30,8 +30,8 @@ class WebGLErrorBoundary extends React.Component<
   }
 }
 
-/** After both hero typewriter lines finish (~3.6s), show CTA; faster when motion is reduced or on small viewports. */
-const HERO_CTA_DELAY_AFTER_TYPING_MS = 3850
+/** After both hero typewriter lines finish (~4.05s), show CTA; faster when motion is reduced or on small viewports. */
+const HERO_CTA_DELAY_AFTER_TYPING_MS = 4300
 const HERO_CTA_DELAY_SHORT_MS = 700
 
 export default function Hero3D() {
@@ -105,7 +105,7 @@ export default function Hero3D() {
 
       {/* 📝 HERO TEXT — not gated on WebGL (avoids blank hero if Canvas is slow or fails) */}
       <div className={styles.heroContentLeft}>
-        <h1 className={styles.typingLineOne}>Instant OTPs,</h1>
+        <h1 className={styles.typingLineOne}>Instant Messaging,</h1>
         <h2 className={styles.typingLineTwo}>Global Reach</h2>
         <div
           className={`${styles.heroCtaWrap} ${showHeroCta ? styles.heroCtaWrapVisible : ''}`}

@@ -46,9 +46,11 @@ const nextConfig = {
     if (dev) {
       config.watchOptions = {
         ...config.watchOptions,
-        aggregateTimeout: 1200,
+        // Slightly longer debounce + polling reduces overlapping rebuilds when you save + refresh
+        // quickly (avoids briefly serving HTML that points at CSS/JS chunks still being written).
+        aggregateTimeout: 2000,
         // Native watchers can miss events on Windows, OneDrive, etc.
-        ...(isWin ? { poll: 1500 } : {}),
+        ...(isWin ? { poll: 2000 } : {}),
       }
       /*
        * Reduces “Cannot find module './NNNN.js'” after refresh/HMR on Windows: numeric chunk IDs
@@ -65,11 +67,13 @@ const nextConfig = {
        */
       config.parallelism = 1
       /*
-       * Webpack’s persistent dev cache often keeps stale chunk IDs (e.g. ./8948.js) after HMR while
-       * files on disk were rotated — “Cannot find module './NNNN.js'”. Disable cache in dev on
-       * all platforms; production builds are unaffected.
+       * `filesystem` dev cache caused stale chunk → runtime “Cannot find module './NNNN.js'” on
+       * Windows. `false` forces full rebuilds every edit, which is slower and increases the window
+       * where a refresh can hit a half-written `.next` output. In-memory cache avoids persistent
+       * stale maps while keeping compiles faster and more atomic. If chunk errors return, run
+       * `npm run dev:fresh` once, or temporarily set `config.cache = false` again.
        */
-      config.cache = false
+      config.cache = { type: 'memory', maxGenerations: 1 }
     }
     return config
   },

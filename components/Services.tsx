@@ -131,13 +131,15 @@ export default function Services() {
               }`}
               key={item.src}
             >
+              {/* Explicit width/height (not fill): if CSS modules fail to load in dev, layout stays bounded */}
               <Image
                 key={item.src}
                 src={item.src}
                 alt={item.title}
-                fill
+                width={320}
+                height={520}
                 className={styles.carouselImage}
-                sizes="(max-width: 900px) 100vw, 50vw"
+                sizes="(max-width: 900px) min(100vw, 320px), 320px"
               />
             </div>
           </div>
